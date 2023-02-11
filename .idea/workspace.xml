@@ -5,25 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/ArmorType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/Slot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/WeaponType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Hero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/HeroAttribute.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Mage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Ranger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Rogue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Warrior.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Armor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Weapon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/services/HeroManagementService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/services/MageManagementServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/HeroManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/HeroManagementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/MageManagementServiceImpl.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -10,6 +10,8 @@ import java.util.Map;
 
 public abstract class Hero {
 
+    static int idGenerator = 1;
+    private int id;
     private String name;
     private int level;
     private HeroAttribute heroAttributes;
@@ -22,10 +24,39 @@ public abstract class Hero {
     }
 
     public Hero(String name) {
-        level = 1;
         this.name = name;
     }
 
+    public Hero(String name,
+                int level,
+                HeroAttribute heroAttributes,
+                Map<Slot, Item> equipment,
+                List<WeaponType> validWeaponTypes,
+                List<ArmorType> validArmorTypes) {
+        this.id = idGenerator++;
+        this.name = name;
+        this.level = level + 1;
+        this.heroAttributes = heroAttributes;
+        this.equipment = equipment;
+        this.validWeaponTypes = validWeaponTypes;
+        this.validArmorTypes = validArmorTypes;
+    }
+
+
+    public abstract int levelUp();
+
+    public abstract Map<Slot, Item> equip();
+
+    public abstract void damage();
+
+    public abstract HeroAttribute totalAttributes();
+
+    public abstract String display();
+
+
+    public int getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
@@ -79,15 +110,13 @@ public abstract class Hero {
 //        level += 1;
 //    }
 
+
     @Override
     public String toString() {
-        return "Hero{" +
-                "name='" + name + '\'' +
-                ", level=" + level +
+        return "Hero id = " + id + ", name='" + name + ", level=" + level +
                 ", heroAttributes=" + heroAttributes +
                 ", equipment=" + equipment +
                 ", validWeaponTypes=" + validWeaponTypes +
-                ", validArmorTypes=" + validArmorTypes +
-                '}';
+                ", validArmorTypes=" + validArmorTypes;
     }
 }

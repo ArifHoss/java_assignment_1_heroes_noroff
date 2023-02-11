@@ -1,23 +1,22 @@
 package org.example.services;
 
-import org.example.enums.Slot;
+import org.example.enums.ArmorType;
+import org.example.pojos.heroes.HeroAttribute;
 import org.example.pojos.heroes.Mage;
-import org.example.pojos.items_equipment.Item;
 
-import java.util.Map;
+import java.util.List;
 
-public interface HeroManagementService {
+public class HeroManagementService {
 
-    void createHero();
+    public void createHero() {
+        Mage mage = new Mage("Erik");
+        mage.setHeroAttributes(new HeroAttribute(1,1,8));
+        mage.setValidArmorTypes(List.of(ArmorType.CLOTH));
+        mage.setLevel(2);
 
-    int levelUp();
+        System.out.println(mage);
+    }
 
-    Map<Slot, Item> equip();
 
-    int damage();
-
-    int totalAttributes();
-
-    void display();
 
 }

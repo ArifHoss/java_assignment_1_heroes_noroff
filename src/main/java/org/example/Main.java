@@ -1,16 +1,11 @@
 package org.example;
 
-import org.example.enums.ArmorType;
-import org.example.pojos.heroes.HeroAttribute;
-import org.example.pojos.heroes.Mage;
-import org.example.services.MageManagementServiceImpl;
-
-import java.util.List;
+import org.example.services.HeroManagementService;
 
 public class Main {
     public static void main(String[] args) {
         
-        MageManagementServiceImpl hero = new MageManagementServiceImpl();
+        HeroManagementService hero = new HeroManagementService();
 
         hero.createHero();
     }
