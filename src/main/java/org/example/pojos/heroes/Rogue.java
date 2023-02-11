@@ -1,21 +1,48 @@
 package org.example.pojos.heroes;
 
+import org.example.enums.ArmorType;
+import org.example.enums.Slot;
+import org.example.enums.WeaponType;
+import org.example.pojos.items_equipment.Item;
+
+import java.util.List;
+import java.util.Map;
+
 public class Rogue extends Hero{
-    private HeroAttribute heroAttribute;
 
     public Rogue() {
     }
 
-    public Rogue(String name, HeroAttribute heroAttribute) {
+    public Rogue(String name) {
         super(name);
-        this.heroAttribute = heroAttribute;
     }
 
-    public HeroAttribute getHeroAttribute() {
-        return heroAttribute;
+    public Rogue(String name, int level, HeroAttribute heroAttributes, Map<Slot, Item> equipment, List<WeaponType> validWeaponTypes, List<ArmorType> validArmorTypes) {
+        super(name, level, heroAttributes, equipment, validWeaponTypes, validArmorTypes);
     }
 
-    public void setHeroAttribute(HeroAttribute heroAttribute) {
-        this.heroAttribute = heroAttribute;
+    @Override
+    public int levelUp() {
+        return 0;
+    }
+
+    @Override
+    public Map<Slot, Item> equip() {
+        return null;
+    }
+
+    @Override
+    public void damage() {
+
+    }
+
+    @Override
+    public HeroAttribute totalAttributes() {
+        return null;
+    }
+
+    @Override
+    public String display() {
+        return null;
     }
 }

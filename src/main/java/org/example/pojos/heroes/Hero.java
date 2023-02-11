@@ -35,7 +35,7 @@ public abstract class Hero {
                 List<ArmorType> validArmorTypes) {
         this.id = idGenerator++;
         this.name = name;
-        this.level = level + 1;
+        this.level += level;
         this.heroAttributes = heroAttributes;
         this.equipment = equipment;
         this.validWeaponTypes = validWeaponTypes;
