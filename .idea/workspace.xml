@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="rescaled all heroes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/services/Main.java" afterDir="false" />
+    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="created heroes and added validations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/HeroAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/HeroAttribute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Mage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Ranger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Ranger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Rogue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Warrior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Armor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Armor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Weapon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/HeroManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/HeroManagementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676110491330</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="created heroes and added validations">
+      <created>1676220955801</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1676220955801</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +126,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added levelUp, equip, damage, totalAttribute and display method to Hero data transfer class" />
     <MESSAGE value="rescaled all heroes" />
-    <option name="LAST_COMMIT_MESSAGE" value="rescaled all heroes" />
+    <MESSAGE value="created heroes and added validations" />
+    <option name="LAST_COMMIT_MESSAGE" value="created heroes and added validations" />
   </component>
 </project>
