@@ -9,11 +9,9 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class Hero {
-
-    static int idGenerator = 1;
-    private int id;
     private String name;
-    private int level;
+    private String heroClass;
+    private int level = 1;
     private HeroAttribute heroAttributes;
     private Map<Slot, Item> equipment;
     private List<WeaponType> validWeaponTypes;
@@ -28,13 +26,14 @@ public abstract class Hero {
     }
 
     public Hero(String name,
+                String heroClass,
                 int level,
                 HeroAttribute heroAttributes,
                 Map<Slot, Item> equipment,
                 List<WeaponType> validWeaponTypes,
                 List<ArmorType> validArmorTypes) {
-        this.id = idGenerator++;
         this.name = name;
+        this.heroClass = heroClass;
         this.level += level;
         this.heroAttributes = heroAttributes;
         this.equipment = equipment;
@@ -43,20 +42,16 @@ public abstract class Hero {
     }
 
 
-    public abstract int levelUp();
+    public abstract int levelUp(int level);
 
     public abstract Map<Slot, Item> equip();
 
     public abstract void damage();
 
-    public abstract HeroAttribute totalAttributes();
+    public abstract void totalAttributes();
 
     public abstract String display();
 
-
-    public int getId() {
-        return id;
-    }
 
     public String getName() {
         return name;
@@ -66,8 +61,16 @@ public abstract class Hero {
         this.name = name;
     }
 
+    public String getHeroClass() {
+        return heroClass;
+    }
+
+    public void setHeroClass(String heroClass) {
+        this.heroClass = heroClass;
+    }
+
     public int getLevel() {
-        return 1;
+        return level;
     }
 
     public void setLevel(int level) {
@@ -113,10 +116,14 @@ public abstract class Hero {
 
     @Override
     public String toString() {
-        return "Hero id = " + id + ", name='" + name + ", level=" + level +
-                ", heroAttributes=" + heroAttributes +
-                ", equipment=" + equipment +
-                ", validWeaponTypes=" + validWeaponTypes +
-                ", validArmorTypes=" + validArmorTypes;
+        StringBuilder sb = new StringBuilder();
+        sb.append("Name: "+ name+"\t");
+        sb.append("Class: "+heroClass+"\t");
+        sb.append("Level: "+level+"\t");
+        sb.append("Total Strength: "+heroAttributes.getStrength()+"\t");
+        sb.append("Total Dexterity: "+heroAttributes.getDexterity()+"\t");
+        sb.append("Total Intelligence: "+heroAttributes.getIntelligence()+"\t");
+        sb.append("Equipment: " + equipment +"\t");
+        return sb.toString();
     }
 }

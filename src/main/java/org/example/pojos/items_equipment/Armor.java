@@ -1,6 +1,7 @@
 package org.example.pojos.items_equipment;
 
 import org.example.enums.ArmorType;
+import org.example.enums.Slot;
 
 public class Armor extends Item{
     private ArmorType armorType;
@@ -10,6 +11,12 @@ public class Armor extends Item{
     }
 
     public Armor(ArmorType armorType, int armorAttribute) {
+        this.armorType = armorType;
+        this.armorAttribute = armorAttribute;
+    }
+
+    public Armor(String name, int requiredLevel, Slot slot, ArmorType armorType, int armorAttribute) {
+        super(name, requiredLevel, slot);
         this.armorType = armorType;
         this.armorAttribute = armorAttribute;
     }
@@ -28,5 +35,11 @@ public class Armor extends Item{
 
     public void setArmorAttribute(int armorAttribute) {
         this.armorAttribute = armorAttribute;
+    }
+
+    @Override
+    public String toString() {
+        return " ArmorType = " + armorType +"\t"+
+                ", armorAttribute = " + armorAttribute+"\t";
     }
 }

@@ -1,16 +1,17 @@
 package org.example.pojos.heroes;
 
 import org.example.enums.ArmorType;
-import org.example.enums.Slot;
+import org.example.enums.*;
 import org.example.enums.WeaponType;
-import org.example.pojos.items_equipment.Item;
+import org.example.pojos.items_equipment.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-public class Mage extends Hero{
+import static org.example.enums.ArmorType.*;
+import static org.example.enums.Slot.*;
+import static org.example.enums.WeaponType.*;
+
+public class Mage extends Hero {
     public Mage() {
     }
 
@@ -18,18 +19,37 @@ public class Mage extends Hero{
         super(name);
     }
 
-    public Mage(String name, int level, HeroAttribute heroAttributes, Map<Slot, Item> equipment, List<WeaponType> validWeaponTypes, List<ArmorType> validArmorTypes) {
-        super(name, level, heroAttributes, equipment, validWeaponTypes, validArmorTypes);
+    public Mage(String name, String heroClass, int level, HeroAttribute heroAttributes, Map<Slot, Item> equipment, List<WeaponType> validWeaponTypes, List<ArmorType> validArmorTypes) {
+        super(name, heroClass, level, heroAttributes, equipment, validWeaponTypes, validArmorTypes);
     }
 
     @Override
-    public int levelUp() {
-        return 0;
+    public int levelUp(int level) {
+        level = level + 1;
+        return level;
     }
 
     @Override
     public Map<Slot, Item> equip() {
-        return null;
+
+        Map<Slot, Item> equipment = new HashMap<>();
+
+        Weapon weapon1 = new Weapon("Staffs", 1, WEAPON, STAFFS, 0);
+        Weapon weapon2 = new Weapon("Wand", 5, WEAPON, WANDS, 0);
+        Armor armor = new Armor("Cloth", 10, BODY, CLOTH, 0);
+
+        if (getLevel() >= 1) {
+            equipment.put(WEAPON, weapon1);
+
+        } else if (getLevel() >= 5) {
+            equipment.put(WEAPON, weapon2);
+
+        } else if (getLevel() >= 10) {
+            equipment.put(BODY, armor);
+
+        }
+
+        return equipment;
     }
 
     @Override
@@ -38,20 +58,31 @@ public class Mage extends Hero{
     }
 
     @Override
-    public HeroAttribute totalAttributes() {
-        return null;
+    public void totalAttributes() {
+
+        HeroAttribute attributes = new HeroAttribute(1, 1, 8);
+
+        int strength = attributes.getStrength();
+        int dexterity = attributes.getDexterity();
+        int intelligence = attributes.getIntelligence();
+
+        int totalAttributes = strength + dexterity + intelligence;
+        System.out.println("Mage total attributes: " + totalAttributes);
     }
 
     @Override
     public String display() {
-        return null;
+        StringBuilder sb = new StringBuilder();
+        Mage mage = new Mage("Erik");
+        sb.append("Name: " + mage.getName() + "\t");
+        sb.append("Class: " + mage.getClass() + "\t");
+        sb.append("Level: " + mage.getLevel() + "\t");
+        sb.append("Total Strength: " + mage.getHeroAttributes().getStrength() + "\t");
+        sb.append("Total Dexterity: " + mage.getHeroAttributes().getDexterity() + "\t");
+        sb.append("Total Intelligence: " + mage.getHeroAttributes().getIntelligence() + "\t");
+        sb.append("Equipment: " + mage.getEquipment() + "\t");
+        return sb.toString();
     }
 
-//    @Override
-//    void levelUp() {
-//        super.levelUp();
-//        if ()
-//        setHeroAttributes(new HeroAttribute(1,1,5));
-////        heroAttributes.
-//    }
+
 }

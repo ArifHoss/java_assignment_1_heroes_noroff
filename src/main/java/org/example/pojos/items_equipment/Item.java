@@ -14,6 +14,12 @@ public abstract class Item {
         return name;
     }
 
+    public Item(String name, int requiredLevel, Slot slot) {
+        this.name = name;
+        this.requiredLevel = requiredLevel;
+        this.slot = slot;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -32,5 +38,12 @@ public abstract class Item {
 
     public void setSlot(Slot slot) {
         this.slot = slot;
+    }
+
+    @Override
+    public String toString() {
+        return " Item name = '" + name + '\'' +
+                ", requiredLevel = " + requiredLevel +
+                ", slot = " + slot;
     }
 }
