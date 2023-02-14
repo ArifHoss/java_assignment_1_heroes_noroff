@@ -34,7 +34,7 @@ public abstract class Hero {
                 List<ArmorType> validArmorTypes) {
         this.name = name;
         this.heroClass = heroClass;
-        this.level += level;
+        this.level = level;
         this.heroAttributes = heroAttributes;
         this.equipment = equipment;
         this.validWeaponTypes = validWeaponTypes;
@@ -42,7 +42,9 @@ public abstract class Hero {
     }
 
 
-    public abstract int levelUp(int level);
+    public int levelUp(){
+        return this.level++;
+    }
 
     public abstract Map<Slot, Item> equip();
 
@@ -71,10 +73,6 @@ public abstract class Hero {
 
     public int getLevel() {
         return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
     }
 
     public HeroAttribute getHeroAttributes() {

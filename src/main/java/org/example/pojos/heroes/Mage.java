@@ -24,12 +24,6 @@ public class Mage extends Hero {
     }
 
     @Override
-    public int levelUp(int level) {
-        level = level + 1;
-        return level;
-    }
-
-    @Override
     public Map<Slot, Item> equip() {
 
         Map<Slot, Item> equipment = new HashMap<>();

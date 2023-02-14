@@ -56,8 +56,6 @@ public class HeroManagementService {
     public static void createMage() {
         Hero mage = new Mage("Erik");
         mage.setHeroClass("Mage");
-        mage.setLevel(2);
-
         if (mage.getLevel() == 1 && mage.getHeroClass().equals("Mage")) {
             mage.setHeroAttributes(new HeroAttribute(1, 1, 8));
         } else if (mage.getLevel() >= 2 && mage.getHeroClass().equals("Mage")) {
@@ -69,13 +67,13 @@ public class HeroManagementService {
         }
         heroes.add(mage);
         System.out.println("You just added a Mage " + mage);
+        System.out.println("=====================");
     }
 
 
     public static void createRanger() {
         Hero ranger = new Ranger("Arif");
         ranger.setHeroClass("Ranger");
-        ranger.setLevel(2);
 
         if (ranger.getLevel() == 1 && ranger.getHeroClass().equals("Ranger")) {
             ranger.setHeroAttributes(new HeroAttribute(1, 7, 1));
@@ -95,7 +93,6 @@ public class HeroManagementService {
     public static void createRogue() {
         Hero rogue = new Rogue("Melvin");
         rogue.setHeroClass("Rogue");
-        rogue.setLevel(2);
 
         if (rogue.getLevel() == 1 && rogue.getHeroClass().equals("Rogue")) {
             rogue.setHeroAttributes(new HeroAttribute(2, 6, 1));
@@ -115,7 +112,6 @@ public class HeroManagementService {
     public static void createWarrior() {
         Hero warrior = new Warrior("Rubin");
         warrior.setHeroClass("Warrior");
-        warrior.setLevel(5);
 
         if (warrior.getLevel() == 1 && warrior.getHeroClass().equals("Warrior")) {
             warrior.setHeroAttributes(new HeroAttribute(5, 2, 1));

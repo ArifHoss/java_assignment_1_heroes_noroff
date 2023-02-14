@@ -28,10 +28,10 @@ public class Rogue extends Hero {
         super(name, heroClass, level, heroAttributes, equipment, validWeaponTypes, validArmorTypes);
     }
 
-    @Override
-    public int levelUp(int level) {
-        return level + 1;
-    }
+//    @Override
+//    public int levelUp(int level) {
+//        return level + 1;
+//    }
 
     @Override
     public Map<Slot, Item> equip() {

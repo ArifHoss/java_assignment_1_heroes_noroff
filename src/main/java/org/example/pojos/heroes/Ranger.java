@@ -29,10 +29,10 @@ public class Ranger extends Hero {
         super(name, heroClass, level, heroAttributes, equipment, validWeaponTypes, validArmorTypes);
     }
 
-    @Override
-    public int levelUp(int level) {
-        return level + 1;
-    }
+//    @Override
+//    public int levelUp(int level) {
+//        return level + 1;
+//    }
 
     @Override
     public Map<Slot, Item> equip() {
@@ -41,14 +41,15 @@ public class Ranger extends Hero {
 
 
         Item weapon1 = new Weapon("Bow", 1, WEAPON, BOWS, 0);
-        Item armor1 = new Armor("Leather", 5, BODY, LEATHER, 0);
+
+        Item armor1 = new Armor("Leather", 5, LEGS, LEATHER, 0);
         Item armor2 = new Armor("Mail", 10, BODY, MAIL, 0);
 
         if (getLevel() >= 1) {
             equipment.put(WEAPON, weapon1);
 
         } else if (getLevel() >= 5) {
-            equipment.put(BODY, armor1);
+            equipment.put(LEGS, armor1);
 
         } else if (getLevel() >= 10) {
             equipment.put(BODY, armor2);
