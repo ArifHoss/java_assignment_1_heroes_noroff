@@ -1,6 +1,8 @@
 package org.example.pojos.heroes;
 
-import org.example.enums.*;
+import org.example.enums.ArmorType;
+import org.example.enums.Slot;
+import org.example.enums.WeaponType;
 import org.example.pojos.items_equipment.Item;
 
 import java.util.List;
@@ -23,40 +25,12 @@ public abstract class Hero {
         this.name = name;
     }
 
-    public Hero(String name,
-                String heroClass,
-                int level,
-                HeroAttribute heroAttributes,
-                Map<Slot, Item> equipment,
-                List<WeaponType> validWeaponTypes,
-                List<ArmorType> validArmorTypes) {
-        this.name = name;
-        this.heroClass = heroClass;
-        this.level = level;
-        this.heroAttributes = heroAttributes;
-        this.equipment = equipment;
-        this.validWeaponTypes = validWeaponTypes;
-        this.validArmorTypes = validArmorTypes;
-    }
 
-
-    public int levelUp(){
+    public int levelUp() {
         return this.level++;
     }
 
     public abstract Map<Slot, Item> equip();
-
-//    public Map<Slot, Item> equip(Item item) {
-//
-//        Map<Slot, Item> equipments = new HashMap<>();
-//
-//        if (item instanceof Weapon)
-//            ((Weapon) item).setWeaponType(null);
-//        if (item instanceof Armor)
-//            ((Armor) item).setArmorType(null);
-//        return equipments;
-//
-//    }
 
     public abstract void damage();
 
@@ -117,21 +91,18 @@ public abstract class Hero {
         this.validArmorTypes = validArmorTypes;
     }
 
-//    void levelUp() {
-//        level += 1;
-//    }
 
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Name: "+ name+"\t");
-        sb.append("Class: "+heroClass+"\t");
-        sb.append("Level: "+level+"\t");
-        sb.append("Total Strength: "+heroAttributes.getStrength()+"\t");
-        sb.append("Total Dexterity: "+heroAttributes.getDexterity()+"\t");
-        sb.append("Total Intelligence: "+heroAttributes.getIntelligence()+"\t");
-        sb.append("Equipment: " + equipment +"\t");
+        sb.append("Name: " + name + "\t");
+        sb.append("Class: " + heroClass + "\t");
+        sb.append("Level: " + level + "\t");
+        sb.append("Total Strength: " + heroAttributes.getStrength() + "\t");
+        sb.append("Total Dexterity: " + heroAttributes.getDexterity() + "\t");
+        sb.append("Total Intelligence: " + heroAttributes.getIntelligence() + "\t");
+        sb.append("Equipment: " + equipment + "\t");
         return sb.toString();
     }
 }

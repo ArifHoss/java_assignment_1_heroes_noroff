@@ -54,12 +54,17 @@ public class HeroManagementService {
     }
 
     public static void createMage() {
-        Hero mage = new Mage("Erik");
+        Mage mage = new Mage("Erik");
         mage.setHeroClass("Mage");
+//        mage.levelUp();
         if (mage.getLevel() == 1 && mage.getHeroClass().equals("Mage")) {
             mage.setHeroAttributes(new HeroAttribute(1, 1, 8));
-        } else if (mage.getLevel() >= 2 && mage.getHeroClass().equals("Mage")) {
+        } else if (mage.getLevel() == 2 && mage.getHeroClass().equals("Mage")) {
             mage.setHeroAttributes(new HeroAttribute(2, 2, 13));
+        }else if (mage.getLevel() == 3 && mage.getHeroClass().equals("Mage")) {
+            mage.setHeroAttributes(new HeroAttribute(3, 3, 18));
+        }else if (mage.getLevel() == 4 && mage.getHeroClass().equals("Mage")) {
+            mage.setHeroAttributes(new HeroAttribute(4, 4, 23));
         }
 
         if (mage.getHeroClass().equals("Mage")) {

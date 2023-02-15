@@ -1,17 +1,15 @@
 package org.example.pojos.heroes;
 
-import org.example.enums.ArmorType;
 import org.example.enums.Slot;
-import org.example.enums.WeaponType;
 import org.example.pojos.items_equipment.Armor;
 import org.example.pojos.items_equipment.Item;
 import org.example.pojos.items_equipment.Weapon;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import static org.example.enums.ArmorType.*;
+import static org.example.enums.ArmorType.MAIL;
+import static org.example.enums.ArmorType.PLATE;
 import static org.example.enums.Slot.*;
 import static org.example.enums.WeaponType.*;
 
@@ -23,19 +21,6 @@ public class Warrior extends Hero {
     public Warrior(String name) {
         super(name);
     }
-
-    public Warrior(String name, String heroClass, int level, HeroAttribute heroAttributes, Map<Slot, Item> equipment, List<WeaponType> validWeaponTypes, List<ArmorType> validArmorTypes) {
-        super(name, heroClass, level, heroAttributes, equipment, validWeaponTypes, validArmorTypes);
-    }
-
-//    @Override
-//    public int levelUp(int level) {
-//        if (level == 0) {
-//            return level + 1;
-//        } else {
-//            return level++;
-//        }
-//    }
 
     @Override
     public Map<Slot, Item> equip() {

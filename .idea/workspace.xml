@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="remove set level upp method added implemented auto increment level by 1">
+    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="renamed package name">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/enums/ArmorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/ArmorType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/enums/Slot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/Slot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/enums/WeaponType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/WeaponType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Mage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Ranger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Ranger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Rogue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Warrior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Armor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Armor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Weapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/HeroManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/HeroManagementService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +114,8 @@
       <workItem from="1676106902597" duration="19000" />
       <workItem from="1676377755644" duration="7155000" />
       <workItem from="1676462657604" duration="607000" />
-      <workItem from="1676482359919" duration="533000" />
+      <workItem from="1676482359919" duration="6275000" />
+      <workItem from="1676488665395" duration="2652000" />
     </task>
     <task id="LOCAL-00001" summary="added levelUp, equip, damage, totalAttribute and display method to Hero data transfer class">
       <created>1676109590866</created>
@@ -148,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676389291238</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="renamed package name">
+      <created>1676482958732</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1676482958732</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +174,7 @@
     <MESSAGE value="rescaled all heroes" />
     <MESSAGE value="created heroes and added validations" />
     <MESSAGE value="remove set level upp method added implemented auto increment level by 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove set level upp method added implemented auto increment level by 1" />
+    <MESSAGE value="renamed package name" />
+    <option name="LAST_COMMIT_MESSAGE" value="renamed package name" />
   </component>
 </project>

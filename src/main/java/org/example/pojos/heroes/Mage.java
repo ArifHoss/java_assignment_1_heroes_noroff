@@ -19,28 +19,30 @@ public class Mage extends Hero {
         super(name);
     }
 
-    public Mage(String name, String heroClass, int level, HeroAttribute heroAttributes, Map<Slot, Item> equipment, List<WeaponType> validWeaponTypes, List<ArmorType> validArmorTypes) {
-        super(name, heroClass, level, heroAttributes, equipment, validWeaponTypes, validArmorTypes);
-    }
-
     @Override
     public Map<Slot, Item> equip() {
 
         Map<Slot, Item> equipment = new HashMap<>();
 
-        Weapon weapon1 = new Weapon("Staffs", 1, WEAPON, STAFFS, 0);
-        Weapon weapon2 = new Weapon("Wand", 5, WEAPON, WANDS, 0);
-        Armor armor = new Armor("Cloth", 10, BODY, CLOTH, 0);
+        List<WeaponType> validWeaponTypes = new ArrayList<>();
+        validWeaponTypes.add(STAFFS);
+        validWeaponTypes.add(WANDS);
+        setValidWeaponTypes(validWeaponTypes);
 
-        if (getLevel() >= 1) {
+        Weapon weapon = new Weapon("Staffs", 1, WEAPON, STAFFS, 0);
+        Weapon weapon1 = new Weapon("Wand", 2, WEAPON, WANDS, 0);
+        Armor armor = new Armor("Cloth", 3, BODY, CLOTH, 0);
+
+        if (getLevel() == weapon.getRequiredLevel() && getValidWeaponTypes().contains(weapon.getWeaponType())) {
+            equipment.put(WEAPON, weapon);
+        }
+
+        if (getLevel() == weapon1.getRequiredLevel() && getValidWeaponTypes().contains(weapon1.getWeaponType())) {
             equipment.put(WEAPON, weapon1);
+        }
 
-        } else if (getLevel() >= 5) {
-            equipment.put(WEAPON, weapon2);
-
-        } else if (getLevel() >= 10) {
+        if (getLevel() == armor.getRequiredLevel() && getValidArmorTypes().contains(armor.getArmorType())) {
             equipment.put(BODY, armor);
-
         }
 
         return equipment;
@@ -63,6 +65,7 @@ public class Mage extends Hero {
         int totalAttributes = strength + dexterity + intelligence;
         System.out.println("Mage total attributes: " + totalAttributes);
     }
+
 
     @Override
     public String display() {
