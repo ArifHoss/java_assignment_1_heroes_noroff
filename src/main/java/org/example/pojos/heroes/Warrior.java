@@ -54,7 +54,7 @@ public class Warrior extends Hero {
         Item armorPlate2 = new Armor("Plate", 5, BODY, PLATE, 1);
         Item armorPlate3 = new Armor("Plate", 6, LEGS, PLATE, 1);
 
-        if (getLevel() >= 1) {
+        if (getLevel() >= weapon1.getRequiredLevel()) {
             equipment.put(WEAPON, weapon1);
             equipment.put(HEAD, armorMail1);
 
