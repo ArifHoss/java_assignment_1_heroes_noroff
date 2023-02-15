@@ -1,13 +1,8 @@
 package org.example.pojos.heroes;
 
-import org.example.enums.ArmorType;
-import org.example.enums.Slot;
-import org.example.enums.WeaponType;
-import org.example.pojos.items_equipment.Armor;
+import org.example.enums.*;
 import org.example.pojos.items_equipment.Item;
-import org.example.pojos.items_equipment.Weapon;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -51,17 +46,17 @@ public abstract class Hero {
 
     public abstract Map<Slot, Item> equip();
 
-    public Map<Slot, Item> equip(Item item) {
-
-        Map<Slot, Item> equipments = new HashMap<>();
-
-        if (item instanceof Weapon)
-            ((Weapon) item).setWeaponType(null);
-        if (item instanceof Armor)
-            ((Armor) item).setArmorType(null);
-        return equipments;
-
-    }
+//    public Map<Slot, Item> equip(Item item) {
+//
+//        Map<Slot, Item> equipments = new HashMap<>();
+//
+//        if (item instanceof Weapon)
+//            ((Weapon) item).setWeaponType(null);
+//        if (item instanceof Armor)
+//            ((Armor) item).setArmorType(null);
+//        return equipments;
+//
+//    }
 
     public abstract void damage();
 
