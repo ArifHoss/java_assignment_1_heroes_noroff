@@ -33,8 +33,8 @@ public abstract class Hero {
         this.level++;
     }
 
-    public abstract void equip(Weapon weapon);
-    public abstract void equip(Armor armor);
+    public abstract void equip(Slot slot,Weapon weapon);
+    public abstract void equip(Slot slot,Armor armor);
 
     public void damage(){
             double weaponDamage = 1.0;
