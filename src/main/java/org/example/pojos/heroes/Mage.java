@@ -55,23 +55,4 @@ public class Mage extends Hero {
         }
     }
 
-    @Override
-    public void damage() {
-
-    }
-
-    @Override
-    public void totalAttributes() {
-
-        HeroAttribute attributes = new HeroAttribute(1, 1, 8);
-
-        int strength = attributes.getStrength();
-        int dexterity = attributes.getDexterity();
-        int intelligence = attributes.getIntelligence();
-
-        int totalAttributes = strength + dexterity + intelligence;
-        System.out.println("Mage total attributes: " + totalAttributes);
-    }
-
-
 }

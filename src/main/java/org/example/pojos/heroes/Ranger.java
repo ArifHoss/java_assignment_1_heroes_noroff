@@ -60,13 +60,5 @@ public class Ranger extends Hero {
         }
     }
 
-    @Override
-    public void damage() {
-
-    }
-
-    @Override
-    public void totalAttributes() {
-    }
 
 }

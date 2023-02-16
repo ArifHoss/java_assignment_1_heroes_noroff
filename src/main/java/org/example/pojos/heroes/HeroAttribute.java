@@ -45,6 +45,8 @@ public class HeroAttribute {
         this.intelligence += heroAttribute.getIntelligence();
 
     }
+
+
     @Override
     public String toString() {
         return "strength = " + strength +

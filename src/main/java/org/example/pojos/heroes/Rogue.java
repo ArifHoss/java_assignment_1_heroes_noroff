@@ -58,14 +58,4 @@ public class Rogue extends Hero {
         }
     }
 
-    @Override
-    public void damage() {
-
-    }
-
-    @Override
-    public void totalAttributes() {
-
-    }
-
 }

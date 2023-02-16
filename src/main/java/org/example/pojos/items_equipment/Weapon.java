@@ -5,17 +5,17 @@ import org.example.enums.WeaponType;
 
 public class Weapon extends Item {
     private WeaponType weaponType;
-    private int weaponDamage;
+    private double weaponDamage;
 
     public Weapon() {
     }
 
-    public Weapon(WeaponType weaponType, int weaponDamage) {
+    public Weapon(WeaponType weaponType, double weaponDamage) {
         this.weaponType = weaponType;
         this.weaponDamage = weaponDamage;
     }
 
-    public Weapon(String name, int requiredLevel, Slot slot, WeaponType weaponType, int weaponDamage) {
+    public Weapon(String name, int requiredLevel, Slot slot, WeaponType weaponType, double weaponDamage) {
         super(name, requiredLevel, slot);
         this.weaponType = weaponType;
         this.weaponDamage = weaponDamage;
@@ -29,11 +29,11 @@ public class Weapon extends Item {
         this.weaponType = weaponType;
     }
 
-    public int getWeaponDamage() {
+    public double getWeaponDamage() {
         return weaponDamage;
     }
 
-    public void setWeaponDamage(int weaponDamage) {
+    public void setWeaponDamage(double weaponDamage) {
         this.weaponDamage = weaponDamage;
     }
 

@@ -61,13 +61,4 @@ public class Warrior extends Hero {
         }
     }
 
-    @Override
-    public void damage() {
-
-    }
-
-    @Override
-    public void totalAttributes() {
-    }
-
 }

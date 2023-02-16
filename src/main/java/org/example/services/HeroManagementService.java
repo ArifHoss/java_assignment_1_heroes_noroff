@@ -17,18 +17,18 @@ public class HeroManagementService {
 
     public static Scanner sc = new Scanner(System.in);
     static ArrayList<Hero> heroes = new ArrayList<>();
-    private static final Weapon weaponAxes = new Weapon("Axes", 1, WEAPON, AXES, 0);
-    private static final Weapon weaponBows = new Weapon("Bows", 2, WEAPON, BOWS, 0);
-    private static final Weapon weaponDaggers = new Weapon("Dagger", 3, WEAPON, DAGGERS, 0);
-    private static final Weapon weaponHammers = new Weapon("Hammers", 4, WEAPON, HAMMERS, 0);
-    private static final Weapon weaponStaffs = new Weapon("Staffs", 2, WEAPON, STAFFS, 0);
-    private static final Weapon weaponSwords = new Weapon("Swords", 5, WEAPON, SWORDS, 0);
-    private static final Weapon weaponWands = new Weapon("Wands", 5, WEAPON, WANDS, 0);
+    private static final Weapon weaponAxes = new Weapon("Axes", 1, WEAPON, AXES, 10);
+    private static final Weapon weaponBows = new Weapon("Bows", 1, WEAPON, BOWS, 0);
+    private static final Weapon weaponDaggers = new Weapon("Dagger", 1, WEAPON, DAGGERS, 0);
+    private static final Weapon weaponHammers = new Weapon("Hammers", 1, WEAPON, HAMMERS, 0);
+    private static final Weapon weaponStaffs = new Weapon("Staffs", 1, WEAPON, STAFFS, 0);
+    private static final Weapon weaponSwords = new Weapon("Swords", 1, WEAPON, SWORDS, 0);
+    private static final Weapon weaponWands = new Weapon("Wands", 1, WEAPON, WANDS, 0);
 
-    private static final Armor armorCloth = new Armor("Cloth", 1, LEGS, CLOTH, 0);
-    private static final Armor armorLeather = new Armor("Leather", 1, LEGS, LEATHER, 0);
-    private static final Armor armorMail = new Armor("Mail", 1, LEGS, MAIL, 0);
-    private static final Armor armorPlate = new Armor("Plate", 1, LEGS, PLATE, 0);
+    private static final Armor armorCloth = new Armor("Cloth", 1, LEGS, CLOTH, new HeroAttribute());
+    private static final Armor armorLeather = new Armor("Leather", 1, LEGS, LEATHER, new HeroAttribute());
+    private static final Armor armorMail = new Armor("Mail", 1, LEGS, MAIL, new HeroAttribute());
+    private static final Armor armorPlate = new Armor("Plate", 1, LEGS, PLATE, new HeroAttribute());
 
     public static void addHeroesMenu() {
         System.out.println("What kind of hero you want to see?");
@@ -37,7 +37,7 @@ public class HeroManagementService {
         System.out.println("2. Ranger: ");
         System.out.println("3. Rogue: ");
         System.out.println("4. Warrior: ");
-        System.out.println("5. All Hero");
+        System.out.println("5. All Heroes: ");
         System.out.println("0. Choose 0 to EXIT!!");
         System.out.println("=====================");
         System.out.print("\nMake a choice: ");
@@ -63,6 +63,7 @@ public class HeroManagementService {
                 createRogue();
                 createWarrior();
                 break;
+
             case 0:
                 System.exit(0);
                 break;
@@ -81,6 +82,11 @@ public class HeroManagementService {
         mage.equip(weaponStaffs);
         heroes.add(mage);
         System.out.println("You just added a Mage " + mage);
+        System.out.print("Mage Erik's ");
+        mage.totalAttributes();
+
+        System.out.print("Mage Erik's ");
+        mage.damage();
         System.out.println("=====================");
     }
 
@@ -88,9 +94,16 @@ public class HeroManagementService {
     public static void createRanger() {
         Hero ranger = new Ranger("Arif");
         ranger.setHeroClass("Ranger");
+        ranger.levelUp();
         ranger.equip(weaponBows);
         heroes.add(ranger);
         System.out.println("You just added a Ranger " + ranger);
+
+        System.out.print("Ranger Arif's ");
+        ranger.totalAttributes();
+
+        System.out.print("Ranger Arif's ");
+        ranger.damage();
         System.out.println("=====================");
 
     }
@@ -98,9 +111,15 @@ public class HeroManagementService {
     public static void createRogue() {
         Hero rogue = new Rogue("Melvin");
         rogue.setHeroClass("Rogue");
+        rogue.levelUp();
         rogue.equip(weaponDaggers);
         heroes.add(rogue);
         System.out.println("You just added Rogue " + rogue);
+        System.out.print("Rogue Melvin's ");
+        rogue.totalAttributes();
+
+        System.out.print("Rogue Melvin's ");
+        rogue.damage();
         System.out.println("=====================");
 
     }
@@ -108,20 +127,17 @@ public class HeroManagementService {
     public static void createWarrior() {
         Hero warrior = new Warrior("Rubin");
         warrior.setHeroClass("Warrior");
+        warrior.levelUp();
         warrior.equip(weaponAxes);
-//        warrior.equip(armorMail);
         heroes.add(warrior);
         System.out.println("You just added Warrior " + warrior);
+        System.out.print("Warrior Rubin's ");
+        warrior.totalAttributes();
+
+        System.out.print("Warrior Rubin's ");
+        warrior.damage();
         System.out.println("=====================");
 
-    }
-
-
-    public static void display() {
-        for (Hero hero : heroes) {
-            System.out.println(hero);
-        }
-        System.out.println("=====================");
     }
 
 
