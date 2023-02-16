@@ -33,8 +33,8 @@ public abstract class Hero {
         this.level++;
     }
 
-    public abstract Map<Slot, Item> equip(Weapon weapon);
-    public abstract Map<Slot, Item> equip(Armor armor);
+    public abstract void equip(Weapon weapon);
+    public abstract void equip(Armor armor);
 
     public abstract void damage();
 

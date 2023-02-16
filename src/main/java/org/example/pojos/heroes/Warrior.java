@@ -1,11 +1,15 @@
 package org.example.pojos.heroes;
 
+import org.example.enums.ArmorType;
 import org.example.enums.Slot;
+import org.example.enums.WeaponType;
 import org.example.pojos.items_equipment.Armor;
 import org.example.pojos.items_equipment.Item;
 import org.example.pojos.items_equipment.Weapon;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static org.example.enums.ArmorType.MAIL;
@@ -15,52 +19,46 @@ import static org.example.enums.WeaponType.*;
 
 public class Warrior extends Hero {
 
+    private final Map<Slot, Item> equipment = new HashMap<>();
+
     public Warrior() {
     }
 
     public Warrior(String name) {
         super(name);
+        super.setHeroAttributes(new HeroAttribute(5, 2, 1));
+        List<WeaponType> validWeaponTypes = new ArrayList<>();
+        validWeaponTypes.add(AXES);
+        validWeaponTypes.add(HAMMERS);
+        validWeaponTypes.add(SWORDS);
+        List<ArmorType> validArmorTypes = new ArrayList<>();
+        validArmorTypes.add(MAIL);
+        validArmorTypes.add(PLATE);
+        setValidWeaponTypes(validWeaponTypes);
+        setValidArmorTypes(validArmorTypes);
+
     }
 
     @Override
-    public Map<Slot, Item> equip() {
+    public void levelUp() {
+        super.levelUp();
+        super.getHeroAttributes().addAttributes(new HeroAttribute(3, 2, 1));
+    }
 
-        Map<Slot, Item> equipment = new HashMap<>();
-
-        Item weapon1 = new Weapon("Axe", 1, WEAPON, AXES, 0);
-        Item weapon2 = new Weapon("Hammer", 2, WEAPON, HAMMERS, 0);
-        Item weapon3 = new Weapon("Sword", 3, WEAPON, SWORDS, 0);
-
-        Item armorMail1 = new Armor("Mail", 1, HEAD, MAIL, 1);
-        Item armorMail2 = new Armor("Mail", 2, BODY, MAIL, 1);
-        Item armorMail3 = new Armor("Mail", 3, LEGS, MAIL, 1);
-
-        Item armorPlate1 = new Armor("Plate", 4, HEAD, PLATE, 1);
-        Item armorPlate2 = new Armor("Plate", 5, BODY, PLATE, 1);
-        Item armorPlate3 = new Armor("Plate", 6, LEGS, PLATE, 1);
-
-        if (getLevel() >= weapon1.getRequiredLevel()) {
-            equipment.put(WEAPON, weapon1);
-            equipment.put(HEAD, armorMail1);
-
-        } else if (getLevel() >= 2) {
-            equipment.put(WEAPON, weapon2);
-            equipment.put(BODY, armorMail2);
-
-        } else if (getLevel() >= 3) {
-            equipment.put(WEAPON, weapon3);
-            equipment.put(BODY, armorMail3);
-
-        } else if (getLevel() >= 4) {
-            equipment.put(HEAD, armorPlate1);
-
-        }else if (getLevel() >= 5) {
-            equipment.put(BODY, armorPlate2);
-
-        }else if (getLevel() >= 6) {
-            equipment.put(LEGS, armorPlate3);
+    @Override
+    public void equip(Weapon weapon) {
+        if (getLevel() >= weapon.getRequiredLevel() && getValidWeaponTypes().contains(weapon.getWeaponType())) {
+            equipment.put(WEAPON, weapon);
+            setEquipment(equipment);
         }
-        return equipment;
+    }
+
+    @Override
+    public void equip(Armor armor) {
+        if (getLevel() >= armor.getRequiredLevel() && getValidArmorTypes().contains(armor.getArmorType())) {
+            equipment.put(WEAPON, armor);
+            setEquipment(equipment);
+        }
     }
 
     @Override

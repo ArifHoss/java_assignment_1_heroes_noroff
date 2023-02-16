@@ -12,9 +12,7 @@ import static org.example.enums.Slot.*;
 import static org.example.enums.WeaponType.*;
 
 public class Mage extends Hero {
-    private Map<Slot, Item> equipment = new HashMap<>();
-    private List<WeaponType> validWeaponTypes = new ArrayList<>();
-    private List<ArmorType> validArmorTypes = new ArrayList<>();
+    private final Map<Slot, Item> equipment = new HashMap<>();
 
     public Mage() {
     }
@@ -22,9 +20,13 @@ public class Mage extends Hero {
     public Mage(String name) {
         super(name);
         super.setHeroAttributes(new HeroAttribute(1, 1, 8));
+        List<WeaponType> validWeaponTypes = new ArrayList<>();
         validWeaponTypes.add(STAFFS);
         validWeaponTypes.add(WANDS);
+        List<ArmorType> validArmorTypes = new ArrayList<>();
         validArmorTypes.add(CLOTH);
+        setValidWeaponTypes(validWeaponTypes);
+        setValidArmorTypes(validArmorTypes);
     }
 
     @Override
@@ -36,21 +38,21 @@ public class Mage extends Hero {
     }
 
     @Override
-    public Map<Slot, Item> equip(Weapon weapon) {
+    public void equip(Weapon weapon) {
 
         if (getLevel() >= weapon.getRequiredLevel() && getValidWeaponTypes().contains(weapon.getWeaponType())) {
             equipment.put(WEAPON, weapon);
+            setEquipment(equipment);
         }
 
-        return equipment;
     }
 
     @Override
-    public Map<Slot, Item> equip(Armor armor) {
+    public void equip(Armor armor) {
         if (getLevel() >= armor.getRequiredLevel() && getValidArmorTypes().contains(armor.getArmorType())) {
             equipment.put(WEAPON, armor);
+            setEquipment(equipment);
         }
-        return equipment;
     }
 
     @Override
