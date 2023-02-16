@@ -70,8 +70,4 @@ public class Warrior extends Hero {
     public void totalAttributes() {
     }
 
-    @Override
-    public String display() {
-        return null;
-    }
 }

@@ -1,15 +1,34 @@
 package org.example.services;
 
 import org.example.pojos.heroes.*;
+import org.example.pojos.items_equipment.Armor;
+import org.example.pojos.items_equipment.Item;
+import org.example.pojos.items_equipment.Weapon;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import static org.example.enums.ArmorType.*;
+import static org.example.enums.Slot.*;
+import static org.example.enums.WeaponType.*;
+
 public class HeroManagementService {
 
     public static Scanner sc = new Scanner(System.in);
     static ArrayList<Hero> heroes = new ArrayList<>();
+    private static final Weapon weaponAxes = new Weapon("Axes", 1, WEAPON, AXES, 0);
+    private static final Weapon weaponBows = new Weapon("Bows", 2, WEAPON, BOWS, 0);
+    private static final Weapon weaponDaggers = new Weapon("Dagger", 3, WEAPON, DAGGERS, 0);
+    private static final Weapon weaponHammers = new Weapon("Hammers", 4, WEAPON, HAMMERS, 0);
+    private static final Weapon weaponStaffs = new Weapon("Staffs", 2, WEAPON, STAFFS, 0);
+    private static final Weapon weaponSwords = new Weapon("Swords", 5, WEAPON, SWORDS, 0);
+    private static final Weapon weaponWands = new Weapon("Wands", 5, WEAPON, WANDS, 0);
+
+    private static final Armor armorCloth = new Armor("Cloth", 1, LEGS, CLOTH, 0);
+    private static final Armor armorLeather = new Armor("Leather", 1, LEGS, LEATHER, 0);
+    private static final Armor armorMail = new Armor("Mail", 1, LEGS, MAIL, 0);
+    private static final Armor armorPlate = new Armor("Plate", 1, LEGS, PLATE, 0);
 
     public static void addHeroesMenu() {
         System.out.println("What kind of hero you want to see?");
@@ -53,23 +72,13 @@ public class HeroManagementService {
 
     }
 
+
     public static void createMage() {
+
         Mage mage = new Mage("Erik");
         mage.setHeroClass("Mage");
-//        mage.levelUp();
-        if (mage.getLevel() == 1 && mage.getHeroClass().equals("Mage")) {
-            mage.setHeroAttributes(new HeroAttribute(1, 1, 8));
-        } else if (mage.getLevel() == 2 && mage.getHeroClass().equals("Mage")) {
-            mage.setHeroAttributes(new HeroAttribute(2, 2, 13));
-        }else if (mage.getLevel() == 3 && mage.getHeroClass().equals("Mage")) {
-            mage.setHeroAttributes(new HeroAttribute(3, 3, 18));
-        }else if (mage.getLevel() == 4 && mage.getHeroClass().equals("Mage")) {
-            mage.setHeroAttributes(new HeroAttribute(4, 4, 23));
-        }
-
-        if (mage.getHeroClass().equals("Mage")) {
-            mage.setEquipment(mage.equip());
-        }
+        mage.levelUp();
+        mage.equip(weaponStaffs);
         heroes.add(mage);
         System.out.println("You just added a Mage " + mage);
         System.out.println("=====================");
@@ -79,16 +88,7 @@ public class HeroManagementService {
     public static void createRanger() {
         Hero ranger = new Ranger("Arif");
         ranger.setHeroClass("Ranger");
-
-        if (ranger.getLevel() == 1 && ranger.getHeroClass().equals("Ranger")) {
-            ranger.setHeroAttributes(new HeroAttribute(1, 7, 1));
-        } else if (ranger.getLevel() >= 2 && ranger.getHeroClass().equals("Ranger")) {
-            ranger.setHeroAttributes(new HeroAttribute(2, 12, 2));
-        }
-
-        if (ranger.getHeroClass().equals("Ranger")) {
-            ranger.setEquipment(ranger.equip());
-        }
+        ranger.equip(weaponBows);
         heroes.add(ranger);
         System.out.println("You just added a Ranger " + ranger);
         System.out.println("=====================");
@@ -98,16 +98,7 @@ public class HeroManagementService {
     public static void createRogue() {
         Hero rogue = new Rogue("Melvin");
         rogue.setHeroClass("Rogue");
-
-        if (rogue.getLevel() == 1 && rogue.getHeroClass().equals("Rogue")) {
-            rogue.setHeroAttributes(new HeroAttribute(2, 6, 1));
-        } else if (rogue.getLevel() >= 2 && rogue.getHeroClass().equals("Rogue")) {
-            rogue.setHeroAttributes(new HeroAttribute(3, 10, 2));
-        }
-
-        if (rogue.getHeroClass().equals("Rogue")) {
-            rogue.setEquipment(rogue.equip());
-        }
+        rogue.equip(weaponDaggers);
         heroes.add(rogue);
         System.out.println("You just added Rogue " + rogue);
         System.out.println("=====================");
@@ -117,16 +108,8 @@ public class HeroManagementService {
     public static void createWarrior() {
         Hero warrior = new Warrior("Rubin");
         warrior.setHeroClass("Warrior");
-
-        if (warrior.getLevel() == 1 && warrior.getHeroClass().equals("Warrior")) {
-            warrior.setHeroAttributes(new HeroAttribute(5, 2, 1));
-        } else if (warrior.getLevel() >= 2 && warrior.getHeroClass().equals("Warrior")) {
-            warrior.setHeroAttributes(new HeroAttribute(8, 4, 2));
-        }
-
-        if (warrior.getHeroClass().equals("Warrior")) {
-            warrior.setEquipment(warrior.equip());
-        }
+        warrior.equip(weaponAxes);
+//        warrior.equip(armorMail);
         heroes.add(warrior);
         System.out.println("You just added Warrior " + warrior);
         System.out.println("=====================");

@@ -40,7 +40,17 @@ public abstract class Hero {
 
     public abstract void totalAttributes();
 
-    public abstract String display();
+    public String display() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Name: " + getName() + "\t");
+        sb.append("Class: " + getClass() + "\t");
+        sb.append("Level: " + getLevel() + "\t");
+        sb.append("Total Strength: " + getHeroAttributes().getStrength() + "\t");
+        sb.append("Total Dexterity: " + getHeroAttributes().getDexterity() + "\t");
+        sb.append("Total Intelligence: " + getHeroAttributes().getIntelligence() + "\t");
+        sb.append("Equipment: " + getEquipment() + "\t");
+        return sb.toString();
+    }
 
 
     public String getName() {

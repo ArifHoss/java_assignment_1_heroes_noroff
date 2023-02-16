@@ -68,8 +68,4 @@ public class Rogue extends Hero {
 
     }
 
-    @Override
-    public String display() {
-        return null;
-    }
 }

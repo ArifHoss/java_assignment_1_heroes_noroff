@@ -74,19 +74,4 @@ public class Mage extends Hero {
     }
 
 
-    @Override
-    public String display() {
-        StringBuilder sb = new StringBuilder();
-        Mage mage = new Mage("Erik");
-        sb.append("Name: " + mage.getName() + "\t");
-        sb.append("Class: " + mage.getClass() + "\t");
-        sb.append("Level: " + mage.getLevel() + "\t");
-        sb.append("Total Strength: " + mage.getHeroAttributes().getStrength() + "\t");
-        sb.append("Total Dexterity: " + mage.getHeroAttributes().getDexterity() + "\t");
-        sb.append("Total Intelligence: " + mage.getHeroAttributes().getIntelligence() + "\t");
-        sb.append("Equipment: " + mage.getEquipment() + "\t");
-        return sb.toString();
-    }
-
-
 }
