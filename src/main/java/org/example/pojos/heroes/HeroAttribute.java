@@ -39,10 +39,17 @@ public class HeroAttribute {
         this.intelligence = intelligence;
     }
 
+    public void addAttributes(HeroAttribute heroAttribute) {
+        this.strength += heroAttribute.getStrength();
+        this.dexterity += heroAttribute.getDexterity();
+        this.intelligence += heroAttribute.getIntelligence();
+
+    }
     @Override
     public String toString() {
         return "strength = " + strength +
                 ", dexterity = " + dexterity +
                 ", intelligence = " + intelligence;
     }
+
 }

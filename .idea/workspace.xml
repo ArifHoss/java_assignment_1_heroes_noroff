@@ -7,10 +7,8 @@
     <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="renamed package name">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/HeroAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/HeroAttribute.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Mage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Ranger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Ranger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Rogue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Warrior.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/HeroManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/HeroManagementService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -116,6 +114,7 @@
       <workItem from="1676462657604" duration="607000" />
       <workItem from="1676482359919" duration="6275000" />
       <workItem from="1676488665395" duration="2652000" />
+      <workItem from="1676548479642" duration="3791000" />
     </task>
     <task id="LOCAL-00001" summary="added levelUp, equip, damage, totalAttribute and display method to Hero data transfer class">
       <created>1676109590866</created>

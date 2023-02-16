@@ -12,39 +12,44 @@ import static org.example.enums.Slot.*;
 import static org.example.enums.WeaponType.*;
 
 public class Mage extends Hero {
+    private Map<Slot, Item> equipment = new HashMap<>();
+    private List<WeaponType> validWeaponTypes = new ArrayList<>();
+    private List<ArmorType> validArmorTypes = new ArrayList<>();
+
     public Mage() {
     }
 
     public Mage(String name) {
         super(name);
+        super.setHeroAttributes(new HeroAttribute(1, 1, 8));
+        validWeaponTypes.add(STAFFS);
+        validWeaponTypes.add(WANDS);
+        validArmorTypes.add(CLOTH);
     }
 
     @Override
-    public Map<Slot, Item> equip() {
+    public void levelUp() {
+        super.levelUp();
+        super.getHeroAttributes().addAttributes(new HeroAttribute(1, 1, 5));
 
-        Map<Slot, Item> equipment = new HashMap<>();
 
-        List<WeaponType> validWeaponTypes = new ArrayList<>();
-        validWeaponTypes.add(STAFFS);
-        validWeaponTypes.add(WANDS);
-        setValidWeaponTypes(validWeaponTypes);
+    }
 
-        Weapon weapon = new Weapon("Staffs", 1, WEAPON, STAFFS, 0);
-        Weapon weapon1 = new Weapon("Wand", 2, WEAPON, WANDS, 0);
-        Armor armor = new Armor("Cloth", 3, BODY, CLOTH, 0);
+    @Override
+    public Map<Slot, Item> equip(Weapon weapon) {
 
-        if (getLevel() == weapon.getRequiredLevel() && getValidWeaponTypes().contains(weapon.getWeaponType())) {
+        if (getLevel() >= weapon.getRequiredLevel() && getValidWeaponTypes().contains(weapon.getWeaponType())) {
             equipment.put(WEAPON, weapon);
         }
 
-        if (getLevel() == weapon1.getRequiredLevel() && getValidWeaponTypes().contains(weapon1.getWeaponType())) {
-            equipment.put(WEAPON, weapon1);
-        }
+        return equipment;
+    }
 
-        if (getLevel() == armor.getRequiredLevel() && getValidArmorTypes().contains(armor.getArmorType())) {
-            equipment.put(BODY, armor);
+    @Override
+    public Map<Slot, Item> equip(Armor armor) {
+        if (getLevel() >= armor.getRequiredLevel() && getValidArmorTypes().contains(armor.getArmorType())) {
+            equipment.put(WEAPON, armor);
         }
-
         return equipment;
     }
 
