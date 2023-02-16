@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="added luvelUp method to all heros and added validItem">
+    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="created display method in hero class and removed all display from heroes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/HeroAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/HeroAttribute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Mage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Ranger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Ranger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Rogue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Warrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Armor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Armor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Weapon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/HeroManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/HeroManagementService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,6 +120,7 @@
       <workItem from="1676482359919" duration="6275000" />
       <workItem from="1676488665395" duration="2652000" />
       <workItem from="1676548479642" duration="10927000" />
+      <workItem from="1676561271084" duration="6915000" />
     </task>
     <task id="LOCAL-00001" summary="added levelUp, equip, damage, totalAttribute and display method to Hero data transfer class">
       <created>1676109590866</created>
@@ -162,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676557054097</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="created display method in hero class and removed all display from heroes">
+      <created>1676561462030</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1676561462030</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +203,7 @@
     <MESSAGE value="renamed package name" />
     <MESSAGE value="edited equip method in mage" />
     <MESSAGE value="added luvelUp method to all heros and added validItem" />
-    <option name="LAST_COMMIT_MESSAGE" value="added luvelUp method to all heros and added validItem" />
+    <MESSAGE value="created display method in hero class and removed all display from heroes" />
+    <option name="LAST_COMMIT_MESSAGE" value="created display method in hero class and removed all display from heroes" />
   </component>
 </project>

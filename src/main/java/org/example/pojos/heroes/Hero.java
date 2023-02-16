@@ -36,9 +36,40 @@ public abstract class Hero {
     public abstract void equip(Weapon weapon);
     public abstract void equip(Armor armor);
 
-    public abstract void damage();
+    public void damage(){
+            double weaponDamage = 1.0;
+            if (getEquipment().containsKey(Slot.WEAPON)) {
+                Item item = getEquipment().get(Slot.WEAPON);
+                if (item instanceof Weapon) {
+                    weaponDamage = ((Weapon) item).getWeaponDamage();
+                }
+            }
 
-    public abstract void totalAttributes();
+            int damagingAttribute = 0;
+            if (this instanceof Warrior) {
+                damagingAttribute = getHeroAttributes().getStrength();
+            } else if (this instanceof Mage) {
+                damagingAttribute = getHeroAttributes().getIntelligence();
+            } else if (this instanceof Ranger || this instanceof Rogue) {
+                damagingAttribute = getHeroAttributes().getDexterity();
+            }
+
+            double totalDamage = weaponDamage * (1 + damagingAttribute / 100.0);
+            System.out.println("Total Damage: " + totalDamage);
+    }
+
+    public void totalAttributes(){
+
+        HeroAttribute totalAttributes = new HeroAttribute(getHeroAttributes().getStrength(), getHeroAttributes().getDexterity(), getHeroAttributes().getIntelligence());
+
+        for (Item item : equipment.values()) {
+            if (item instanceof Armor) {
+                totalAttributes.addAttributes(((Armor) item).getArmorAttribute());
+            }
+        }
+
+        System.out.println("Total Attributes: " + totalAttributes);
+    }
 
     public String display() {
         StringBuilder sb = new StringBuilder();
