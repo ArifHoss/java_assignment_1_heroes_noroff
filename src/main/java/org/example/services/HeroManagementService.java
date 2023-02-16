@@ -79,7 +79,7 @@ public class HeroManagementService {
         Mage mage = new Mage("Erik");
         mage.setHeroClass("Mage");
         mage.levelUp();
-        mage.equip(weaponStaffs);
+        mage.equip(WEAPON,weaponStaffs);
         heroes.add(mage);
         System.out.println("You just added a Mage " + mage);
         System.out.print("Mage Erik's ");
@@ -95,7 +95,7 @@ public class HeroManagementService {
         Hero ranger = new Ranger("Arif");
         ranger.setHeroClass("Ranger");
         ranger.levelUp();
-        ranger.equip(weaponBows);
+        ranger.equip(WEAPON,weaponBows);
         heroes.add(ranger);
         System.out.println("You just added a Ranger " + ranger);
 
@@ -112,7 +112,7 @@ public class HeroManagementService {
         Hero rogue = new Rogue("Melvin");
         rogue.setHeroClass("Rogue");
         rogue.levelUp();
-        rogue.equip(weaponDaggers);
+        rogue.equip(WEAPON,weaponDaggers);
         heroes.add(rogue);
         System.out.println("You just added Rogue " + rogue);
         System.out.print("Rogue Melvin's ");
@@ -128,7 +128,7 @@ public class HeroManagementService {
         Hero warrior = new Warrior("Rubin");
         warrior.setHeroClass("Warrior");
         warrior.levelUp();
-        warrior.equip(weaponAxes);
+        warrior.equip(WEAPON,weaponAxes);
         heroes.add(warrior);
         System.out.println("You just added Warrior " + warrior);
         System.out.print("Warrior Rubin's ");

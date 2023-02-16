@@ -38,19 +38,19 @@ public class Mage extends Hero {
     }
 
     @Override
-    public void equip(Weapon weapon) {
+    public void equip(Slot slot,Weapon weapon) {
 
         if (getLevel() >= weapon.getRequiredLevel() && getValidWeaponTypes().contains(weapon.getWeaponType())) {
-            equipment.put(WEAPON, weapon);
+            equipment.put(slot, weapon);
             setEquipment(equipment);
         }
 
     }
 
     @Override
-    public void equip(Armor armor) {
+    public void equip(Slot slot,Armor armor) {
         if (getLevel() >= armor.getRequiredLevel() && getValidArmorTypes().contains(armor.getArmorType())) {
-            equipment.put(WEAPON, armor);
+            equipment.put(slot, armor);
             setEquipment(equipment);
         }
     }
