@@ -50,7 +50,7 @@ public class Mage extends Hero {
             }
             equipment.put(slot, weapon);
             setEquipment(equipment);
-        } catch (InvalidWeaponException e) {
+        } catch (NullPointerException e) {
             throw new InvalidWeaponException("Invalid Weapon: " + e.getMessage());
         }
 
