@@ -1,8 +1,13 @@
 package org.example.pojos.heroes;
 
+import org.example.enums.Slot;
+import org.example.enums.WeaponType;
+import org.example.exceptions.InvalidWeaponException;
+import org.example.pojos.items_equipment.Weapon;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.example.enums.Slot.WEAPON;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MageTest {
@@ -17,8 +22,9 @@ class MageTest {
     void createMage() {
         String actual = mage.getName();
         String expected = "Gandalf";
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
+
     @Test
     void levelUp() {
         mage.levelUp();
@@ -38,10 +44,17 @@ class MageTest {
     }
 
     @Test
-    void equip() {
+    void equipValidWeapon() throws InvalidWeaponException {
+        Weapon staff = new Weapon("Staff fo Testing", 1, WEAPON, WeaponType.STAFFS, 10);
+        mage.equip(WEAPON, staff);
+        assertEquals(staff, mage.getEquipment().get(WEAPON));
     }
 
     @Test
-    void testEquip() {
+    void equipInvalidWeapon() throws InvalidWeaponException {
+        Weapon sword = new Weapon("Sword fo Testing", 1, WEAPON, WeaponType.SWORDS, 10);
+        mage.equip(Slot.WEAPON, sword);
+        assertNull(mage.getEquipment().get(Slot.WEAPON));
+
     }
 }

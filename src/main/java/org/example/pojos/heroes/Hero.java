@@ -3,6 +3,8 @@ package org.example.pojos.heroes;
 import org.example.enums.ArmorType;
 import org.example.enums.Slot;
 import org.example.enums.WeaponType;
+import org.example.exceptions.InvalidArmorException;
+import org.example.exceptions.InvalidWeaponException;
 import org.example.pojos.items_equipment.Armor;
 import org.example.pojos.items_equipment.Item;
 import org.example.pojos.items_equipment.Weapon;
@@ -33,8 +35,8 @@ public abstract class Hero {
         this.level++;
     }
 
-    public abstract void equip(Slot slot,Weapon weapon);
-    public abstract void equip(Slot slot,Armor armor);
+    public abstract void equip(Slot slot,Weapon weapon) throws InvalidWeaponException;
+    public abstract void equip(Slot slot,Armor armor) throws InvalidWeaponException, InvalidArmorException;
 
     public void damage(){
             double weaponDamage = 1.0;
