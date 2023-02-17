@@ -30,6 +30,7 @@ public class Mage extends Hero {
         setValidArmorTypes(validArmorTypes);
     }
 
+
     @Override
     public void levelUp() {
         super.levelUp();

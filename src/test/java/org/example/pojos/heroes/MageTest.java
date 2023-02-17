@@ -10,6 +10,9 @@ import org.example.pojos.items_equipment.Weapon;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import static org.example.enums.ArmorType.CLOTH;
 import static org.example.enums.ArmorType.LEATHER;
 import static org.example.enums.Slot.LEGS;
@@ -18,27 +21,42 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MageTest {
     private Mage mage;
+    private static final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+
 
     @BeforeEach
     void setUp() {
+        System.setOut(new PrintStream(outContent));
         mage = new Mage("Gandalf");
     }
 
     @Test
     void createMage() {
+        //Arrange
         String actual = mage.getName();
+        //Act
         String expected = "Gandalf";
+        //Assert
         assertEquals(expected, actual);
     }
 
     @Test
     void levelUp() {
+        //Arrange
         mage.levelUp();
-        assertEquals(2, mage.getLevel());
+        //Act
+        int actual = mage.getLevel();
+        //Assert
+        assertEquals(2, actual);
     }
 
+
     @Test
-    void damage() {
+    public void testDamageWithValidWeapon() throws InvalidWeaponException {
+        Weapon expectedWeapon = new Weapon("Staff fo Testing", 1, WEAPON, WeaponType.STAFFS, 2.0);
+        mage.equip(Slot.WEAPON, expectedWeapon);
+        mage.damage();
+        assertEquals("Total Damage: 2.16", getOutput());
     }
 
     @Test
@@ -46,18 +64,10 @@ class MageTest {
     }
 
     /*
-    4.1) Equipping weapons
+      Valid Weapon
     • Mages – Staff, Wand
-    • Rangers – Bow
-    • Rogues – Dagger, Sword
-    • Warriors – Axe, Hammer, Sword
-
-    4.2) Equipping armor
-    Certain hero classes can equip certain armor types:
+      Valid Armor
     • Mages – Cloth
-    • Rangers – Leather, Mail
-    • Rogues – Leather, Mail
-    • Warriors – Mail, Plate
      */
     @Test
     void equipValidWeapon() throws InvalidWeaponException {
@@ -104,9 +114,22 @@ class MageTest {
 
     @Test
     void equipInvalidArmor() {
-        Armor armorLeather = new Armor("Leather", 1, LEGS, LEATHER, new HeroAttribute(1, 1, 8));
 
+        //Arrange
+        Armor expectedArmor = new Armor("Leather", 1, LEGS, LEATHER, new HeroAttribute(1, 1, 8));
+        String expected = "Armor type is not allowed for this character";
 
+        //Act
+        Exception armorException = assertThrows(InvalidArmorException.class, () -> mage.equip(LEGS, expectedArmor));
+        String actual = armorException.getMessage();
+
+        //Assert
+        assertEquals(expected, actual);
+
+    }
+
+    private static String getOutput() {
+        return outContent.toString().trim();
     }
 
 }
