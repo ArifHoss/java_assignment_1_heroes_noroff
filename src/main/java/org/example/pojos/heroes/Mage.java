@@ -56,7 +56,7 @@ public class Mage extends Hero {
     @Override
     public void equip(Slot slot, Armor armor) throws InvalidArmorException {
 
-        if (getLevel() <= armor.getRequiredLevel()) {
+        if (getLevel() < armor.getRequiredLevel()) {
             throw new InvalidArmorException("Armor level is too high for the character");
         }
         if (!getValidArmorTypes().contains(armor.getArmorType())) {

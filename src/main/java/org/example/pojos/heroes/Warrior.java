@@ -49,7 +49,7 @@ public class Warrior extends Hero {
 
     @Override
     public void equip(Slot slot, Weapon weapon) throws InvalidWeaponException {
-        if (getLevel() <= weapon.getRequiredLevel()) {
+        if (getLevel() < weapon.getRequiredLevel()) {
             throw new InvalidWeaponException("Weapon level is too high for the character");
         }
         if (!getValidWeaponTypes().contains(weapon.getWeaponType())) {
@@ -62,7 +62,7 @@ public class Warrior extends Hero {
 
     @Override
     public void equip(Slot slot, Armor armor) throws InvalidArmorException {
-        if (getLevel() <= armor.getRequiredLevel()) {
+        if (getLevel() < armor.getRequiredLevel()) {
             throw new InvalidArmorException("Armor level is too high for the character");
         }
         if (!getValidArmorTypes().contains(armor.getArmorType())) {

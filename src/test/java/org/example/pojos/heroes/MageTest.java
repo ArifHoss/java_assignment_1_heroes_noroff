@@ -2,11 +2,17 @@ package org.example.pojos.heroes;
 
 import org.example.enums.Slot;
 import org.example.enums.WeaponType;
+import org.example.exceptions.InvalidArmorException;
 import org.example.exceptions.InvalidWeaponException;
+import org.example.pojos.items_equipment.Armor;
+import org.example.pojos.items_equipment.Item;
 import org.example.pojos.items_equipment.Weapon;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.example.enums.ArmorType.CLOTH;
+import static org.example.enums.ArmorType.LEATHER;
+import static org.example.enums.Slot.LEGS;
 import static org.example.enums.Slot.WEAPON;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -72,6 +78,23 @@ Certain hero classes can equip certain armor types:
         assertEquals(expected, actual);
 
     }
+    @Test
+    void equipValidArmor() throws InvalidArmorException {
 
+        //Arrange
+        Armor expected = new Armor("Cloth to Testing", 1, LEGS, CLOTH, new HeroAttribute(1,1,8));
+        mage.equip(LEGS,expected);
+        //Act
+        Item actual = mage.getEquipment().get(LEGS);
+        //Assert
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void equipInvalidArmor() {
+        Armor armorLeather = new Armor("Leather", 1, LEGS, LEATHER, new HeroAttribute(1,1,8));
+
+
+    }
 
 }
