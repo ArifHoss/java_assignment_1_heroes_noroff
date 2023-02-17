@@ -80,7 +80,11 @@ public class HeroManagementService {
         Mage mage = new Mage("Erik");
         mage.setHeroClass("Mage");
         mage.levelUp();
-        mage.equip(WEAPON,weaponStaffs);
+        try {
+            mage.equip(WEAPON,weaponStaffs);
+        } catch (InvalidWeaponException e) {
+            throw new InvalidWeaponException("Invalid Mage Weapon");
+        }
         heroes.add(mage);
         System.out.println("You just added a Mage " + mage);
         System.out.print("Mage Erik's ");
@@ -96,7 +100,11 @@ public class HeroManagementService {
         Hero ranger = new Ranger("Arif");
         ranger.setHeroClass("Ranger");
         ranger.levelUp();
-        ranger.equip(WEAPON,weaponBows);
+        try {
+            ranger.equip(WEAPON,weaponBows);
+        } catch (InvalidWeaponException e) {
+            throw new InvalidWeaponException("Invalid Ranger Weapon");
+        }
         heroes.add(ranger);
         System.out.println("You just added a Ranger " + ranger);
 
@@ -113,7 +121,11 @@ public class HeroManagementService {
         Hero rogue = new Rogue("Melvin");
         rogue.setHeroClass("Rogue");
         rogue.levelUp();
-        rogue.equip(WEAPON,weaponDaggers);
+        try {
+            rogue.equip(WEAPON,weaponDaggers);
+        } catch (InvalidWeaponException e) {
+            throw new InvalidWeaponException("Invalid Rogue Weapon");
+        }
         heroes.add(rogue);
         System.out.println("You just added Rogue " + rogue);
         System.out.print("Rogue Melvin's ");
@@ -129,7 +141,11 @@ public class HeroManagementService {
         Hero warrior = new Warrior("Rubin");
         warrior.setHeroClass("Warrior");
         warrior.levelUp();
-        warrior.equip(WEAPON,weaponAxes);
+        try {
+            warrior.equip(WEAPON,weaponAxes);
+        } catch (InvalidWeaponException e) {
+            throw new InvalidWeaponException("Invalid Warrior Weapon");
+        }
         heroes.add(warrior);
         System.out.println("You just added Warrior " + warrior);
         System.out.print("Warrior Rubin's ");
