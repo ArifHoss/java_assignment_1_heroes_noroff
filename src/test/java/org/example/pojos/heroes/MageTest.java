@@ -45,54 +45,66 @@ class MageTest {
     void totalAttributes() {
     }
 
-/*
-4.1) Equipping weapons
-• Mages – Staff, Wand
-• Rangers – Bow
-• Rogues – Dagger, Sword
-• Warriors – Axe, Hammer, Sword
+    /*
+    4.1) Equipping weapons
+    • Mages – Staff, Wand
+    • Rangers – Bow
+    • Rogues – Dagger, Sword
+    • Warriors – Axe, Hammer, Sword
 
-4.2) Equipping armor
-Certain hero classes can equip certain armor types:
-• Mages – Cloth
-• Rangers – Leather, Mail
-• Rogues – Leather, Mail
-• Warriors – Mail, Plate
- */
+    4.2) Equipping armor
+    Certain hero classes can equip certain armor types:
+    • Mages – Cloth
+    • Rangers – Leather, Mail
+    • Rogues – Leather, Mail
+    • Warriors – Mail, Plate
+     */
     @Test
     void equipValidWeapon() throws InvalidWeaponException {
-        Weapon staff = new Weapon("Staff fo Testing", 1, WEAPON, WeaponType.STAFFS, 10);
-        mage.equip(WEAPON, staff);
-        assertEquals(staff, mage.getEquipment().get(WEAPON));
+        //Arrange
+        Weapon expectedWeapon = new Weapon("Staff fo Testing", 1, WEAPON, WeaponType.STAFFS, 10);
+        mage.equip(WEAPON, expectedWeapon);
+
+        //Act
+        Item actualWeapon = mage.getEquipment().get(WEAPON);
+
+        //Assert
+        assertEquals(expectedWeapon, actualWeapon);
     }
 
     @Test
     void equipInvalidWeapon() {
 
-        Weapon sword = new Weapon("Sword fo Testing", 1, WEAPON, WeaponType.SWORDS, 10);
-        Exception weaponException = assertThrows(InvalidWeaponException.class, () -> mage.equip(WEAPON, sword));
-
-        String actual = weaponException.getMessage();
+        //Arrange
+        Weapon expectedWeapon = new Weapon("Sword fo Testing", 1, WEAPON, WeaponType.SWORDS, 10);
         String expected = "Weapon type is not allowed for this character";
 
+        //Act
+        Exception weaponException = assertThrows(InvalidWeaponException.class, () -> mage.equip(WEAPON, expectedWeapon));
+        String actual = weaponException.getMessage();
+
+        //Assert
         assertEquals(expected, actual);
 
     }
+
     @Test
     void equipValidArmor() throws InvalidArmorException {
 
         //Arrange
-        Armor expected = new Armor("Cloth to Testing", 1, LEGS, CLOTH, new HeroAttribute(1,1,8));
-        mage.equip(LEGS,expected);
+        Armor expectedArmor = new Armor("Cloth to Testing", 1, LEGS, CLOTH, new HeroAttribute(1, 1, 8));
+        mage.equip(LEGS, expectedArmor);
+
         //Act
-        Item actual = mage.getEquipment().get(LEGS);
+        Item actualArmor = mage.getEquipment().get(LEGS);
+
         //Assert
-        assertEquals(expected, actual);
+        assertEquals(expectedArmor, actualArmor);
     }
 
     @Test
     void equipInvalidArmor() {
-        Armor armorLeather = new Armor("Leather", 1, LEGS, LEATHER, new HeroAttribute(1,1,8));
+        Armor armorLeather = new Armor("Leather", 1, LEGS, LEATHER, new HeroAttribute(1, 1, 8));
 
 
     }
