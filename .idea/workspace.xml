@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="implemented exceptions on Mage and HeroManagementService">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Rogue.java" afterDir="false" />
+    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="handled exceptions on Warrior">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Ranger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Ranger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +187,7 @@
       <workItem from="1676488665395" duration="2652000" />
       <workItem from="1676548479642" duration="10927000" />
       <workItem from="1676561271084" duration="9118000" />
-      <workItem from="1676617593535" duration="9522000" />
+      <workItem from="1676617593535" duration="10389000" />
     </task>
     <task id="LOCAL-00001" summary="added levelUp, equip, damage, totalAttribute and display method to Hero data transfer class">
       <created>1676109590866</created>
@@ -315,7 +315,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676643249874</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="handled exceptions on Rogue">
+      <created>1676643804654</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1676643804654</updated>
+    </task>
+    <task id="LOCAL-00020" summary="handled exceptions on Warrior">
+      <created>1676644087818</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1676644087818</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,6 +363,8 @@
     <MESSAGE value="change exceptions handled to equip mage" />
     <MESSAGE value="change to InvalidWeaponException" />
     <MESSAGE value="implemented exceptions on Mage and HeroManagementService" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented exceptions on Mage and HeroManagementService" />
+    <MESSAGE value="handled exceptions on Rogue" />
+    <MESSAGE value="handled exceptions on Warrior" />
+    <option name="LAST_COMMIT_MESSAGE" value="handled exceptions on Warrior" />
   </component>
 </project>

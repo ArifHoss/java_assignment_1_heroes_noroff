@@ -3,6 +3,8 @@ package org.example.pojos.heroes;
 import org.example.enums.ArmorType;
 import org.example.enums.Slot;
 import org.example.enums.WeaponType;
+import org.example.exceptions.InvalidArmorException;
+import org.example.exceptions.InvalidWeaponException;
 import org.example.pojos.items_equipment.Armor;
 import org.example.pojos.items_equipment.Item;
 import org.example.pojos.items_equipment.Weapon;
@@ -41,23 +43,34 @@ public class Ranger extends Hero {
     @Override
     public void levelUp() {
         super.levelUp();
-        super.getHeroAttributes().addAttributes(new HeroAttribute(1,5,1));
+        super.getHeroAttributes().addAttributes(new HeroAttribute(1, 5, 1));
     }
 
     @Override
-    public void equip(Slot slot,Weapon weapon) {
-        if (getLevel() >= weapon.getRequiredLevel() && getValidWeaponTypes().contains(weapon.getWeaponType())) {
-            equipment.put(slot, weapon);
-            setEquipment(equipment);
+    public void equip(Slot slot, Weapon weapon) throws InvalidWeaponException {
+        if (getLevel() <= weapon.getRequiredLevel()) {
+            throw new InvalidWeaponException("Weapon level is too high for the character");
         }
+        if (!getValidWeaponTypes().contains(weapon.getWeaponType())) {
+            throw new InvalidWeaponException("Weapon type is not allowed for this character");
+
+        }
+        equipment.put(slot, weapon);
+        setEquipment(equipment);
     }
 
     @Override
-    public void equip(Slot slot,Armor armor) {
-        if (getLevel() >= armor.getRequiredLevel() && getValidArmorTypes().contains(armor.getArmorType())) {
-            equipment.put(slot, armor);
-            setEquipment(equipment);
+    public void equip(Slot slot, Armor armor) throws InvalidArmorException {
+        if (getLevel() <= armor.getRequiredLevel()) {
+            throw new InvalidArmorException("Armor level is too high for the character");
         }
+        if (!getValidArmorTypes().contains(armor.getArmorType())) {
+            throw new InvalidArmorException("Armor type is not allowed for this character");
+
+        }
+
+        equipment.put(slot, armor);
+        setEquipment(equipment);
     }
 
 
