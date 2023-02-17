@@ -39,10 +39,20 @@ class MageTest {
     void totalAttributes() {
     }
 
-    @Test
-    void testLevelUp() {
-    }
+/*
+4.1) Equipping weapons
+• Mages – Staff, Wand
+• Rangers – Bow
+• Rogues – Dagger, Sword
+• Warriors – Axe, Hammer, Sword
 
+4.2) Equipping armor
+Certain hero classes can equip certain armor types:
+• Mages – Cloth
+• Rangers – Leather, Mail
+• Rogues – Leather, Mail
+• Warriors – Mail, Plate
+ */
     @Test
     void equipValidWeapon() throws InvalidWeaponException {
         Weapon staff = new Weapon("Staff fo Testing", 1, WEAPON, WeaponType.STAFFS, 10);
@@ -51,10 +61,17 @@ class MageTest {
     }
 
     @Test
-    void equipInvalidWeapon() throws InvalidWeaponException {
+    void equipInvalidWeapon() {
+
         Weapon sword = new Weapon("Sword fo Testing", 1, WEAPON, WeaponType.SWORDS, 10);
-        mage.equip(Slot.WEAPON, sword);
-        assertNull(mage.getEquipment().get(Slot.WEAPON));
+        Exception weaponException = assertThrows(InvalidWeaponException.class, () -> mage.equip(WEAPON, sword));
+
+        String actual = weaponException.getMessage();
+        String expected = "Weapon type is not allowed for this character";
+
+        assertEquals(expected, actual);
 
     }
+
+
 }
