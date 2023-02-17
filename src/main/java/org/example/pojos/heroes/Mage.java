@@ -3,12 +3,13 @@ package org.example.pojos.heroes;
 import org.example.enums.ArmorType;
 import org.example.enums.*;
 import org.example.enums.WeaponType;
+import org.example.exceptions.InvalidArmorException;
+import org.example.exceptions.InvalidWeaponException;
 import org.example.pojos.items_equipment.*;
 
 import java.util.*;
 
 import static org.example.enums.ArmorType.*;
-import static org.example.enums.Slot.*;
 import static org.example.enums.WeaponType.*;
 
 public class Mage extends Hero {
@@ -38,21 +39,39 @@ public class Mage extends Hero {
     }
 
     @Override
-    public void equip(Slot slot,Weapon weapon) {
+    public void equip(Slot slot, Weapon weapon) throws InvalidWeaponException {
 
-        if (getLevel() >= weapon.getRequiredLevel() && getValidWeaponTypes().contains(weapon.getWeaponType())) {
+        try {
+            if (getLevel() >= weapon.getRequiredLevel()) {
+                throw new InvalidWeaponException("Weapon level is too high for the character");
+            }
+            if (!getValidWeaponTypes().contains(weapon.getWeaponType())) {
+                throw new InvalidWeaponException("Weapon type is not allowed for this character");
+            }
             equipment.put(slot, weapon);
             setEquipment(equipment);
+        } catch (NullPointerException e) {
+            throw new InvalidWeaponException("Invalid Weapon: " + e.getMessage());
         }
 
     }
 
     @Override
-    public void equip(Slot slot,Armor armor) {
-        if (getLevel() >= armor.getRequiredLevel() && getValidArmorTypes().contains(armor.getArmorType())) {
+    public void equip(Slot slot, Armor armor) throws InvalidArmorException {
+
+        try {
+            if (getLevel() >= armor.getRequiredLevel()) {
+                throw new InvalidArmorException("Armor level is too high for the character");
+            }
+            if (!getValidArmorTypes().contains(armor.getArmorType())) {
+                throw new InvalidArmorException("Armor type is not allowed for this character");
+            }
             equipment.put(slot, armor);
             setEquipment(equipment);
+        } catch (InvalidArmorException e) {
+            throw new InvalidArmorException("Invalid Armor: "+e.getMessage());
         }
+
     }
 
 }

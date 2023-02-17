@@ -1,5 +1,6 @@
 package org.example.services;
 
+import org.example.exceptions.InvalidWeaponException;
 import org.example.pojos.heroes.*;
 import org.example.pojos.items_equipment.Armor;
 import org.example.pojos.items_equipment.Item;
@@ -30,7 +31,7 @@ public class HeroManagementService {
     private static final Armor armorMail = new Armor("Mail", 1, LEGS, MAIL, new HeroAttribute());
     private static final Armor armorPlate = new Armor("Plate", 1, LEGS, PLATE, new HeroAttribute());
 
-    public static void addHeroesMenu() {
+    public static void addHeroesMenu() throws InvalidWeaponException {
         System.out.println("What kind of hero you want to see?");
         System.out.println("=====================");
         System.out.println("1. Mage: ");
@@ -74,7 +75,7 @@ public class HeroManagementService {
     }
 
 
-    public static void createMage() {
+    public static void createMage() throws InvalidWeaponException {
 
         Mage mage = new Mage("Erik");
         mage.setHeroClass("Mage");
@@ -91,7 +92,7 @@ public class HeroManagementService {
     }
 
 
-    public static void createRanger() {
+    public static void createRanger() throws InvalidWeaponException {
         Hero ranger = new Ranger("Arif");
         ranger.setHeroClass("Ranger");
         ranger.levelUp();
@@ -108,7 +109,7 @@ public class HeroManagementService {
 
     }
 
-    public static void createRogue() {
+    public static void createRogue() throws InvalidWeaponException {
         Hero rogue = new Rogue("Melvin");
         rogue.setHeroClass("Rogue");
         rogue.levelUp();
@@ -124,7 +125,7 @@ public class HeroManagementService {
 
     }
 
-    public static void createWarrior() {
+    public static void createWarrior() throws InvalidWeaponException {
         Hero warrior = new Warrior("Rubin");
         warrior.setHeroClass("Warrior");
         warrior.levelUp();
