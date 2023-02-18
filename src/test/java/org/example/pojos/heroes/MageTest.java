@@ -70,9 +70,22 @@ class MageTest {
     • Mages – Cloth
      */
     @Test
-    void equipValidWeapon() throws InvalidWeaponException {
+    void equipValidMageWeaponStaffs() throws InvalidWeaponException {
         //Arrange
-        Weapon expectedWeapon = new Weapon("Staff fo Testing", 1, WEAPON, WeaponType.STAFFS, 10);
+        Weapon expectedWeapon = new Weapon("Staff", 1, WEAPON, WeaponType.STAFFS, 10);
+        mage.equip(WEAPON, expectedWeapon);
+
+        //Act
+        Item actualWeapon = mage.getEquipment().get(WEAPON);
+
+        //Assert
+        assertEquals(expectedWeapon, actualWeapon);
+    }
+
+    @Test
+    void equipValidMageWeaponWand() throws InvalidWeaponException {
+        //Arrange
+        Weapon expectedWeapon = new Weapon("Wand", 1, WEAPON, WeaponType.WANDS, 10);
         mage.equip(WEAPON, expectedWeapon);
 
         //Act
@@ -86,7 +99,7 @@ class MageTest {
     void equipInvalidWeapon() {
 
         //Arrange
-        Weapon expectedWeapon = new Weapon("Sword fo Testing", 1, WEAPON, WeaponType.SWORDS, 10);
+        Weapon expectedWeapon = new Weapon("Sword", 1, WEAPON, WeaponType.SWORDS, 10);
         String expected = "Weapon type is not allowed for this character";
 
         //Act
