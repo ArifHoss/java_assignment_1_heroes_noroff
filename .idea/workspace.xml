@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="tested damageWithValidWeapon MageTest">
+    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="tested valid and invalid A Hero Ranger kan have in RangerTest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/RangerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/RangerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/RogueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/RogueTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,8 +85,8 @@
       <recent name="org.example.pojos.heroes" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MageTest">
-    <configuration name="MageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.RogueTest">
+    <configuration name="RogueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_assignment_1_heroes_noroff" />
       <extension name="coverage">
         <pattern>
@@ -94,13 +95,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
-      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.MageTest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.RogueTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RangerTest.equipInvalidArmor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RogueTest.equipInvalidArmor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_assignment_1_heroes_noroff" />
       <extension name="coverage">
         <pattern>
@@ -109,14 +110,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
-      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.RangerTest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.RogueTest" />
       <option name="METHOD_NAME" value="equipInvalidArmor" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RangerTest.equipValidArmor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RogueTest.equipInvalidRWeapon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_assignment_1_heroes_noroff" />
       <extension name="coverage">
         <pattern>
@@ -125,14 +126,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
-      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.RangerTest" />
-      <option name="METHOD_NAME" value="equipValidArmor" />
+      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.RogueTest" />
+      <option name="METHOD_NAME" value="equipInvalidRWeapon" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RangerTest.equipValidRangerArmorMail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RogueTest.equipValidRogueArmorLeather" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_assignment_1_heroes_noroff" />
       <extension name="coverage">
         <pattern>
@@ -141,14 +142,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
-      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.RangerTest" />
-      <option name="METHOD_NAME" value="equipValidRangerArmorMail" />
+      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.RogueTest" />
+      <option name="METHOD_NAME" value="equipValidRogueArmorLeather" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RangerTest.equipValidWeapon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RogueTest.equipValidRogueArmorMail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_assignment_1_heroes_noroff" />
       <extension name="coverage">
         <pattern>
@@ -157,8 +158,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
-      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.RangerTest" />
-      <option name="METHOD_NAME" value="equipValidWeapon" />
+      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.RogueTest" />
+      <option name="METHOD_NAME" value="equipValidRogueArmorMail" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -166,11 +167,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MageTest" />
-        <item itemvalue="JUnit.RangerTest.equipValidRangerArmorMail" />
-        <item itemvalue="JUnit.RangerTest.equipInvalidArmor" />
-        <item itemvalue="JUnit.RangerTest.equipValidArmor" />
-        <item itemvalue="JUnit.RangerTest.equipValidWeapon" />
+        <item itemvalue="JUnit.RogueTest" />
+        <item itemvalue="JUnit.RogueTest.equipInvalidArmor" />
+        <item itemvalue="JUnit.RogueTest.equipValidRogueArmorMail" />
+        <item itemvalue="JUnit.RogueTest.equipValidRogueArmorLeather" />
+        <item itemvalue="JUnit.RogueTest.equipInvalidRWeapon" />
       </list>
     </recent_temporary>
   </component>
@@ -371,7 +372,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676655697383</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="refactor method name RangerTest">
+      <created>1676715948583</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1676715948583</updated>
+    </task>
+    <task id="LOCAL-00027" summary="tested valid and invalid A Hero Ranger kan have in RangerTest">
+      <created>1676716011123</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1676716011123</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,6 +427,8 @@
     <MESSAGE value="removed '=' from heroes equip" />
     <MESSAGE value="tested equipInvalidArmor MageTest" />
     <MESSAGE value="tested damageWithValidWeapon MageTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="tested damageWithValidWeapon MageTest" />
+    <MESSAGE value="refactor method name RangerTest" />
+    <MESSAGE value="tested valid and invalid A Hero Ranger kan have in RangerTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="tested valid and invalid A Hero Ranger kan have in RangerTest" />
   </component>
 </project>

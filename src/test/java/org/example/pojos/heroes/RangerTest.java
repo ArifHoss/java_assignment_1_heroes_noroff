@@ -55,7 +55,7 @@ class RangerTest {
     @Test
     void equipValidRangerWeaponBows() throws InvalidWeaponException {
         //Arrange
-        Weapon expectedWeapon = new Weapon("Staff", 1, WEAPON, WeaponType.BOWS, 10);
+        Weapon expectedWeapon = new Weapon("Bows", 1, WEAPON, WeaponType.BOWS, 10);
         ranger.equip(WEAPON, expectedWeapon);
 
         //Act
