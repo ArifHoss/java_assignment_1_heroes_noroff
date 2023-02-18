@@ -9,35 +9,33 @@ import org.example.pojos.items_equipment.Weapon;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.example.enums.ArmorType.CLOTH;
-import static org.example.enums.ArmorType.LEATHER;
-import static org.example.enums.Slot.LEGS;
-import static org.example.enums.Slot.WEAPON;
+import static org.example.enums.ArmorType.*;
+import static org.example.enums.Slot.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class WarriorTest {
-    private Mage mage;
+    private Warrior warrior;
 
     @BeforeEach
     void setUp() {
-        mage = new Mage("Gandalf");
+        warrior = new Warrior("Gandalf");
     }
 
     @Test
-    void createMage() {
-        String actual = mage.getName();
+    void createWarrior() {
+        String actual = warrior.getName();
         String expected = "Gandalf";
         assertEquals(expected, actual);
     }
 
     @Test
     void levelUp() {
-        mage.levelUp();
-        assertEquals(2, mage.getLevel());
+        warrior.levelUp();
+        assertEquals(2, warrior.getLevel());
     }
 
     @Test
-    void damage() {
+    void dawarrior() {
     }
 
     @Test
@@ -52,13 +50,38 @@ class WarriorTest {
     • Warriors – Mail, Plate
      */
     @Test
-    void equipValidWeapon() throws InvalidWeaponException {
+    void equipValidWarriorWeaponAxes() throws InvalidWeaponException {
         //Arrange
-        Weapon expectedWeapon = new Weapon("Staff fo Testing", 1, WEAPON, WeaponType.STAFFS, 10);
-        mage.equip(WEAPON, expectedWeapon);
+        Weapon expectedWeapon = new Weapon("Axe", 1, WEAPON, WeaponType.AXES, 10);
+        warrior.equip(WEAPON, expectedWeapon);
 
         //Act
-        Item actualWeapon = mage.getEquipment().get(WEAPON);
+        Item actualWeapon = warrior.getEquipment().get(WEAPON);
+
+        //Assert
+        assertEquals(expectedWeapon, actualWeapon);
+    }
+
+    @Test
+    void equipValidWarriorWeaponHammer() throws InvalidWeaponException {
+        //Arrange
+        Weapon expectedWeapon = new Weapon("Hammers", 1, WEAPON, WeaponType.HAMMERS, 10);
+        warrior.equip(WEAPON, expectedWeapon);
+
+        //Act
+        Item actualWeapon = warrior.getEquipment().get(WEAPON);
+
+        //Assert
+        assertEquals(expectedWeapon, actualWeapon);
+    }
+    @Test
+    void equipValidWarriorWeaponSword() throws InvalidWeaponException {
+        //Arrange
+        Weapon expectedWeapon = new Weapon("Swords", 1, WEAPON, WeaponType.SWORDS, 10);
+        warrior.equip(WEAPON, expectedWeapon);
+
+        //Act
+        Item actualWeapon = warrior.getEquipment().get(WEAPON);
 
         //Assert
         assertEquals(expectedWeapon, actualWeapon);
@@ -68,11 +91,11 @@ class WarriorTest {
     void equipInvalidWeapon() {
 
         //Arrange
-        Weapon expectedWeapon = new Weapon("Sword fo Testing", 1, WEAPON, WeaponType.SWORDS, 10);
+        Weapon expectedWeapon = new Weapon("Bows", 1, WEAPON, WeaponType.BOWS, 10);
         String expected = "Weapon type is not allowed for this character";
 
         //Act
-        Exception weaponException = assertThrows(InvalidWeaponException.class, () -> mage.equip(WEAPON, expectedWeapon));
+        Exception weaponException = assertThrows(InvalidWeaponException.class, () -> warrior.equip(WEAPON, expectedWeapon));
         String actual = weaponException.getMessage();
 
         //Assert
@@ -81,28 +104,41 @@ class WarriorTest {
     }
 
     @Test
-    void equipValidArmor() throws InvalidArmorException {
+    void equipWarriorValidArmorMail() throws InvalidArmorException {
 
         //Arrange
-        Armor expectedArmor = new Armor("Cloth to Testing", 1, LEGS, CLOTH, new HeroAttribute(1, 1, 8));
-        mage.equip(LEGS, expectedArmor);
+        Armor expectedArmor = new Armor("Mail", 1, BODY, MAIL, new HeroAttribute(5, 2, 1));
+        warrior.equip(BODY, expectedArmor);
 
         //Act
-        Item actualArmor = mage.getEquipment().get(LEGS);
+        Item actualArmor = warrior.getEquipment().get(BODY);
 
         //Assert
         assertEquals(expectedArmor, actualArmor);
     }
 
     @Test
+    void equipWarriorValidArmorPlate() throws InvalidArmorException {
+
+        //Arrange
+        Armor expectedArmor = new Armor("Plate", 1, BODY, PLATE, new HeroAttribute(5, 2, 1));
+        warrior.equip(BODY, expectedArmor);
+
+        //Act
+        Item actualArmor = warrior.getEquipment().get(BODY);
+
+        //Assert
+        assertEquals(expectedArmor, actualArmor);
+    }
+    @Test
     void equipInvalidArmor() {
 
         //Arrange
-        Armor expectedArmor = new Armor("Leather", 1, LEGS, LEATHER, new HeroAttribute(1, 1, 8));
-        String expected = "Armor type is not allowed for this character";
+        Armor expectedArmor = new Armor("Leather", 1, LEGS, LEATHER, new HeroAttribute(5, 2, 1));
+        String expected = "Armor level is too high for the character";
 
         //Act
-        Exception armorException = assertThrows(InvalidArmorException.class, () -> mage.equip(LEGS, expectedArmor));
+        Exception armorException = assertThrows(InvalidArmorException.class, () -> warrior.equip(LEGS, expectedArmor));
         String actual = armorException.getMessage();
 
         //Assert
