@@ -1,5 +1,6 @@
 package org.example.pojos.heroes;
 
+import org.example.enums.Slot;
 import org.example.enums.WeaponType;
 import org.example.exceptions.InvalidArmorException;
 import org.example.exceptions.InvalidWeaponException;
@@ -10,13 +11,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.example.enums.ArmorType.*;
-import static org.example.enums.Slot.LEGS;
-import static org.example.enums.Slot.WEAPON;
+import static org.example.enums.Slot.*;
+import static org.example.enums.WeaponType.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RogueTest {
 
     private Rogue rogue;
+    private Weapon weapon;
+    private Armor armor;
 
     /*
     Arthur: A chivalrous warrior with a strong sense
@@ -27,6 +30,8 @@ class RogueTest {
     @BeforeEach
     void setUp() {
         rogue = new Rogue("Arthur");
+        weapon = new Weapon("Common Dagger", 1, WEAPON, DAGGERS);
+        armor = new Armor("Quality Leather", 1, BODY, LEATHER);
     }
 
     @Test
@@ -60,9 +65,6 @@ class RogueTest {
 
     }
 
-    @Test
-    void damage() {
-    }
 
     @Test
     void totalAttributes() {
@@ -75,6 +77,99 @@ class RogueTest {
       Valid armor
     • Rogues – Leather, Mail
      */
+
+    @Test
+    void validWeaponName() {
+        //Arrange
+        String expectedWeaponName = "Common Dagger";
+        //Act
+        String actualWeaponName = weapon.getName();
+        //Assert
+        assertEquals(expectedWeaponName,actualWeaponName);
+    }
+    @Test
+    void validWeaponLevel() {
+        //Arrange
+        int expectedRequiredLevel = 1;
+        //Act
+        int actualRequiredLevel = weapon.getRequiredLevel();
+        //Assert
+        assertEquals(expectedRequiredLevel,actualRequiredLevel);
+    }
+
+    @Test
+    void validWeaponSlot() {
+        //Arrange
+        Slot expectedSlot = WEAPON;
+        //Act
+        Slot actualSlot = weapon.getSlot();
+        //Assert
+        assertEquals(expectedSlot,actualSlot);
+    }
+
+    @Test
+    void validWeaponType() {
+        //Arrange
+        WeaponType expectedWeaponType = DAGGERS;
+        //Act
+        WeaponType actualWeaponType = weapon.getWeaponType();
+        //Assert
+        assertEquals(expectedWeaponType,actualWeaponType);
+    }
+
+    @Test
+    void calculateDamageWithoutEquipment() {
+        //Arrange
+        rogue.setHeroAttributes(new HeroAttribute(0, 5, 0));
+        //Act
+        double expectedDamage = (1.0 * (1 + rogue.getHeroAttributes().getDexterity() / 100.0));
+        double actualDamage = rogue.calculateDamage();
+        //Assert
+        assertEquals(expectedDamage, actualDamage, 0.01);
+    }
+
+    @Test
+    void calculateDamageWithValidWeaponEquipped() throws InvalidWeaponException {
+        //Arrange
+        rogue.setHeroAttributes(new HeroAttribute(0, 5, 0));
+        weapon.setWeaponDamage(2.0);
+        rogue.equip(WEAPON, weapon);
+        //Act
+        double expectedDamage = weapon.getWeaponDamage() * ((1 + rogue.getHeroAttributes().getDexterity() / 100.0));
+        double actualDamage = rogue.calculateDamage();
+        //Assert
+        assertEquals(expectedDamage, actualDamage);
+    }
+
+    @Test
+    void calculateDamageWithReplacedWeaponEquipped() throws InvalidWeaponException {
+        //Arrange
+        rogue.setHeroAttributes(new HeroAttribute(0, 2, 0));
+        weapon.setWeaponDamage(2.0);
+        weapon = new Weapon("Common Sword", 1, WEAPON, SWORDS); // Replacing weapon
+        rogue.equip(WEAPON, weapon);
+        //Act
+        double expectedDamage = weapon.getWeaponDamage() * ((1 + rogue.getHeroAttributes().getDexterity() / 100.0));
+        double actualDamage = rogue.calculateDamage();
+        //Assert
+        assertEquals(expectedDamage, actualDamage);
+    }
+    @Test
+    void calculateDamageWithValidWeaponAndArmorEquipped() throws InvalidWeaponException, InvalidArmorException {
+        //Arrange
+        rogue.setHeroAttributes(new HeroAttribute(0, 2, 0));
+        weapon.setWeaponDamage(2.0);
+        rogue.equip(Slot.WEAPON, weapon);
+
+        armor = new Armor("Common Mail", 1, Slot.BODY, MAIL);
+        armor.setArmorAttribute(new HeroAttribute(0, 1, 2));
+        rogue.equip(Slot.BODY, armor);
+        //Act
+        double expectedDamage = weapon.getWeaponDamage() * (1 + ((rogue.getHeroAttributes().getDexterity() + armor.getArmorAttribute().getDexterity()) / 100.0));
+        double actualDamage = rogue.calculateDamage();
+        //Assert
+        assertEquals(expectedDamage, actualDamage,0.1);
+    }
     @Test
     void equipValidRogueWeaponDagger() throws InvalidWeaponException {
         //Arrange

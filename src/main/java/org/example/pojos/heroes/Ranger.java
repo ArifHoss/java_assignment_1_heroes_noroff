@@ -16,7 +16,6 @@ import java.util.Map;
 
 import static org.example.enums.ArmorType.LEATHER;
 import static org.example.enums.ArmorType.MAIL;
-import static org.example.enums.Slot.*;
 import static org.example.enums.WeaponType.BOWS;
 
 public class Ranger extends Hero {
