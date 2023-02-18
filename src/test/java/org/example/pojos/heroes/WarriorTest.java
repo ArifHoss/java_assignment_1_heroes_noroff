@@ -10,11 +10,10 @@ import org.example.pojos.items_equipment.Weapon;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
-
 import static org.example.enums.ArmorType.*;
 import static org.example.enums.Slot.*;
 import static org.example.enums.WeaponType.AXES;
+import static org.example.enums.WeaponType.HAMMERS;
 import static org.junit.jupiter.api.Assertions.*;
 
 class WarriorTest {
@@ -124,15 +123,60 @@ class WarriorTest {
         assertEquals(expectedWeaponType,actualWeaponType);
     }
     @Test
-    void calculateDamageWithoutWeapon() {
+    void calculateDamageWithoutEquipment() {
         //Arrange
         warrior.setHeroAttributes(new HeroAttribute(5, 0, 0));
         //Act
         double expectedDamage = (1.0 * (1 + warrior.getHeroAttributes().getStrength() / 100.0));
-        double actualDamage = warrior.damage();
+        double actualDamage = warrior.calculateDamage();
         //Assert
         assertEquals(expectedDamage, actualDamage, 0.01);
     }
+
+    @Test
+    void calculateDamageWithValidWeaponEquipped() throws InvalidWeaponException {
+        //Arrange
+        warrior.setHeroAttributes(new HeroAttribute(5, 0, 0));
+        weapon.setWeaponDamage(2.0);
+        warrior.equip(WEAPON, weapon);
+        //Act
+        double expectedDamage = weapon.getWeaponDamage() * ((1 + warrior.getHeroAttributes().getStrength() / 100.0));
+        double actualDamage = warrior.calculateDamage();
+        //Assert
+        assertEquals(expectedDamage, actualDamage);
+    }
+
+    @Test
+    void calculateDamageWithReplacedWeaponEquipped() throws InvalidWeaponException {
+        //Arrange
+        warrior.setHeroAttributes(new HeroAttribute(5, 0, 0));
+        weapon.setWeaponDamage(2.0);
+        weapon = new Weapon("Hummer", 1, WEAPON, HAMMERS); // Replacing weapon
+        warrior.equip(WEAPON, weapon);
+        //Act
+        double expectedDamage = weapon.getWeaponDamage() * ((1 + warrior.getHeroAttributes().getStrength() / 100.0));
+        double actualDamage = warrior.calculateDamage();
+        //Assert
+        assertEquals(expectedDamage, actualDamage);
+    }
+    @Test
+    void calculateDamageWithValidWeaponAndArmorEquipped() throws InvalidWeaponException, InvalidArmorException {
+        //Arrange
+        Warrior warrior = new Warrior("Conan");
+        warrior.setHeroAttributes(new HeroAttribute(5, 1, 0));
+        Weapon weapon = new Weapon("Common Axe", 1, Slot.WEAPON, AXES);
+        weapon.setWeaponDamage(2.0);
+        warrior.equip(Slot.WEAPON, weapon);
+        Armor armor = new Armor("Common Plate Chest", 1, Slot.BODY, PLATE);
+        armor.setArmorAttribute(new HeroAttribute(1, 0, 0));
+        warrior.equip(Slot.BODY, armor);
+        //Act
+        double expectedDamage = weapon.getWeaponDamage() * (1 + ((warrior.getHeroAttributes().getStrength() + armor.getArmorAttribute().getStrength()) / 100.0));
+        double actualDamage = warrior.calculateDamage();
+        //Assert
+        assertEquals(expectedDamage, actualDamage,0.1);
+    }
+
     @Test
     void calculateDamageWithWeapon() throws InvalidWeaponException {
         //Arrange
@@ -140,7 +184,7 @@ class WarriorTest {
         warrior.equip(WEAPON, weapon); //Equip the warrior with the weapon
         //Act
         double expectedDamage = (weapon.getWeaponDamage() * (1 + warrior.getHeroAttributes().getStrength() / 100.0));
-        double actualDamage = warrior.damage();
+        double actualDamage = warrior.calculateDamage();
         //Assert
         assertEquals(expectedDamage, actualDamage, 0.01);
     }

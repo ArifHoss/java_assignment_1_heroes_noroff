@@ -91,7 +91,7 @@ public class HeroManagementService {
         mage.totalAttributes();
 
         System.out.print("Mage Erik's ");
-        mage.damage();
+        mage.calculateDamage();
         System.out.println("=====================");
     }
 
@@ -112,7 +112,7 @@ public class HeroManagementService {
         ranger.totalAttributes();
 
         System.out.print("Ranger Arif's ");
-        ranger.damage();
+        ranger.calculateDamage();
         System.out.println("=====================");
 
     }
@@ -132,7 +132,7 @@ public class HeroManagementService {
         rogue.totalAttributes();
 
         System.out.print("Rogue Melvin's ");
-        rogue.damage();
+        rogue.calculateDamage();
         System.out.println("=====================");
 
     }
@@ -152,7 +152,7 @@ public class HeroManagementService {
         warrior.totalAttributes();
 
         System.out.print("Warrior Rubin's ");
-        warrior.damage();
+        warrior.calculateDamage();
         System.out.println("=====================");
 
     }

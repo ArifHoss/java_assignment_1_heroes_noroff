@@ -69,7 +69,7 @@ class MageTest {
     public void testDamageWithValidWeapon() throws InvalidWeaponException {
         Weapon expectedWeapon = new Weapon("Staff fo Testing", 1, WEAPON, WeaponType.STAFFS);
         mage.equip(Slot.WEAPON, expectedWeapon);
-        mage.damage();
+        mage.calculateDamage();
         assertEquals("Total Damage: 2.16", getOutput());
     }
 

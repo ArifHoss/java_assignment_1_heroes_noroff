@@ -47,7 +47,7 @@ public class Ranger extends Hero {
     }
 
     @Override
-    public double damage() {
+    public double calculateDamage() {
         double weaponDamage = 1.0;
         if (getEquipment().containsKey(Slot.WEAPON)) {
             Item item = getEquipment().get(Slot.WEAPON);

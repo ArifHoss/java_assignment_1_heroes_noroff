@@ -39,7 +39,7 @@ public abstract class Hero {
     public abstract void equip(Slot slot,Weapon weapon) throws InvalidWeaponException;
     public abstract void equip(Slot slot,Armor armor) throws InvalidWeaponException, InvalidArmorException;
 
-    public double damage(){
+    public double calculateDamage(){
             double weaponDamage = 1.0;
             if (getEquipment().containsKey(Slot.WEAPON)) {
                 Item item = getEquipment().get(Slot.WEAPON);
