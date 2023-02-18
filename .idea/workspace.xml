@@ -85,7 +85,7 @@
       <recent name="org.example.pojos.heroes" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RogueTest.createRogue">
+  <component name="RunManager" selected="JUnit.MageTest.levelUp">
     <configuration name="MageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_assignment_1_heroes_noroff" />
       <extension name="coverage">
@@ -97,6 +97,22 @@
       <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
       <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.MageTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MageTest.levelUp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java_assignment_1_heroes_noroff" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.pojos.heroes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
+      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.MageTest" />
+      <option name="METHOD_NAME" value="levelUp" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -148,29 +164,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WarriorTest.createWarrior" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java_assignment_1_heroes_noroff" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.pojos.heroes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
-      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.WarriorTest" />
-      <option name="METHOD_NAME" value="createWarrior" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MageTest.levelUp" />
         <item itemvalue="JUnit.RogueTest.createRogue" />
         <item itemvalue="JUnit.RangerTest.createRanger" />
         <item itemvalue="JUnit.WarriorTest" />
         <item itemvalue="JUnit.MageTest" />
-        <item itemvalue="JUnit.WarriorTest.createWarrior" />
       </list>
     </recent_temporary>
   </component>

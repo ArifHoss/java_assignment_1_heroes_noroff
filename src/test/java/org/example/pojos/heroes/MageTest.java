@@ -53,11 +53,15 @@ class MageTest {
     @Test
     void levelUp() {
         //Arrange
-        mage.levelUp();
+        mage.levelUp(); // Level increase by 1, every time call levelUp() method.
+        int expectedLevel = 2;
+        HeroAttribute expectedAttributes = new HeroAttribute(2, 2, 13);
         //Act
-        int actual = mage.getLevel();
+        int actualLevel = mage.getLevel();
+        HeroAttribute actualAttributes = mage.getHeroAttributes();
         //Assert
-        assertEquals(2, actual);
+        assertEquals(expectedLevel, actualLevel);
+        assertEquals(expectedAttributes, actualAttributes);
     }
 
 
