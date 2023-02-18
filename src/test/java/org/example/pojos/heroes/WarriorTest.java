@@ -47,8 +47,16 @@ class WarriorTest {
 
     @Test
     void levelUp() {
+        //Arrange
         warrior.levelUp();
-        assertEquals(2, warrior.getLevel());
+        int expectedLevel = 2;
+        HeroAttribute expectedAttributes = new HeroAttribute(8, 4, 2);
+        //Act
+        int actualLevel = warrior.getLevel();
+        HeroAttribute actualAttributes = warrior.getHeroAttributes();
+        //Assert
+        assertEquals(expectedLevel, actualLevel);
+        assertEquals(expectedAttributes, actualAttributes);
     }
 
     @Test
