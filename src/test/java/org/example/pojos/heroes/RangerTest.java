@@ -9,8 +9,7 @@ import org.example.pojos.items_equipment.Weapon;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.example.enums.ArmorType.CLOTH;
-import static org.example.enums.ArmorType.LEATHER;
+import static org.example.enums.ArmorType.*;
 import static org.example.enums.Slot.LEGS;
 import static org.example.enums.Slot.WEAPON;
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,24 +17,24 @@ import static org.junit.jupiter.api.Assertions.*;
 class RangerTest {
 
 
-    private Mage mage;
+    private Ranger ranger;
 
     @BeforeEach
     void setUp() {
-        mage = new Mage("Gandalf");
+        ranger = new Ranger("Gandalf");
     }
 
     @Test
-    void createMage() {
-        String actual = mage.getName();
+    void createRanger() {
+        String actual = ranger.getName();
         String expected = "Gandalf";
         assertEquals(expected, actual);
     }
 
     @Test
     void levelUp() {
-        mage.levelUp();
-        assertEquals(2, mage.getLevel());
+        ranger.levelUp();
+        assertEquals(2, ranger.getLevel());
     }
 
     @Test
@@ -54,13 +53,13 @@ class RangerTest {
     • Rangers – Leather, Mail
      */
     @Test
-    void equipValidWeapon() throws InvalidWeaponException {
+    void equipValidRangerWeaponBows() throws InvalidWeaponException {
         //Arrange
-        Weapon expectedWeapon = new Weapon("Staff fo Testing", 1, WEAPON, WeaponType.STAFFS, 10);
-        mage.equip(WEAPON, expectedWeapon);
+        Weapon expectedWeapon = new Weapon("Staff", 1, WEAPON, WeaponType.BOWS, 10);
+        ranger.equip(WEAPON, expectedWeapon);
 
         //Act
-        Item actualWeapon = mage.getEquipment().get(WEAPON);
+        Item actualWeapon = ranger.getEquipment().get(WEAPON);
 
         //Assert
         assertEquals(expectedWeapon, actualWeapon);
@@ -70,11 +69,11 @@ class RangerTest {
     void equipInvalidWeapon() {
 
         //Arrange
-        Weapon expectedWeapon = new Weapon("Sword fo Testing", 1, WEAPON, WeaponType.SWORDS, 10);
+        Weapon expectedWeapon = new Weapon("Sword", 1, WEAPON, WeaponType.SWORDS, 10);
         String expected = "Weapon type is not allowed for this character";
 
         //Act
-        Exception weaponException = assertThrows(InvalidWeaponException.class, () -> mage.equip(WEAPON, expectedWeapon));
+        Exception weaponException = assertThrows(InvalidWeaponException.class, () -> ranger.equip(WEAPON, expectedWeapon));
         String actual = weaponException.getMessage();
 
         //Assert
@@ -83,14 +82,28 @@ class RangerTest {
     }
 
     @Test
-    void equipValidArmor() throws InvalidArmorException {
+    void equipValidRangerArmorLeather() throws InvalidArmorException {
 
         //Arrange
-        Armor expectedArmor = new Armor("Cloth to Testing", 1, LEGS, CLOTH, new HeroAttribute(1, 1, 8));
-        mage.equip(LEGS, expectedArmor);
+        Armor expectedArmor = new Armor("Cloth", 1, LEGS, LEATHER, new HeroAttribute(1, 7, 1));
+        ranger.equip(LEGS, expectedArmor);
 
         //Act
-        Item actualArmor = mage.getEquipment().get(LEGS);
+        Item actualArmor = ranger.getEquipment().get(LEGS);
+
+        //Assert
+        assertEquals(expectedArmor, actualArmor);
+    }
+
+    @Test
+    void equipValidRangerArmorMail() throws InvalidArmorException {
+
+        //Arrange
+        Armor expectedArmor = new Armor("Cloth", 1, LEGS, MAIL, new HeroAttribute(1, 7, 1));
+        ranger.equip(LEGS, expectedArmor);
+
+        //Act
+        Item actualArmor = ranger.getEquipment().get(LEGS);
 
         //Assert
         assertEquals(expectedArmor, actualArmor);
@@ -100,11 +113,11 @@ class RangerTest {
     void equipInvalidArmor() {
 
         //Arrange
-        Armor expectedArmor = new Armor("Leather", 1, LEGS, LEATHER, new HeroAttribute(1, 1, 8));
+        Armor expectedArmor = new Armor("Leather", 1, LEGS, CLOTH, new HeroAttribute(1, 7, 1));
         String expected = "Armor type is not allowed for this character";
 
         //Act
-        Exception armorException = assertThrows(InvalidArmorException.class, () -> mage.equip(LEGS, expectedArmor));
+        Exception armorException = assertThrows(InvalidArmorException.class, () -> ranger.equip(LEGS, expectedArmor));
         String actual = armorException.getMessage();
 
         //Assert
