@@ -1,5 +1,6 @@
 package org.example.pojos.heroes;
 
+import org.example.enums.Slot;
 import org.example.enums.WeaponType;
 import org.example.exceptions.InvalidArmorException;
 import org.example.exceptions.InvalidWeaponException;
@@ -10,14 +11,16 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.example.enums.ArmorType.*;
-import static org.example.enums.Slot.LEGS;
-import static org.example.enums.Slot.WEAPON;
+import static org.example.enums.Slot.*;
+import static org.example.enums.WeaponType.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RangerTest {
 
 
     private Ranger ranger;
+    private Weapon weapon;
+    private Armor armor;
 
 
     /*
@@ -29,6 +32,9 @@ class RangerTest {
     @BeforeEach
     void setUp() {
         ranger = new Ranger("Achilles");
+        weapon = new Weapon("Common Bow", 1, WEAPON, BOWS);
+        armor = new Armor("Quality Leather", 1, BODY, LEATHER);
+
     }
 
     @Test
@@ -61,9 +67,6 @@ class RangerTest {
         assertEquals(expectedAttributes,actualAttributes);
     }
 
-    @Test
-    void damage() {
-    }
 
     @Test
     void totalAttributes() {
@@ -76,6 +79,99 @@ class RangerTest {
       Valid armor
     • Rangers – Leather, Mail
      */
+
+    @Test
+    void validWeaponName() {
+        //Arrange
+        String expectedWeaponName = "Common Bow";
+        //Act
+        String actualWeaponName = weapon.getName();
+        //Assert
+        assertEquals(expectedWeaponName,actualWeaponName);
+    }
+    @Test
+    void validWeaponLevel() {
+        //Arrange
+        int expectedRequiredLevel = 1;
+        //Act
+        int actualRequiredLevel = weapon.getRequiredLevel();
+        //Assert
+        assertEquals(expectedRequiredLevel,actualRequiredLevel);
+    }
+
+    @Test
+    void validWeaponSlot() {
+        //Arrange
+        Slot expectedSlot = WEAPON;
+        //Act
+        Slot actualSlot = weapon.getSlot();
+        //Assert
+        assertEquals(expectedSlot,actualSlot);
+    }
+
+    @Test
+    void validWeaponType() {
+        //Arrange
+        WeaponType expectedWeaponType = BOWS;
+        //Act
+        WeaponType actualWeaponType = weapon.getWeaponType();
+        //Assert
+        assertEquals(expectedWeaponType,actualWeaponType);
+    }
+
+    @Test
+    void calculateDamageWithoutEquipment() {
+        //Arrange
+        ranger.setHeroAttributes(new HeroAttribute(0, 5, 0));
+        //Act
+        double expectedDamage = (1.0 * (1 + ranger.getHeroAttributes().getDexterity() / 100.0));
+        double actualDamage = ranger.calculateDamage();
+        //Assert
+        assertEquals(expectedDamage, actualDamage, 0.01);
+    }
+
+    @Test
+    void calculateDamageWithValidWeaponEquipped() throws InvalidWeaponException {
+        //Arrange
+        ranger.setHeroAttributes(new HeroAttribute(0, 5, 0));
+        weapon.setWeaponDamage(2.0);
+        ranger.equip(WEAPON, weapon);
+        //Act
+        double expectedDamage = weapon.getWeaponDamage() * ((1 + ranger.getHeroAttributes().getDexterity() / 100.0));
+        double actualDamage = ranger.calculateDamage();
+        //Assert
+        assertEquals(expectedDamage, actualDamage);
+    }
+
+    @Test
+    void calculateDamageWithReplacedWeaponEquipped() throws InvalidWeaponException {
+        //Arrange
+        ranger.setHeroAttributes(new HeroAttribute(0, 2, 0));
+        weapon.setWeaponDamage(2.0);
+        weapon = new Weapon("Common Bows", 1, WEAPON, BOWS); // Replacing weapon
+        ranger.equip(WEAPON, weapon);
+        //Act
+        double expectedDamage = weapon.getWeaponDamage() * ((1 + ranger.getHeroAttributes().getDexterity() / 100.0));
+        double actualDamage = ranger.calculateDamage();
+        //Assert
+        assertEquals(expectedDamage, actualDamage);
+    }
+    @Test
+    void calculateDamageWithValidWeaponAndArmorEquipped() throws InvalidWeaponException, InvalidArmorException {
+        //Arrange
+        ranger.setHeroAttributes(new HeroAttribute(0, 2, 0));
+        weapon.setWeaponDamage(2.0);
+        ranger.equip(Slot.WEAPON, weapon);
+
+        armor = new Armor("Common Mail", 1, Slot.BODY, MAIL);
+        armor.setArmorAttribute(new HeroAttribute(0, 1, 2));
+        ranger.equip(Slot.BODY, armor);
+        //Act
+        double expectedDamage = weapon.getWeaponDamage() * (1 + ((ranger.getHeroAttributes().getDexterity() + armor.getArmorAttribute().getDexterity()) / 100.0));
+        double actualDamage = ranger.calculateDamage();
+        //Assert
+        assertEquals(expectedDamage, actualDamage,0.1);
+    }
     @Test
     void equipValidRangerWeaponBows() throws InvalidWeaponException {
         //Arrange
