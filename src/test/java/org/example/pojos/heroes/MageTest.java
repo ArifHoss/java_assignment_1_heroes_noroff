@@ -1,28 +1,32 @@
 package org.example.pojos.heroes;
 
-import org.example.enums.Slot;
-import org.example.enums.WeaponType;
+import org.example.enums.*;
 import org.example.exceptions.InvalidArmorException;
 import org.example.exceptions.InvalidWeaponException;
-import org.example.pojos.items_equipment.Armor;
-import org.example.pojos.items_equipment.Item;
-import org.example.pojos.items_equipment.Weapon;
+import org.example.pojos.items_equipment.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.example.enums.ArmorType.CLOTH;
-import static org.example.enums.ArmorType.LEATHER;
-import static org.example.enums.Slot.LEGS;
-import static org.example.enums.Slot.WEAPON;
+import static org.example.enums.ArmorType.*;
+import static org.example.enums.Slot.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MageTest {
     private Mage mage;
     private static final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
+
+    /*
+    Short descriptions of my Hero
+    Gandalf: is a powerful wizard who is known for his wisdom and
+    guidance to the heroes of the story. Gandalf is a key
+    player in the defeat of 'Sauron' and the ultimate triumph
+    of good over evil in Middle-earth. He is often depicted
+    as an old man with a long beard and a tall pointed hat.
+     */
 
     @BeforeEach
     void setUp() {
@@ -31,13 +35,19 @@ class MageTest {
     }
 
     @Test
-    void createMage() {
+    void createMageWithValidNameAndAttributes() {
         //Arrange
-        String actual = mage.getName();
+        String expectedName = "Gandalf";
+        int expectedLevel = 1;
+        HeroAttribute expectedAttributes = new HeroAttribute(1, 1, 8);
         //Act
-        String expected = "Gandalf";
+        String actualName = mage.getName();
+        int actualLevel = mage.getLevel();
+        HeroAttribute actualAttributes = mage.getHeroAttributes();
         //Assert
-        assertEquals(expected, actual);
+        assertEquals(expectedName, actualName);
+        assertEquals(expectedLevel,actualLevel);
+        assertEquals(expectedAttributes, actualAttributes);
     }
 
     @Test
