@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="implemented test damage to WarriorTest">
+    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="added damage to heroes&#10;&#10;implemented test calculateDamageWithoutEquipment,calculateDamageWithValidWeaponEquipped,calculateDamageWithReplacedWeaponEquipped,&#10;calculateDamageWithValidWeaponAndArmorEquipped">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Hero.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Mage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Ranger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Ranger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Rogue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Warrior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Armor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Armor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/HeroManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/HeroManagementService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/MageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/MageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/WarriorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/WarriorTest.java" afterDir="false" />
     </list>
@@ -92,8 +86,8 @@
       <recent name="org.example.pojos.heroes" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.WarriorTest.calculateDamageWithValidWeaponAndArmorEquipped">
-    <configuration name="WarriorTest.calculateDamageWithReplacedWeaponEquipped" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MageTest.calculateDamageWithoutEquipment">
+    <configuration name="MageTest.calculateDamageWithoutEquipment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_assignment_1_heroes_noroff" />
       <extension name="coverage">
         <pattern>
@@ -102,14 +96,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
-      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.WarriorTest" />
-      <option name="METHOD_NAME" value="calculateDamageWithReplacedWeaponEquipped" />
+      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.MageTest" />
+      <option name="METHOD_NAME" value="calculateDamageWithoutEquipment" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WarriorTest.calculateDamageWithValidWeaponAndArmorEquipped" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MageTest.validWeaponLevel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_assignment_1_heroes_noroff" />
       <extension name="coverage">
         <pattern>
@@ -118,14 +112,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
-      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.WarriorTest" />
-      <option name="METHOD_NAME" value="calculateDamageWithValidWeaponAndArmorEquipped" />
+      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.MageTest" />
+      <option name="METHOD_NAME" value="validWeaponLevel" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WarriorTest.calculateDamageWithValidWeaponEquipped" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MageTest.validWeaponName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_assignment_1_heroes_noroff" />
       <extension name="coverage">
         <pattern>
@@ -134,14 +128,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
-      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.WarriorTest" />
-      <option name="METHOD_NAME" value="calculateDamageWithValidWeaponEquipped" />
+      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.MageTest" />
+      <option name="METHOD_NAME" value="validWeaponName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WarriorTest.calculateDamageWithValidWeaponItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MageTest.validWeaponSlot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_assignment_1_heroes_noroff" />
       <extension name="coverage">
         <pattern>
@@ -150,14 +144,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
-      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.WarriorTest" />
-      <option name="METHOD_NAME" value="calculateDamageWithValidWeaponItem" />
+      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.MageTest" />
+      <option name="METHOD_NAME" value="validWeaponSlot" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WarriorTest.calculateDamageWithoutWeapon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MageTest.validWeaponType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_assignment_1_heroes_noroff" />
       <extension name="coverage">
         <pattern>
@@ -166,8 +160,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
-      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.WarriorTest" />
-      <option name="METHOD_NAME" value="calculateDamageWithoutWeapon" />
+      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.MageTest" />
+      <option name="METHOD_NAME" value="validWeaponType" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -175,11 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.WarriorTest.calculateDamageWithValidWeaponAndArmorEquipped" />
-        <item itemvalue="JUnit.WarriorTest.calculateDamageWithValidWeaponEquipped" />
-        <item itemvalue="JUnit.WarriorTest.calculateDamageWithReplacedWeaponEquipped" />
-        <item itemvalue="JUnit.WarriorTest.calculateDamageWithValidWeaponItem" />
-        <item itemvalue="JUnit.WarriorTest.calculateDamageWithoutWeapon" />
+        <item itemvalue="JUnit.MageTest.calculateDamageWithoutEquipment" />
+        <item itemvalue="JUnit.MageTest.validWeaponType" />
+        <item itemvalue="JUnit.MageTest.validWeaponSlot" />
+        <item itemvalue="JUnit.MageTest.validWeaponLevel" />
+        <item itemvalue="JUnit.MageTest.validWeaponName" />
       </list>
     </recent_temporary>
   </component>
@@ -464,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676736943130</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="added damage to heroes&#10;&#10;implemented test calculateDamageWithoutEquipment,calculateDamageWithValidWeaponEquipped,calculateDamageWithReplacedWeaponEquipped,&#10;calculateDamageWithValidWeaponAndArmorEquipped">
+      <created>1676751905013</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1676751905013</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,7 +483,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="created test class for Mage and Hero" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="exceptions handled to equip mage" />
     <MESSAGE value="change exceptions handled to equip mage" />
@@ -507,6 +507,7 @@
     <MESSAGE value="When Weapon is created, it needs to have the correct name, required level, slot, weapon type, and damage" />
     <MESSAGE value="implemented damage to heroes" />
     <MESSAGE value="implemented test damage to WarriorTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented test damage to WarriorTest" />
+    <MESSAGE value="added damage to heroes&#10;&#10;implemented test calculateDamageWithoutEquipment,calculateDamageWithValidWeaponEquipped,calculateDamageWithReplacedWeaponEquipped,&#10;calculateDamageWithValidWeaponAndArmorEquipped" />
+    <option name="LAST_COMMIT_MESSAGE" value="added damage to heroes&#10;&#10;implemented test calculateDamageWithoutEquipment,calculateDamageWithValidWeaponEquipped,calculateDamageWithReplacedWeaponEquipped,&#10;calculateDamageWithValidWeaponAndArmorEquipped" />
   </component>
 </project>
