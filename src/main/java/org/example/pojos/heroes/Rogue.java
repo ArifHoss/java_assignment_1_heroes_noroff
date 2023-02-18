@@ -45,6 +45,23 @@ public class Rogue extends Hero {
     }
 
     @Override
+    public double damage() {
+        double weaponDamage = 1.0;
+        if (getEquipment().containsKey(Slot.WEAPON)) {
+            Item item = getEquipment().get(Slot.WEAPON);
+            if (item instanceof Weapon) {
+                weaponDamage = ((Weapon) item).getWeaponDamage();
+            }
+        }
+
+        int damagingAttribute = getHeroAttributes().getDexterity();
+
+        double totalDamage = weaponDamage * (1 + damagingAttribute / 100.0);
+//        System.out.println("Total Damage: " + totalDamage);
+        return totalDamage;
+    }
+
+    @Override
     public void equip(Slot slot,Weapon weapon) throws InvalidWeaponException {
         if (getLevel() < weapon.getRequiredLevel()) {
             throw new InvalidWeaponException("Weapon level is too high for this character");
@@ -69,4 +86,10 @@ public class Rogue extends Hero {
         setEquipment(equipment);
     }
 
+    @Override
+    public String toString() {
+        return "Rogue{" +
+                "equipment=" + equipment +
+                '}';
+    }
 }

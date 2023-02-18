@@ -35,8 +35,23 @@ public class Mage extends Hero {
     public void levelUp() {
         super.levelUp();
         super.getHeroAttributes().addAttributes(new HeroAttribute(1, 1, 5));
+    }
 
+    @Override
+    public double damage() {
+        double weaponDamage = 1.0;
+        if (getEquipment().containsKey(Slot.WEAPON)) {
+            Item item = getEquipment().get(Slot.WEAPON);
+            if (item instanceof Weapon) {
+                weaponDamage = ((Weapon) item).getWeaponDamage();
+            }
+        }
 
+        int damagingAttribute = getHeroAttributes().getIntelligence();
+
+        double totalDamage = weaponDamage * (1 + damagingAttribute / 100.0);
+//        System.out.println("Total Damage: " + totalDamage);
+        return totalDamage;
     }
 
     @Override
@@ -68,4 +83,10 @@ public class Mage extends Hero {
 
     }
 
+    @Override
+    public String toString() {
+        return "Mage{" +
+                "equipment=" + equipment +
+                '}';
+    }
 }

@@ -9,14 +9,10 @@ import org.example.pojos.items_equipment.Armor;
 import org.example.pojos.items_equipment.Item;
 import org.example.pojos.items_equipment.Weapon;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static org.example.enums.ArmorType.MAIL;
 import static org.example.enums.ArmorType.PLATE;
-import static org.example.enums.Slot.*;
 import static org.example.enums.WeaponType.*;
 
 public class Warrior extends Hero {
@@ -42,9 +38,37 @@ public class Warrior extends Hero {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Warrior warrior)) return false;
+        if (!super.equals(o)) return false;
+        return Objects.equals(getEquipment(), warrior.getEquipment());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getEquipment());
+    }
+
+    @Override
     public void levelUp() {
         super.levelUp();
         super.getHeroAttributes().addAttributes(new HeroAttribute(3, 2, 1));
+    }
+
+    @Override
+    public double damage() {
+        double weaponDamage = 1.0;
+        if (getEquipment() != null && getEquipment().containsKey(Slot.WEAPON)) {
+            Item item = getEquipment().get(Slot.WEAPON);
+            if (item instanceof Weapon) {
+                weaponDamage = ((Weapon) item).getWeaponDamage();
+            }
+        }
+        int damagingAttribute = getHeroAttributes().getStrength();
+        double totalDamage = weaponDamage * (1 + damagingAttribute / 100.0);
+        System.out.println("Total Damage: " + totalDamage);
+        return totalDamage;
     }
 
     @Override
@@ -73,4 +97,10 @@ public class Warrior extends Hero {
         setEquipment(equipment);
     }
 
+    @Override
+    public String toString() {
+        return "Warrior{" +
+                "equipment=" + equipment +
+                '}';
+    }
 }
