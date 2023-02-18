@@ -78,7 +78,7 @@ class RogueTest {
     @Test
     void equipValidRogueWeaponDagger() throws InvalidWeaponException {
         //Arrange
-        Weapon expectedWeapon = new Weapon("Dagger", 1, WEAPON, WeaponType.DAGGERS, 10);
+        Weapon expectedWeapon = new Weapon("Dagger", 1, WEAPON, WeaponType.DAGGERS);
         rogue.equip(WEAPON, expectedWeapon);
 
         //Act
@@ -91,7 +91,7 @@ class RogueTest {
     @Test
     void equipValidRogueWeaponSword() throws InvalidWeaponException {
         //Arrange
-        Weapon expectedWeapon = new Weapon("Swords", 1, WEAPON, WeaponType.SWORDS, 10);
+        Weapon expectedWeapon = new Weapon("Swords", 1, WEAPON, WeaponType.SWORDS);
         rogue.equip(WEAPON, expectedWeapon);
 
         //Act
@@ -105,7 +105,7 @@ class RogueTest {
     void equipInvalidRWeapon() {
 
         //Arrange
-        Weapon expectedWeapon = new Weapon("Staff", 1, WEAPON, WeaponType.STAFFS, 10);
+        Weapon expectedWeapon = new Weapon("Staff", 1, WEAPON, WeaponType.STAFFS);
         String expected = "Weapon type is not allowed for this character";
 
         //Act

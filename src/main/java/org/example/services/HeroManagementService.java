@@ -18,13 +18,13 @@ public class HeroManagementService {
 
     public static Scanner sc = new Scanner(System.in);
     static ArrayList<Hero> heroes = new ArrayList<>();
-    private static final Weapon weaponAxes = new Weapon("Axes", 1, WEAPON, AXES, 10);
-    private static final Weapon weaponBows = new Weapon("Bows", 1, WEAPON, BOWS, 0);
-    private static final Weapon weaponDaggers = new Weapon("Dagger", 1, WEAPON, DAGGERS, 0);
-    private static final Weapon weaponHammers = new Weapon("Hammers", 1, WEAPON, HAMMERS, 0);
-    private static final Weapon weaponStaffs = new Weapon("Staffs", 1, WEAPON, STAFFS, 0);
-    private static final Weapon weaponSwords = new Weapon("Swords", 1, WEAPON, SWORDS, 0);
-    private static final Weapon weaponWands = new Weapon("Wands", 1, WEAPON, WANDS, 0);
+    private static final Weapon weaponAxes = new Weapon("Axes", 1, WEAPON, AXES);
+    private static final Weapon weaponBows = new Weapon("Bows", 1, WEAPON, BOWS);
+    private static final Weapon weaponDaggers = new Weapon("Dagger", 1, WEAPON, DAGGERS);
+    private static final Weapon weaponHammers = new Weapon("Hammers", 1, WEAPON, HAMMERS);
+    private static final Weapon weaponStaffs = new Weapon("Staffs", 1, WEAPON, STAFFS);
+    private static final Weapon weaponSwords = new Weapon("Swords", 1, WEAPON, SWORDS);
+    private static final Weapon weaponWands = new Weapon("Wands", 1, WEAPON, WANDS);
 
     private static final Armor armorCloth = new Armor("Cloth", 1, LEGS, CLOTH, new HeroAttribute());
     private static final Armor armorLeather = new Armor("Leather", 1, LEGS, LEATHER, new HeroAttribute());

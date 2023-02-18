@@ -10,6 +10,8 @@ import org.example.pojos.items_equipment.Weapon;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
+
 import static org.example.enums.ArmorType.*;
 import static org.example.enums.Slot.*;
 import static org.example.enums.WeaponType.AXES;
@@ -31,7 +33,7 @@ class WarriorTest {
     void setUp() {
         warrior = new Warrior("Ragnar");
         //Valid warrior weapon
-        weapon = new Weapon("Axe", 1, WEAPON, AXES, 10);
+        weapon = new Weapon("Axe", 1, WEAPON, AXES);
         //Valid warrior armor
         armor = new Armor("Mail");
     }
@@ -84,31 +86,69 @@ class WarriorTest {
      */
 
     @Test
-    void validWeapon() {
+    void validWeaponName() {
         //Arrange
         String expectedWeaponName = "Axe";
-        int expectedRequiredLevel = 1;
-        Slot expectedSlot = WEAPON;
-        WeaponType expectedWeaponType = AXES;
-        double expectedDamage = 10;
         //Act
         String actualWeaponName = weapon.getName();
-        int actualRequiredLevel = weapon.getRequiredLevel();
-        Slot actualSlot = weapon.getSlot();
-        WeaponType actualWeaponType = weapon.getWeaponType();
-        double actualDamage = weapon.getWeaponDamage();
         //Assert
         assertEquals(expectedWeaponName,actualWeaponName);
+    }
+    @Test
+    void validWeaponLevel() {
+        //Arrange
+        int expectedRequiredLevel = 1;
+        //Act
+        int actualRequiredLevel = weapon.getRequiredLevel();
+        //Assert
         assertEquals(expectedRequiredLevel,actualRequiredLevel);
+    }
+
+    @Test
+    void validWeaponSlot() {
+        //Arrange
+        Slot expectedSlot = WEAPON;
+        //Act
+        Slot actualSlot = weapon.getSlot();
+        //Assert
         assertEquals(expectedSlot,actualSlot);
+    }
+
+    @Test
+    void validWeaponType() {
+        //Arrange
+        WeaponType expectedWeaponType = AXES;
+        //Act
+        WeaponType actualWeaponType = weapon.getWeaponType();
+        //Assert
         assertEquals(expectedWeaponType,actualWeaponType);
-        assertEquals(expectedDamage,actualDamage);
+    }
+    @Test
+    void calculateDamageWithoutWeapon() {
+        //Arrange
+        warrior.setHeroAttributes(new HeroAttribute(5, 0, 0));
+        //Act
+        double expectedDamage = (1.0 * (1 + warrior.getHeroAttributes().getStrength() / 100.0));
+        double actualDamage = warrior.damage();
+        //Assert
+        assertEquals(expectedDamage, actualDamage, 0.01);
+    }
+    @Test
+    void calculateDamageWithWeapon() throws InvalidWeaponException {
+        //Arrange
+        warrior.setHeroAttributes(new HeroAttribute(5, 0, 0));
+        warrior.equip(WEAPON, weapon); //Equip the warrior with the weapon
+        //Act
+        double expectedDamage = (weapon.getWeaponDamage() * (1 + warrior.getHeroAttributes().getStrength() / 100.0));
+        double actualDamage = warrior.damage();
+        //Assert
+        assertEquals(expectedDamage, actualDamage, 0.01);
     }
 
     @Test
     void equipValidWarriorWeaponAxes() throws InvalidWeaponException {
         //Arrange
-        Weapon expectedWeapon = new Weapon("Axe", 1, WEAPON, WeaponType.AXES, 10);
+        Weapon expectedWeapon = new Weapon("Axe", 1, WEAPON, WeaponType.AXES);
         warrior.equip(WEAPON, expectedWeapon);
 
         //Act
@@ -121,7 +161,7 @@ class WarriorTest {
     @Test
     void equipValidWarriorWeaponHammer() throws InvalidWeaponException {
         //Arrange
-        Weapon expectedWeapon = new Weapon("Hammers", 1, WEAPON, WeaponType.HAMMERS, 10);
+        Weapon expectedWeapon = new Weapon("Hammers", 1, WEAPON, WeaponType.HAMMERS);
         warrior.equip(WEAPON, expectedWeapon);
 
         //Act
@@ -133,7 +173,7 @@ class WarriorTest {
     @Test
     void equipValidWarriorWeaponSword() throws InvalidWeaponException {
         //Arrange
-        Weapon expectedWeapon = new Weapon("Swords", 1, WEAPON, WeaponType.SWORDS, 10);
+        Weapon expectedWeapon = new Weapon("Swords", 1, WEAPON, WeaponType.SWORDS);
         warrior.equip(WEAPON, expectedWeapon);
 
         //Act
@@ -147,7 +187,7 @@ class WarriorTest {
     void equipInvalidWeapon() {
 
         //Arrange
-        Weapon expectedWeapon = new Weapon("Bows", 1, WEAPON, WeaponType.BOWS, 10);
+        Weapon expectedWeapon = new Weapon("Bows", 1, WEAPON, WeaponType.BOWS);
         String expected = "Weapon type is not allowed for this character";
 
         //Act

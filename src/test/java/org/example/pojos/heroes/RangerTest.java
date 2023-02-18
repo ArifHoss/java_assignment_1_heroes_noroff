@@ -79,7 +79,7 @@ class RangerTest {
     @Test
     void equipValidRangerWeaponBows() throws InvalidWeaponException {
         //Arrange
-        Weapon expectedWeapon = new Weapon("Bows", 1, WEAPON, WeaponType.BOWS, 10);
+        Weapon expectedWeapon = new Weapon("Bows", 1, WEAPON, WeaponType.BOWS);
         ranger.equip(WEAPON, expectedWeapon);
 
         //Act
@@ -93,7 +93,7 @@ class RangerTest {
     void equipInvalidWeapon() {
 
         //Arrange
-        Weapon expectedWeapon = new Weapon("Sword", 1, WEAPON, WeaponType.SWORDS, 10);
+        Weapon expectedWeapon = new Weapon("Sword", 1, WEAPON, WeaponType.SWORDS);
         String expected = "Weapon type is not allowed for this character";
 
         //Act

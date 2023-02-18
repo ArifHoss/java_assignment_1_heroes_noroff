@@ -67,7 +67,7 @@ class MageTest {
 
     @Test
     public void testDamageWithValidWeapon() throws InvalidWeaponException {
-        Weapon expectedWeapon = new Weapon("Staff fo Testing", 1, WEAPON, WeaponType.STAFFS, 2.0);
+        Weapon expectedWeapon = new Weapon("Staff fo Testing", 1, WEAPON, WeaponType.STAFFS);
         mage.equip(Slot.WEAPON, expectedWeapon);
         mage.damage();
         assertEquals("Total Damage: 2.16", getOutput());
@@ -86,7 +86,7 @@ class MageTest {
     @Test
     void equipValidMageWeaponStaffs() throws InvalidWeaponException {
         //Arrange
-        Weapon expectedWeapon = new Weapon("Staff", 1, WEAPON, WeaponType.STAFFS, 10);
+        Weapon expectedWeapon = new Weapon("Staff", 1, WEAPON, WeaponType.STAFFS);
         mage.equip(WEAPON, expectedWeapon);
 
         //Act
@@ -99,7 +99,7 @@ class MageTest {
     @Test
     void equipValidMageWeaponWand() throws InvalidWeaponException {
         //Arrange
-        Weapon expectedWeapon = new Weapon("Wand", 1, WEAPON, WeaponType.WANDS, 10);
+        Weapon expectedWeapon = new Weapon("Wand", 1, WEAPON, WeaponType.WANDS);
         mage.equip(WEAPON, expectedWeapon);
 
         //Act
@@ -113,7 +113,7 @@ class MageTest {
     void equipInvalidWeapon() {
 
         //Arrange
-        Weapon expectedWeapon = new Weapon("Sword", 1, WEAPON, WeaponType.SWORDS, 10);
+        Weapon expectedWeapon = new Weapon("Sword", 1, WEAPON, WeaponType.SWORDS);
         String expected = "Weapon type is not allowed for this character";
 
         //Act
