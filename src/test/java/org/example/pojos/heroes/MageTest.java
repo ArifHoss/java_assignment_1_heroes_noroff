@@ -12,10 +12,13 @@ import java.io.PrintStream;
 
 import static org.example.enums.ArmorType.*;
 import static org.example.enums.Slot.*;
+import static org.example.enums.WeaponType.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MageTest {
     private Mage mage;
+    private Weapon weapon;
+    private Armor armor;
     private static final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
 
@@ -32,6 +35,8 @@ class MageTest {
     void setUp() {
         System.setOut(new PrintStream(outContent));
         mage = new Mage("Gandalf");
+        weapon = new Weapon("Common Staff", 1, WEAPON, STAFFS);
+        armor = new Armor("Common Cloth", 1, BODY, CLOTH);
     }
 
     @Test
@@ -63,16 +68,6 @@ class MageTest {
         assertEquals(expectedLevel, actualLevel);
         assertEquals(expectedAttributes, actualAttributes);
     }
-
-
-    @Test
-    public void testDamageWithValidWeapon() throws InvalidWeaponException {
-        Weapon expectedWeapon = new Weapon("Staff fo Testing", 1, WEAPON, WeaponType.STAFFS);
-        mage.equip(Slot.WEAPON, expectedWeapon);
-        mage.calculateDamage();
-        assertEquals("Total Damage: 2.16", getOutput());
-    }
-
     @Test
     void totalAttributes() {
     }
@@ -83,6 +78,101 @@ class MageTest {
       Valid Armor
     • Mages – Cloth
      */
+
+    @Test
+    void validWeaponName() {
+        //Arrange
+        String expectedWeaponName = "Common Staff";
+        //Act
+        String actualWeaponName = weapon.getName();
+        //Assert
+        assertEquals(expectedWeaponName,actualWeaponName);
+    }
+    @Test
+    void validWeaponLevel() {
+        //Arrange
+        int expectedRequiredLevel = 1;
+        //Act
+        int actualRequiredLevel = weapon.getRequiredLevel();
+        //Assert
+        assertEquals(expectedRequiredLevel,actualRequiredLevel);
+    }
+
+    @Test
+    void validWeaponSlot() {
+        //Arrange
+        Slot expectedSlot = WEAPON;
+        //Act
+        Slot actualSlot = weapon.getSlot();
+        //Assert
+        assertEquals(expectedSlot,actualSlot);
+    }
+
+    @Test
+    void validWeaponType() {
+        //Arrange
+        WeaponType expectedWeaponType = STAFFS;
+        //Act
+        WeaponType actualWeaponType = weapon.getWeaponType();
+        //Assert
+        assertEquals(expectedWeaponType,actualWeaponType);
+    }
+
+    @Test
+    void calculateDamageWithoutEquipment() {
+        //Arrange
+        mage.setHeroAttributes(new HeroAttribute(0, 0, 5));
+        //Act
+        double expectedDamage = (1.0 * (1 + mage.getHeroAttributes().getIntelligence() / 100.0));
+        double actualDamage = mage.calculateDamage();
+        //Assert
+        assertEquals(expectedDamage, actualDamage, 0.01);
+    }
+
+    @Test
+    void calculateDamageWithValidWeaponEquipped() throws InvalidWeaponException {
+        //Arrange
+        mage.setHeroAttributes(new HeroAttribute(0, 0, 5));
+        weapon.setWeaponDamage(2.0);
+        mage.equip(WEAPON, weapon);
+        //Act
+        double expectedDamage = weapon.getWeaponDamage() * ((1 + mage.getHeroAttributes().getIntelligence() / 100.0));
+        double actualDamage = mage.calculateDamage();
+        //Assert
+        assertEquals(expectedDamage, actualDamage);
+    }
+
+    @Test
+    void calculateDamageWithReplacedWeaponEquipped() throws InvalidWeaponException {
+        //Arrange
+        mage.setHeroAttributes(new HeroAttribute(0, 0, 5));
+        weapon.setWeaponDamage(2.0);
+        weapon = new Weapon("Common Staff", 1, WEAPON, STAFFS); // Replacing weapon
+        mage.equip(WEAPON, weapon);
+        //Act
+        double expectedDamage = weapon.getWeaponDamage() * ((1 + mage.getHeroAttributes().getIntelligence() / 100.0));
+        double actualDamage = mage.calculateDamage();
+        //Assert
+        assertEquals(expectedDamage, actualDamage);
+    }
+    @Test
+    void calculateDamageWithValidWeaponAndArmorEquipped() throws InvalidWeaponException, InvalidArmorException {
+        //Arrange
+        weapon = new Weapon("Common Wand", 1, Slot.WEAPON, WANDS);
+
+        mage.setHeroAttributes(new HeroAttribute(0, 1, 5));
+        weapon.setWeaponDamage(2.0);
+        mage.equip(Slot.WEAPON, weapon);
+
+        armor = new Armor("Common Cloth", 1, Slot.BODY, CLOTH);
+        armor.setArmorAttribute(new HeroAttribute(0, 1, 2));
+        mage.equip(Slot.BODY, armor);
+        //Act
+        double expectedDamage = weapon.getWeaponDamage() * (1 + ((mage.getHeroAttributes().getIntelligence() + armor.getArmorAttribute().getIntelligence()) / 100.0));
+        double actualDamage = MageTest.this.mage.calculateDamage();
+        //Assert
+        assertEquals(expectedDamage, actualDamage,0.1);
+    }
     @Test
     void equipValidMageWeaponStaffs() throws InvalidWeaponException {
         //Arrange

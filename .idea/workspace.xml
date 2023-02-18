@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="added damage to heroes&#10;&#10;implemented test calculateDamageWithoutEquipment,calculateDamageWithValidWeaponEquipped,calculateDamageWithReplacedWeaponEquipped,&#10;calculateDamageWithValidWeaponAndArmorEquipped">
+    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="removed empty damage method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Mage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/MageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/MageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/WarriorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/WarriorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,8 +84,8 @@
       <recent name="org.example.pojos.heroes" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MageTest.calculateDamageWithoutEquipment">
-    <configuration name="MageTest.calculateDamageWithoutEquipment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.WarriorTest">
+    <configuration name="MageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_assignment_1_heroes_noroff" />
       <extension name="coverage">
         <pattern>
@@ -97,13 +95,28 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
       <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.MageTest" />
-      <option name="METHOD_NAME" value="calculateDamageWithoutEquipment" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MageTest.calculateDamageWithReplacedWeaponEquipped" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java_assignment_1_heroes_noroff" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.pojos.heroes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
+      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.MageTest" />
+      <option name="METHOD_NAME" value="calculateDamageWithReplacedWeaponEquipped" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MageTest.validWeaponLevel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MageTest.calculateDamageWithValidWeaponAndArmorEquipped" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_assignment_1_heroes_noroff" />
       <extension name="coverage">
         <pattern>
@@ -113,13 +126,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
       <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.MageTest" />
-      <option name="METHOD_NAME" value="validWeaponLevel" />
+      <option name="METHOD_NAME" value="calculateDamageWithValidWeaponAndArmorEquipped" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MageTest.validWeaponName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MageTest.calculateDamageWithValidWeaponEquipped" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_assignment_1_heroes_noroff" />
       <extension name="coverage">
         <pattern>
@@ -129,13 +142,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
       <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.MageTest" />
-      <option name="METHOD_NAME" value="validWeaponName" />
+      <option name="METHOD_NAME" value="calculateDamageWithValidWeaponEquipped" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MageTest.validWeaponSlot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WarriorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_assignment_1_heroes_noroff" />
       <extension name="coverage">
         <pattern>
@@ -144,36 +157,19 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
-      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.MageTest" />
-      <option name="METHOD_NAME" value="validWeaponSlot" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MageTest.validWeaponType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java_assignment_1_heroes_noroff" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.pojos.heroes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
-      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.MageTest" />
-      <option name="METHOD_NAME" value="validWeaponType" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.WarriorTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MageTest.calculateDamageWithoutEquipment" />
-        <item itemvalue="JUnit.MageTest.validWeaponType" />
-        <item itemvalue="JUnit.MageTest.validWeaponSlot" />
-        <item itemvalue="JUnit.MageTest.validWeaponLevel" />
-        <item itemvalue="JUnit.MageTest.validWeaponName" />
+        <item itemvalue="JUnit.WarriorTest" />
+        <item itemvalue="JUnit.MageTest" />
+        <item itemvalue="JUnit.MageTest.calculateDamageWithValidWeaponAndArmorEquipped" />
+        <item itemvalue="JUnit.MageTest.calculateDamageWithReplacedWeaponEquipped" />
+        <item itemvalue="JUnit.MageTest.calculateDamageWithValidWeaponEquipped" />
       </list>
     </recent_temporary>
   </component>
@@ -465,7 +461,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676751905013</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="added getEquipment() != null to calculate damage method and equal and hashCode method">
+      <created>1676752942614</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1676752942614</updated>
+    </task>
+    <task id="LOCAL-00040" summary="removed empty damage method">
+      <created>1676752972922</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1676752972922</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -483,8 +493,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
-    <MESSAGE value="exceptions handled to equip mage" />
     <MESSAGE value="change exceptions handled to equip mage" />
     <MESSAGE value="change to InvalidWeaponException" />
     <MESSAGE value="implemented exceptions on Mage and HeroManagementService" />
@@ -508,6 +516,8 @@
     <MESSAGE value="implemented damage to heroes" />
     <MESSAGE value="implemented test damage to WarriorTest" />
     <MESSAGE value="added damage to heroes&#10;&#10;implemented test calculateDamageWithoutEquipment,calculateDamageWithValidWeaponEquipped,calculateDamageWithReplacedWeaponEquipped,&#10;calculateDamageWithValidWeaponAndArmorEquipped" />
-    <option name="LAST_COMMIT_MESSAGE" value="added damage to heroes&#10;&#10;implemented test calculateDamageWithoutEquipment,calculateDamageWithValidWeaponEquipped,calculateDamageWithReplacedWeaponEquipped,&#10;calculateDamageWithValidWeaponAndArmorEquipped" />
+    <MESSAGE value="added getEquipment() != null to calculate damage method and equal and hashCode method" />
+    <MESSAGE value="removed empty damage method" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed empty damage method" />
   </component>
 </project>
