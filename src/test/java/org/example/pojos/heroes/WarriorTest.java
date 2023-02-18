@@ -16,16 +16,33 @@ import static org.junit.jupiter.api.Assertions.*;
 class WarriorTest {
     private Warrior warrior;
 
+    /*
+    Short descriptions of my Hero!
+    Ragnar: A fierce and cunning warrior,
+    who is also a skilled navigator and leader of men,
+    known for his bravery and cunning tactics on the battlefield.
+     */
+
     @BeforeEach
     void setUp() {
-        warrior = new Warrior("Gandalf");
+        warrior = new Warrior("Ragnar");
     }
 
     @Test
     void createWarrior() {
-        String actual = warrior.getName();
-        String expected = "Gandalf";
-        assertEquals(expected, actual);
+        //Arrange
+        String expectedName = "Ragnar";
+        int expectedLevel = 1;
+        HeroAttribute expectedAttributes = new HeroAttribute(5, 2, 1);
+
+        //Act
+        String actualName = warrior.getName();
+        int actualLevel = warrior.getLevel();
+        HeroAttribute actualAttributes = warrior.getHeroAttributes();
+        //Assert
+        assertEquals(expectedName,actualName);
+        assertEquals(expectedLevel,actualLevel);
+        assertEquals(expectedAttributes,actualAttributes);
     }
 
     @Test

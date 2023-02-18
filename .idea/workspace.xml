@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="tested valid and invalid  Hero Warrior kan have in WarriorTest">
+    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="added equals and hashCode method to HeroAttribute">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/HeroAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/HeroAttribute.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/MageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/MageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/WarriorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/WarriorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +85,7 @@
       <recent name="org.example.pojos.heroes" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MageTest.createMageWithValidNameAndAttributes">
+  <component name="RunManager" selected="JUnit.WarriorTest.createWarrior">
     <configuration name="MageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_assignment_1_heroes_noroff" />
       <extension name="coverage">
@@ -132,21 +132,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RogueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java_assignment_1_heroes_noroff" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.pojos.heroes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
-      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.RogueTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="WarriorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_assignment_1_heroes_noroff" />
       <extension name="coverage">
@@ -162,13 +147,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WarriorTest.createWarrior" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java_assignment_1_heroes_noroff" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.pojos.heroes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
+      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.WarriorTest" />
+      <option name="METHOD_NAME" value="createWarrior" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.WarriorTest.createWarrior" />
+        <item itemvalue="JUnit.MageTest" />
         <item itemvalue="JUnit.MageTest.createMageWithValidNameAndAttributes" />
         <item itemvalue="JUnit.RangerTest" />
         <item itemvalue="JUnit.WarriorTest" />
-        <item itemvalue="JUnit.RogueTest" />
-        <item itemvalue="JUnit.MageTest" />
       </list>
     </recent_temporary>
   </component>
@@ -397,7 +398,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676724075092</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="added equals and hashCode method to HeroAttribute">
+      <created>1676726066561</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1676726066561</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,7 +423,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="created heroes and added validations" />
     <MESSAGE value="remove set level upp method added implemented auto increment level by 1" />
     <MESSAGE value="renamed package name" />
     <MESSAGE value="edited equip method in mage" />
@@ -440,6 +447,7 @@
     <MESSAGE value="tested valid and invalid A Hero Ranger kan have in RangerTest" />
     <MESSAGE value="tested valid and invalid A Hero Rogue kan have in RogueTest" />
     <MESSAGE value="tested valid and invalid  Hero Warrior kan have in WarriorTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="tested valid and invalid  Hero Warrior kan have in WarriorTest" />
+    <MESSAGE value="added equals and hashCode method to HeroAttribute" />
+    <option name="LAST_COMMIT_MESSAGE" value="added equals and hashCode method to HeroAttribute" />
   </component>
 </project>
