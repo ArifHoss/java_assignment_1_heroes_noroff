@@ -19,16 +19,32 @@ class RangerTest {
 
     private Ranger ranger;
 
+
+    /*
+    Achilles: A legendary warrior, whose exceptional
+    strength and fighting skills are matched only by
+    his pride and arrogance, and whose exploits in
+    battle are the stuff of legend.
+     */
     @BeforeEach
     void setUp() {
-        ranger = new Ranger("Gandalf");
+        ranger = new Ranger("Achilles");
     }
 
     @Test
     void createRanger() {
-        String actual = ranger.getName();
-        String expected = "Gandalf";
-        assertEquals(expected, actual);
+        //Arrange
+        String expectedName = "Achilles";
+        int expectedLevel = 1;
+        HeroAttribute expectedAttributes = new HeroAttribute(1, 7, 1);
+        //Act
+        String actualName = ranger.getName();
+        int actualLevel = ranger.getLevel();
+        HeroAttribute actualAttributes = ranger.getHeroAttributes();
+        //Assert
+        assertEquals(expectedName,actualName);
+        assertEquals(expectedLevel,actualLevel);
+        assertEquals(expectedAttributes,actualAttributes);
     }
 
     @Test

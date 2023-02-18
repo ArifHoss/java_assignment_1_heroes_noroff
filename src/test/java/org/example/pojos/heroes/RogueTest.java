@@ -18,16 +18,31 @@ class RogueTest {
 
     private Rogue rogue;
 
+    /*
+    Arthur: A chivalrous warrior with a strong sense
+    of honor and justice, skilled in combat and known
+    for his bravery on the battlefield.
+     */
+
     @BeforeEach
     void setUp() {
-        rogue = new Rogue("Gandalf");
+        rogue = new Rogue("Arthur");
     }
 
     @Test
     void createRogue() {
-        String actual = rogue.getName();
-        String expected = "Gandalf";
-        assertEquals(expected, actual);
+        //Arrange
+        String expectedName = "Arthur";
+        int expectedLevel = 1;
+        HeroAttribute expectedAttributes = new HeroAttribute(2,6,1);
+        //Act
+        String actualName = rogue.getName();
+        int actualLevel = rogue.getLevel();
+        HeroAttribute actualAttributes = rogue.getHeroAttributes();
+        //assert
+        assertEquals(expectedName, actualName);
+        assertEquals(expectedLevel, actualLevel);
+        assertEquals(expectedAttributes, actualAttributes);
     }
 
     @Test
