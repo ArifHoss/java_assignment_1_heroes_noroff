@@ -3,7 +3,6 @@ package org.example.services;
 import org.example.exceptions.InvalidWeaponException;
 import org.example.pojos.heroes.*;
 import org.example.pojos.items_equipment.Armor;
-import org.example.pojos.items_equipment.Item;
 import org.example.pojos.items_equipment.Weapon;
 
 import java.util.ArrayList;
@@ -11,7 +10,8 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import static org.example.enums.ArmorType.*;
-import static org.example.enums.Slot.*;
+import static org.example.enums.Slot.LEGS;
+import static org.example.enums.Slot.WEAPON;
 import static org.example.enums.WeaponType.*;
 
 public class HeroManagementService {
