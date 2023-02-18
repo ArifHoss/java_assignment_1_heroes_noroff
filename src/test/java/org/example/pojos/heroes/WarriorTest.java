@@ -69,10 +69,6 @@ class WarriorTest {
     }
 
     @Test
-    void dawarrior() {
-    }
-
-    @Test
     void totalAttributes() {
     }
 
