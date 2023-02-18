@@ -47,8 +47,17 @@ class RogueTest {
 
     @Test
     void levelUp() {
+        //Arrange
         rogue.levelUp();
-        assertEquals(2, rogue.getLevel());
+        int expectedLevel = 2;
+        HeroAttribute expectedAttributes = new HeroAttribute(3, 10, 2);
+        //Act
+        int actualLevel = rogue.getLevel();
+        HeroAttribute actualAttributes = rogue.getHeroAttributes();
+        //Assert
+        assertEquals(expectedLevel, actualLevel);
+        assertEquals(expectedAttributes, actualAttributes);
+
     }
 
     @Test

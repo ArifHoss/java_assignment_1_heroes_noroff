@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="re-write create mage test method">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/RangerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/RangerTest.java" afterDir="false" />
+    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="re-write create Ranger and Rogue test method">
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/RogueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/RogueTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,22 +83,7 @@
       <recent name="org.example.pojos.heroes" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MageTest.levelUp">
-    <configuration name="MageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java_assignment_1_heroes_noroff" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.pojos.heroes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
-      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.MageTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.RogueTest.levelUp">
     <configuration name="MageTest.levelUp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_assignment_1_heroes_noroff" />
       <extension name="coverage">
@@ -149,6 +132,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RogueTest.levelUp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java_assignment_1_heroes_noroff" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.pojos.heroes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
+      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.RogueTest" />
+      <option name="METHOD_NAME" value="levelUp" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WarriorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_assignment_1_heroes_noroff" />
       <extension name="coverage">
@@ -166,11 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RogueTest.levelUp" />
         <item itemvalue="JUnit.MageTest.levelUp" />
         <item itemvalue="JUnit.RogueTest.createRogue" />
         <item itemvalue="JUnit.RangerTest.createRanger" />
         <item itemvalue="JUnit.WarriorTest" />
-        <item itemvalue="JUnit.MageTest" />
       </list>
     </recent_temporary>
   </component>
@@ -420,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676727292133</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="re-write create Ranger and Rogue test method">
+      <created>1676728065973</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1676728065973</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -438,7 +444,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="edited equip method in mage" />
     <MESSAGE value="added luvelUp method to all heros and added validItem" />
     <MESSAGE value="created display method in hero class and removed all display from heroes" />
     <MESSAGE value="implemented damage method in Hero class" />
@@ -463,6 +468,7 @@
     <MESSAGE value="added equals and hashCode method to HeroAttribute" />
     <MESSAGE value="re-write create warrior test method" />
     <MESSAGE value="re-write create mage test method" />
-    <option name="LAST_COMMIT_MESSAGE" value="re-write create mage test method" />
+    <MESSAGE value="re-write create Ranger and Rogue test method" />
+    <option name="LAST_COMMIT_MESSAGE" value="re-write create Ranger and Rogue test method" />
   </component>
 </project>
