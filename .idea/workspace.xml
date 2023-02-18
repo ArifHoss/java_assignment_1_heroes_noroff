@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="tested equipInvalidArmor MageTest">
+    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="tested damageWithValidWeapon MageTest">
       <change afterPath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/RangerTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/RogueTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/WarriorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Mage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/MageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/MageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +195,7 @@
       <workItem from="1676488665395" duration="2652000" />
       <workItem from="1676548479642" duration="10927000" />
       <workItem from="1676561271084" duration="9118000" />
-      <workItem from="1676617593535" duration="20482000" />
+      <workItem from="1676617593535" duration="20850000" />
     </task>
     <task id="LOCAL-00001" summary="added levelUp, equip, damage, totalAttribute and display method to Hero data transfer class">
       <created>1676109590866</created>
@@ -368,7 +365,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676652469611</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="tested damageWithValidWeapon MageTest">
+      <created>1676655697383</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1676655697383</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,6 +412,7 @@
     <MESSAGE value="equipValidWeapon and equipInvalidWeapon tested" />
     <MESSAGE value="removed '=' from heroes equip" />
     <MESSAGE value="tested equipInvalidArmor MageTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="tested equipInvalidArmor MageTest" />
+    <MESSAGE value="tested damageWithValidWeapon MageTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="tested damageWithValidWeapon MageTest" />
   </component>
 </project>
