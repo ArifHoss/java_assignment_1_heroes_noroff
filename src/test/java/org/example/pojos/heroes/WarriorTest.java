@@ -1,5 +1,6 @@
 package org.example.pojos.heroes;
 
+import org.example.enums.Slot;
 import org.example.enums.WeaponType;
 import org.example.exceptions.InvalidArmorException;
 import org.example.exceptions.InvalidWeaponException;
@@ -11,10 +12,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.example.enums.ArmorType.*;
 import static org.example.enums.Slot.*;
+import static org.example.enums.WeaponType.AXES;
 import static org.junit.jupiter.api.Assertions.*;
 
 class WarriorTest {
     private Warrior warrior;
+    private Weapon weapon;
+    private Armor armor;
 
     /*
     Short descriptions of my Hero!
@@ -26,6 +30,10 @@ class WarriorTest {
     @BeforeEach
     void setUp() {
         warrior = new Warrior("Ragnar");
+        //Valid warrior weapon
+        weapon = new Weapon("Axe", 1, WEAPON, AXES, 10);
+        //Valid warrior armor
+        armor = new Armor("Mail");
     }
 
     @Test
@@ -74,6 +82,29 @@ class WarriorTest {
       Valid armor
     • Warriors – Mail, Plate
      */
+
+    @Test
+    void validWeapon() {
+        //Arrange
+        String expectedWeaponName = "Axe";
+        int expectedRequiredLevel = 1;
+        Slot expectedSlot = WEAPON;
+        WeaponType expectedWeaponType = AXES;
+        double expectedDamage = 10;
+        //Act
+        String actualWeaponName = weapon.getName();
+        int actualRequiredLevel = weapon.getRequiredLevel();
+        Slot actualSlot = weapon.getSlot();
+        WeaponType actualWeaponType = weapon.getWeaponType();
+        double actualDamage = weapon.getWeaponDamage();
+        //Assert
+        assertEquals(expectedWeaponName,actualWeaponName);
+        assertEquals(expectedRequiredLevel,actualRequiredLevel);
+        assertEquals(expectedSlot,actualSlot);
+        assertEquals(expectedWeaponType,actualWeaponType);
+        assertEquals(expectedDamage,actualDamage);
+    }
+
     @Test
     void equipValidWarriorWeaponAxes() throws InvalidWeaponException {
         //Arrange
