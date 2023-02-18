@@ -49,8 +49,16 @@ class RangerTest {
 
     @Test
     void levelUp() {
+        //Arrange
         ranger.levelUp();
-        assertEquals(2, ranger.getLevel());
+        int expectedLevel = 2;
+        HeroAttribute expectedAttributes = new HeroAttribute(2, 12, 2);
+        //Act
+        int actualLevel = ranger.getLevel();
+        HeroAttribute actualAttributes = ranger.getHeroAttributes();
+        //Assert
+        assertEquals(expectedLevel,actualLevel);
+        assertEquals(expectedAttributes,actualAttributes);
     }
 
     @Test
