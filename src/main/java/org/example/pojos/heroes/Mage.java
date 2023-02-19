@@ -46,7 +46,7 @@ public class Mage extends Hero {
     @Override
     public void levelUp() {
         super.levelUp();
-        super.getHeroAttributes().addAttributes(new HeroAttribute(1, 1, 5));
+        super.getHeroAttributes().calculateHeroattributes(new HeroAttribute(1, 1, 5));
     }
 
     @Override

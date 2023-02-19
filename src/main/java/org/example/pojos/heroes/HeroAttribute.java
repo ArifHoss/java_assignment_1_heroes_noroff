@@ -53,7 +53,7 @@ public class HeroAttribute {
         return Objects.hash(getStrength(), getDexterity(), getIntelligence());
     }
 
-    public void addAttributes(HeroAttribute heroAttribute) {
+    public void calculateHeroattributes(HeroAttribute heroAttribute) {
         this.strength += heroAttribute.getStrength();
         this.dexterity += heroAttribute.getDexterity();
         this.intelligence += heroAttribute.getIntelligence();

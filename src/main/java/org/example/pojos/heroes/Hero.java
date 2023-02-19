@@ -68,7 +68,7 @@ public abstract class Hero {
 
         for (Item item : equipment.values()) {
             if (item instanceof Armor) {
-                totalAttributes.addAttributes(((Armor) item).getArmorAttribute());
+                totalAttributes.calculateHeroattributes(((Armor) item).getArmorAttribute());
             }
         }
 

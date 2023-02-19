@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.Map;
 
 import static org.example.enums.ArmorType.*;
-import static org.example.enums.Slot.*;
 import static org.example.enums.WeaponType.*;
 
 public class Rogue extends Hero {
@@ -41,7 +40,7 @@ public class Rogue extends Hero {
     @Override
     public void levelUp() {
         super.levelUp();
-        super.getHeroAttributes().addAttributes(new HeroAttribute(1,4,1));
+        super.getHeroAttributes().calculateHeroattributes(new HeroAttribute(1,4,1));
     }
 
     @Override

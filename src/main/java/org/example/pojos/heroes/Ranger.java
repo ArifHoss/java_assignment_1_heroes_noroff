@@ -42,7 +42,7 @@ public class Ranger extends Hero {
     @Override
     public void levelUp() {
         super.levelUp();
-        super.getHeroAttributes().addAttributes(new HeroAttribute(1, 5, 1));
+        super.getHeroAttributes().calculateHeroattributes(new HeroAttribute(1, 5, 1));
     }
 
     @Override

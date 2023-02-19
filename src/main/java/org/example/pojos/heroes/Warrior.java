@@ -53,7 +53,7 @@ public class Warrior extends Hero {
     @Override
     public void levelUp() {
         super.levelUp();
-        super.getHeroAttributes().addAttributes(new HeroAttribute(3, 2, 1));
+        super.getHeroAttributes().calculateHeroattributes(new HeroAttribute(3, 2, 1));
     }
 
     @Override
