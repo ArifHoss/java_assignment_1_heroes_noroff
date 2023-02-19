@@ -80,7 +80,7 @@ class MageTest {
      */
 
     @Test
-    void warriorBaseAttributes() {
+    void mageBaseAttributes() {
         //Arrange
         int expectedStrength = 1;
         int expectedDexterity = 1;
