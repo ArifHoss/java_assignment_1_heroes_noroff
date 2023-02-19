@@ -68,8 +68,42 @@ class MageTest {
         assertEquals(expectedLevel, actualLevel);
         assertEquals(expectedAttributes, actualAttributes);
     }
+    /*
+    * attribute gain
+      A Mage begins at level 1 with:
+      Strength Dexterity Intelligence
+          1        1          8
+
+      Every time a Mage levels up, they gain:
+      Strength Dexterity Intelligence
+         1         1         5
+     */
+
     @Test
-    void totalAttributes() {
+    void warriorBaseAttributes() {
+        //Arrange
+        int expectedStrength = 1;
+        int expectedDexterity = 1;
+        int expectedIntelligence = 8;
+        //Act
+        int actualStrength = mage.getHeroAttributes().getStrength();
+        int actualDexterity = mage.getHeroAttributes().getDexterity();
+        int actualIntelligence = mage.getHeroAttributes().getIntelligence();
+        //Assert
+        assertEquals(expectedStrength,actualStrength);
+        assertEquals(expectedDexterity,actualDexterity);
+        assertEquals(expectedIntelligence,actualIntelligence);
+    }
+
+    @Test
+    void calculateTotalAttributesWhileLevelUp() {
+        //Arrange
+        HeroAttribute expectedAttributes = new HeroAttribute(2, 2, 13);
+        mage.levelUp();
+        //Act
+        HeroAttribute actualAttributes = mage.getHeroAttributes();
+        //Assert
+        assertEquals(expectedAttributes,actualAttributes);
     }
 
     /*

@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="refactor addHeroattributes to calculateHeroattributes">
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/WarriorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/WarriorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/MageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/MageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,8 +83,8 @@
       <recent name="org.example.pojos.heroes" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.WarriorTest.calculateTotalAttributesWhileLevelUp">
-    <configuration name="RogueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MageTest.calculateTotalAttributesWhileLevelUp">
+    <configuration name="MageTest.calculateTotalAttributesWhileLevelUp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_assignment_1_heroes_noroff" />
       <extension name="coverage">
         <pattern>
@@ -93,8 +93,25 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
-      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.RogueTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.MageTest" />
+      <option name="METHOD_NAME" value="calculateTotalAttributesWhileLevelUp" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MageTest.warriorBaseAttributes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java_assignment_1_heroes_noroff" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.pojos.heroes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
+      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.MageTest" />
+      <option name="METHOD_NAME" value="warriorBaseAttributes" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -110,22 +127,6 @@
       <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
       <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.RogueTest" />
       <option name="METHOD_NAME" value="calculateTotalAttributes" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RogueTest.totalAttributes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java_assignment_1_heroes_noroff" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.pojos.heroes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
-      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.RogueTest" />
-      <option name="METHOD_NAME" value="totalAttributes" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -165,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MageTest.calculateTotalAttributesWhileLevelUp" />
+        <item itemvalue="JUnit.MageTest.warriorBaseAttributes" />
         <item itemvalue="JUnit.WarriorTest.calculateTotalAttributesWhileLevelUp" />
         <item itemvalue="JUnit.WarriorTest.warriorBaseAttributes" />
         <item itemvalue="JUnit.RogueTest.calculateTotalAttributes" />
-        <item itemvalue="JUnit.RogueTest.totalAttributes" />
-        <item itemvalue="JUnit.RogueTest" />
       </list>
     </recent_temporary>
   </component>
