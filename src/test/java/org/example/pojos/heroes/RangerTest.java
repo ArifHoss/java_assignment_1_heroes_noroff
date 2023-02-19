@@ -68,8 +68,40 @@ class RangerTest {
     }
 
 
+    /*
+
+      A Ranger begins at level 1 with:
+      Strength Dexterity Intelligence
+          1        7          1
+
+      Every time a Ranger levels up, they gain:
+      Strength Dexterity Intelligence
+         1         5         1
+     */
     @Test
-    void totalAttributes() {
+    void rangerBaseAttributes() {
+        //Arrange
+        int expectedStrength = 1;
+        int expectedDexterity = 7;
+        int expectedIntelligence = 1;
+        //Act
+        int actualStrength = ranger.getHeroAttributes().getStrength();
+        int actualDexterity = ranger.getHeroAttributes().getDexterity();
+        int actualIntelligence = ranger.getHeroAttributes().getIntelligence();
+        //Assert
+        assertEquals(expectedStrength,actualStrength);
+        assertEquals(expectedDexterity,actualDexterity);
+        assertEquals(expectedIntelligence,actualIntelligence);
+    }
+    @Test
+    void calculateTotalAttributesWhileLevelUp() {
+        //Arrange
+        HeroAttribute expectedAttributes = new HeroAttribute(2, 12, 2);
+        ranger.levelUp();
+        //Act
+        HeroAttribute actualAttributes = ranger.getHeroAttributes();
+        //Assert
+        assertEquals(expectedAttributes,actualAttributes);
     }
 
     /*
