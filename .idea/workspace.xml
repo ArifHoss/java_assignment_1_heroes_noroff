@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="added damage test to RangerTest&#10;calculateDamageWithoutEquipment,calculateDamageWithValidWeaponEquipped,calculateDamageWithReplacedWeaponEquipped,&#10;calculateDamageWithValidWeaponAndArmorEquipped">
+    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="refactor addHeroattributes to calculateHeroattributes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/RogueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/pojos/heroes/RogueTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,23 +84,7 @@
       <recent name="org.example.pojos.heroes" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RogueTest">
-    <configuration name="RangerTest.calculateDamageWithValidWeaponAndArmorEquipped" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java_assignment_1_heroes_noroff" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.pojos.heroes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
-      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.RangerTest" />
-      <option name="METHOD_NAME" value="calculateDamageWithValidWeaponAndArmorEquipped" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.RogueTest.calculateTotalAttributes">
     <configuration name="RogueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_assignment_1_heroes_noroff" />
       <extension name="coverage">
@@ -131,15 +116,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RogueTest,calculateDamageWithoutEquipment and 3 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RogueTest.calculateTotalAttributes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_assignment_1_heroes_noroff" />
-      <option name="TEST_OBJECT" value="pattern" />
-      <patterns>
-        <pattern testClass="org.example.pojos.heroes.RogueTest,calculateDamageWithoutEquipment" />
-        <pattern testClass="org.example.pojos.heroes.RogueTest,calculateDamageWithValidWeaponEquipped" />
-        <pattern testClass="org.example.pojos.heroes.RogueTest,calculateDamageWithReplacedWeaponEquipped" />
-        <pattern testClass="org.example.pojos.heroes.RogueTest,calculateDamageWithValidWeaponAndArmorEquipped" />
-      </patterns>
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.pojos.heroes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
+      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.RogueTest" />
+      <option name="METHOD_NAME" value="calculateTotalAttributes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RogueTest.totalAttributes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java_assignment_1_heroes_noroff" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.pojos.heroes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.pojos.heroes" />
+      <option name="MAIN_CLASS_NAME" value="org.example.pojos.heroes.RogueTest" />
+      <option name="METHOD_NAME" value="totalAttributes" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -162,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RogueTest.calculateTotalAttributes" />
+        <item itemvalue="JUnit.RogueTest.totalAttributes" />
         <item itemvalue="JUnit.RogueTest" />
         <item itemvalue="JUnit.RogueTest.validWeaponName" />
         <item itemvalue="JUnit.RogueTest.calculateDamageWithReplacedWeaponEquipped" />
-        <item itemvalue="JUnit.RogueTest,calculateDamageWithoutEquipment and 3 more" />
-        <item itemvalue="JUnit.RangerTest.calculateDamageWithValidWeaponAndArmorEquipped" />
       </list>
     </recent_temporary>
   </component>
@@ -493,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676754795131</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="refactor addHeroattributes to calculateHeroattributes">
+      <created>1676799546416</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1676799546416</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +522,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="implemented exceptions on Mage and HeroManagementService" />
     <MESSAGE value="handled exceptions on Rogue" />
     <MESSAGE value="handled exceptions on Warrior" />
     <MESSAGE value="handled exceptions on Ranger" />
@@ -536,6 +546,7 @@
     <MESSAGE value="removed empty damage method" />
     <MESSAGE value="added damage test to MageTest&#10;calculateDamageWithoutEquipment,calculateDamageWithValidWeaponEquipped,calculateDamageWithReplacedWeaponEquipped,&#10;calculateDamageWithValidWeaponAndArmorEquipped" />
     <MESSAGE value="added damage test to RangerTest&#10;calculateDamageWithoutEquipment,calculateDamageWithValidWeaponEquipped,calculateDamageWithReplacedWeaponEquipped,&#10;calculateDamageWithValidWeaponAndArmorEquipped" />
-    <option name="LAST_COMMIT_MESSAGE" value="added damage test to RangerTest&#10;calculateDamageWithoutEquipment,calculateDamageWithValidWeaponEquipped,calculateDamageWithReplacedWeaponEquipped,&#10;calculateDamageWithValidWeaponAndArmorEquipped" />
+    <MESSAGE value="refactor addHeroattributes to calculateHeroattributes" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor addHeroattributes to calculateHeroattributes" />
   </component>
 </project>

@@ -66,8 +66,40 @@ class RogueTest {
     }
 
 
+    /*
+    * Rogue attribute gain
+      A Rogue begins at level 1 with:
+      Strength Dexterity Intelligence
+          2        6          1
+
+      Every time a Rogue levels up, they gain:
+      Strength Dexterity Intelligence
+         1         4         1
+     */
     @Test
-    void totalAttributes() {
+    void rogueAttributes() {
+        //Arrange
+        int expectedStrength = 2;
+        int expectedDexterity = 6;
+        int expectedIntelligence = 1;
+        //Act
+        int actualStrength = rogue.getHeroAttributes().getStrength();
+        int actualDexterity = rogue.getHeroAttributes().getDexterity();
+        int actualIntelligence = rogue.getHeroAttributes().getIntelligence();
+        //Assert
+        assertEquals(expectedStrength,actualStrength);
+        assertEquals(expectedDexterity,actualDexterity);
+        assertEquals(expectedIntelligence,actualIntelligence);
+    }
+    @Test
+    void calculateTotalAttributes() {
+        //Arrange
+        HeroAttribute expectedAttributes = new HeroAttribute(3, 10, 2);
+        rogue.levelUp();
+        //Act
+        HeroAttribute actualAttributes = rogue.getHeroAttributes();
+        //Assert
+        assertEquals(expectedAttributes,actualAttributes);
     }
 
     /*
