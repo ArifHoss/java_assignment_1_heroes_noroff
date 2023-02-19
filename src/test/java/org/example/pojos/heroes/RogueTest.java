@@ -77,7 +77,7 @@ class RogueTest {
          1         4         1
      */
     @Test
-    void rogueAttributes() {
+    void rogueBaseAttributes() {
         //Arrange
         int expectedStrength = 2;
         int expectedDexterity = 6;
@@ -92,7 +92,7 @@ class RogueTest {
         assertEquals(expectedIntelligence,actualIntelligence);
     }
     @Test
-    void calculateTotalAttributes() {
+    void calculateTotalAttributesWhileLevelUp() {
         //Arrange
         HeroAttribute expectedAttributes = new HeroAttribute(3, 10, 2);
         rogue.levelUp();

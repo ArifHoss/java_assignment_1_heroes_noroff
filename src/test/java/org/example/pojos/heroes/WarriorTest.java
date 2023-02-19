@@ -68,8 +68,42 @@ class WarriorTest {
         assertEquals(expectedAttributes, actualAttributes);
     }
 
+    /*
+    * attribute gain
+      A Warrior begins at level 1 with:
+      Strength Dexterity Intelligence
+          2        2          1
+
+      Every time a Warrior levels up, they gain:
+      Strength Dexterity Intelligence
+         3         2         1
+     */
+
     @Test
-    void totalAttributes() {
+    void warriorBaseAttributes() {
+        //Arrange
+        int expectedStrength = 5;
+        int expectedDexterity = 2;
+        int expectedIntelligence = 1;
+        //Act
+        int actualStrength = warrior.getHeroAttributes().getStrength();
+        int actualDexterity = warrior.getHeroAttributes().getDexterity();
+        int actualIntelligence = warrior.getHeroAttributes().getIntelligence();
+        //Assert
+        assertEquals(expectedStrength,actualStrength);
+        assertEquals(expectedDexterity,actualDexterity);
+        assertEquals(expectedIntelligence,actualIntelligence);
+    }
+
+    @Test
+    void calculateTotalAttributesWhileLevelUp() {
+        //Arrange
+        HeroAttribute expectedAttributes = new HeroAttribute(8, 4, 2);
+        warrior.levelUp();
+        //Act
+        HeroAttribute actualAttributes = warrior.getHeroAttributes();
+        //Assert
+        assertEquals(expectedAttributes,actualAttributes);
     }
 
     /*
