@@ -1,5 +1,7 @@
 package org.example.pojos.heroes;
 
+import java.util.Objects;
+
 public class HeroAttribute {
 
     private int strength;
@@ -39,7 +41,19 @@ public class HeroAttribute {
         this.intelligence = intelligence;
     }
 
-    public void addAttributes(HeroAttribute heroAttribute) {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof HeroAttribute attribute)) return false;
+        return getStrength() == attribute.getStrength() && getDexterity() == attribute.getDexterity() && getIntelligence() == attribute.getIntelligence();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getStrength(), getDexterity(), getIntelligence());
+    }
+
+    public void calculateHeroattributes(HeroAttribute heroAttribute) {
         this.strength += heroAttribute.getStrength();
         this.dexterity += heroAttribute.getDexterity();
         this.intelligence += heroAttribute.getIntelligence();

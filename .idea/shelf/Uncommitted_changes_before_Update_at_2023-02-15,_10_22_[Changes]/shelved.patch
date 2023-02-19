@@ -1,0 +1,342 @@
+Index: src/main/java/org/example/enums/ArmorType.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/enums/ArmorType.java b/src/main/java/org/example/equip_enums/ArmorType.java
+rename from src/main/java/org/example/enums/ArmorType.java
+rename to src/main/java/org/example/equip_enums/ArmorType.java
+--- a/src/main/java/org/example/enums/ArmorType.java	(revision 2f705e786f8417052e20e8fe5ef78ba9a69fcecc)
++++ b/src/main/java/org/example/equip_enums/ArmorType.java	(date 1676450971289)
+@@ -1,4 +1,4 @@
+-package org.example.enums;
++package org.example.equip_enums;
+ 
+ public enum ArmorType {
+     CLOTH,
+Index: src/main/java/org/example/enums/WeaponType.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/enums/WeaponType.java b/src/main/java/org/example/equip_enums/WeaponType.java
+rename from src/main/java/org/example/enums/WeaponType.java
+rename to src/main/java/org/example/equip_enums/WeaponType.java
+--- a/src/main/java/org/example/enums/WeaponType.java	(revision 2f705e786f8417052e20e8fe5ef78ba9a69fcecc)
++++ b/src/main/java/org/example/equip_enums/WeaponType.java	(date 1676450971299)
+@@ -1,4 +1,4 @@
+-package org.example.enums;
++package org.example.equip_enums;
+ 
+ public enum WeaponType {
+     AXES,
+Index: src/main/java/org/example/pojos/items_equipment/Weapon.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/pojos/items_equipment/Weapon.java b/src/main/java/org/example/pojos/equipment/Weapon.java
+rename from src/main/java/org/example/pojos/items_equipment/Weapon.java
+rename to src/main/java/org/example/pojos/equipment/Weapon.java
+--- a/src/main/java/org/example/pojos/items_equipment/Weapon.java	(revision 2f705e786f8417052e20e8fe5ef78ba9a69fcecc)
++++ b/src/main/java/org/example/pojos/equipment/Weapon.java	(date 1676450971301)
+@@ -1,7 +1,7 @@
+-package org.example.pojos.items_equipment;
++package org.example.pojos.equipment;
+ 
+-import org.example.enums.Slot;
+-import org.example.enums.WeaponType;
++import org.example.equip_enums.Slot;
++import org.example.equip_enums.WeaponType;
+ 
+ public class Weapon extends Item {
+     private WeaponType weaponType;
+Index: src/main/java/org/example/pojos/items_equipment/Armor.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/pojos/items_equipment/Armor.java b/src/main/java/org/example/pojos/equipment/Armor.java
+rename from src/main/java/org/example/pojos/items_equipment/Armor.java
+rename to src/main/java/org/example/pojos/equipment/Armor.java
+--- a/src/main/java/org/example/pojos/items_equipment/Armor.java	(revision 2f705e786f8417052e20e8fe5ef78ba9a69fcecc)
++++ b/src/main/java/org/example/pojos/equipment/Armor.java	(date 1676450971305)
+@@ -1,7 +1,7 @@
+-package org.example.pojos.items_equipment;
++package org.example.pojos.equipment;
+ 
+-import org.example.enums.ArmorType;
+-import org.example.enums.Slot;
++import org.example.equip_enums.ArmorType;
++import org.example.equip_enums.Slot;
+ 
+ public class Armor extends Item{
+     private ArmorType armorType;
+Index: src/main/java/org/example/pojos/items_equipment/Item.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/pojos/items_equipment/Item.java b/src/main/java/org/example/pojos/equipment/Item.java
+rename from src/main/java/org/example/pojos/items_equipment/Item.java
+rename to src/main/java/org/example/pojos/equipment/Item.java
+--- a/src/main/java/org/example/pojos/items_equipment/Item.java	(revision 2f705e786f8417052e20e8fe5ef78ba9a69fcecc)
++++ b/src/main/java/org/example/pojos/equipment/Item.java	(date 1676450971295)
+@@ -1,6 +1,6 @@
+-package org.example.pojos.items_equipment;
++package org.example.pojos.equipment;
+ 
+-import org.example.enums.Slot;
++import org.example.equip_enums.Slot;
+ 
+ public abstract class Item {
+     private String name;
+Index: src/main/java/org/example/pojos/heroes/Ranger.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.pojos.heroes;\n\nimport org.example.enums.ArmorType;\nimport org.example.enums.Slot;\nimport org.example.enums.WeaponType;\nimport org.example.pojos.items_equipment.Armor;\nimport org.example.pojos.items_equipment.Item;\nimport org.example.pojos.items_equipment.Weapon;\n\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Map;\n\nimport static org.example.enums.ArmorType.*;\nimport static org.example.enums.Slot.*;\nimport static org.example.enums.WeaponType.*;\n\npublic class Ranger extends Hero {\n\n\n    public Ranger() {\n    }\n\n    public Ranger(String name) {\n        super(name);\n    }\n\n    public Ranger(String name, String heroClass, int level, HeroAttribute heroAttributes, Map<Slot, Item> equipment, List<WeaponType> validWeaponTypes, List<ArmorType> validArmorTypes) {\n        super(name, heroClass, level, heroAttributes, equipment, validWeaponTypes, validArmorTypes);\n    }\n\n    @Override\n    public int levelUp(int level) {\n        return level + 1;\n    }\n\n    @Override\n    public Map<Slot, Item> equip() {\n\n        Map<Slot, Item> equipment = new HashMap<>();\n\n\n        Item weapon1 = new Weapon(\"Bow\", 1, WEAPON, BOWS, 0);\n        Item armor1 = new Armor(\"Leather\", 5, BODY, LEATHER, 0);\n        Item armor2 = new Armor(\"Mail\", 10, BODY, MAIL, 0);\n\n        if (getLevel() >= 1) {\n            equipment.put(WEAPON, weapon1);\n\n        } else if (getLevel() >= 5) {\n            equipment.put(BODY, armor1);\n\n        } else if (getLevel() >= 10) {\n            equipment.put(BODY, armor2);\n        }\n        return equipment;\n    }\n\n    @Override\n    public void damage() {\n\n    }\n\n    @Override\n    public void totalAttributes() {\n    }\n\n    @Override\n    public String display() {\n        return null;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/pojos/heroes/Ranger.java b/src/main/java/org/example/pojos/heroes/Ranger.java
+--- a/src/main/java/org/example/pojos/heroes/Ranger.java	(revision 2f705e786f8417052e20e8fe5ef78ba9a69fcecc)
++++ b/src/main/java/org/example/pojos/heroes/Ranger.java	(date 1676450971286)
+@@ -1,19 +1,19 @@
+ package org.example.pojos.heroes;
+ 
+-import org.example.enums.ArmorType;
+-import org.example.enums.Slot;
+-import org.example.enums.WeaponType;
+-import org.example.pojos.items_equipment.Armor;
+-import org.example.pojos.items_equipment.Item;
+-import org.example.pojos.items_equipment.Weapon;
++import org.example.equip_enums.ArmorType;
++import org.example.equip_enums.Slot;
++import org.example.equip_enums.WeaponType;
++import org.example.pojos.equipment.Armor;
++import org.example.pojos.equipment.Item;
++import org.example.pojos.equipment.Weapon;
+ 
+ import java.util.HashMap;
+ import java.util.List;
+ import java.util.Map;
+ 
+-import static org.example.enums.ArmorType.*;
+-import static org.example.enums.Slot.*;
+-import static org.example.enums.WeaponType.*;
++import static org.example.equip_enums.ArmorType.*;
++import static org.example.equip_enums.Slot.*;
++import static org.example.equip_enums.WeaponType.*;
+ 
+ public class Ranger extends Hero {
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"c4b3621a-c506-4ff7-bfa6-ce84fa25e240\" name=\"Changes\" comment=\"created heroes and added validations\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/services/HeroManagementService.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/services/HeroManagementService.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/services/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/services/Main.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Enum\" />\n        <option value=\"Interface\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"MavenImportPreferences\">\n    <option name=\"importingSettings\">\n      <MavenImportingSettings>\n        <option name=\"workspaceImportEnabled\" value=\"true\" />\n      </MavenImportingSettings>\n    </option>\n  </component>\n  <component name=\"ProjectId\" id=\"2LMjncqsrWEosub7L2ta94Xot9d\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CreateClassDialog.RecentsKey\">\n      <recent name=\"org.example.pojos.items_equipment\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.example.services.Main\" />\n      <module name=\"java_assignment_1_heroes_noroff\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"org.example.services.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.Main\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"c4b3621a-c506-4ff7-bfa6-ce84fa25e240\" name=\"Changes\" comment=\"\" />\n      <created>1675688016440</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1675688016440</updated>\n      <workItem from=\"1675688017182\" duration=\"96000\" />\n      <workItem from=\"1675688126618\" duration=\"1196000\" />\n      <workItem from=\"1675771578850\" duration=\"87000\" />\n      <workItem from=\"1675861336371\" duration=\"17176000\" />\n      <workItem from=\"1675956747766\" duration=\"8174000\" />\n      <workItem from=\"1676106902597\" duration=\"19000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"added levelUp, equip, damage, totalAttribute and display method to Hero data transfer class\">\n      <created>1676109590866</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1676109590866</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"rescaled all heroes\">\n      <created>1676110491330</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1676110491330</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"created heroes and added validations\">\n      <created>1676220955801</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1676220955801</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"4\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"added levelUp, equip, damage, totalAttribute and display method to Hero data transfer class\" />\n    <MESSAGE value=\"rescaled all heroes\" />\n    <MESSAGE value=\"created heroes and added validations\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"created heroes and added validations\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 2f705e786f8417052e20e8fe5ef78ba9a69fcecc)
++++ b/.idea/workspace.xml	(date 1676450980224)
+@@ -4,10 +4,19 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="created heroes and added validations">
++    <list default="true" id="c4b3621a-c506-4ff7-bfa6-ce84fa25e240" name="Changes" comment="created hero addHeroMenu">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/HeroManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/HeroManagementService.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/Main.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/enums/ArmorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/equip_enums/ArmorType.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/enums/Slot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/equip_enums/Slot.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/enums/WeaponType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/equip_enums/WeaponType.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Hero.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Mage.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Ranger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Ranger.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Rogue.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/heroes/Warrior.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Armor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/equipment/Armor.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/equipment/Item.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/items_equipment/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pojos/equipment/Weapon.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -117,7 +126,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1676220955801</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="created hero addHeroMenu">
++      <created>1676223289372</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1676223289372</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -127,6 +143,7 @@
+     <MESSAGE value="added levelUp, equip, damage, totalAttribute and display method to Hero data transfer class" />
+     <MESSAGE value="rescaled all heroes" />
+     <MESSAGE value="created heroes and added validations" />
+-    <option name="LAST_COMMIT_MESSAGE" value="created heroes and added validations" />
++    <MESSAGE value="created hero addHeroMenu" />
++    <option name="LAST_COMMIT_MESSAGE" value="created hero addHeroMenu" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/main/java/org/example/pojos/heroes/Warrior.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.pojos.heroes;\n\nimport org.example.enums.ArmorType;\nimport org.example.enums.Slot;\nimport org.example.enums.WeaponType;\nimport org.example.pojos.items_equipment.Armor;\nimport org.example.pojos.items_equipment.Item;\nimport org.example.pojos.items_equipment.Weapon;\n\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Map;\n\nimport static org.example.enums.ArmorType.*;\nimport static org.example.enums.Slot.*;\nimport static org.example.enums.WeaponType.*;\n\npublic class Warrior extends Hero {\n\n    public Warrior() {\n    }\n\n    public Warrior(String name) {\n        super(name);\n    }\n\n    public Warrior(String name, String heroClass, int level, HeroAttribute heroAttributes, Map<Slot, Item> equipment, List<WeaponType> validWeaponTypes, List<ArmorType> validArmorTypes) {\n        super(name, heroClass, level, heroAttributes, equipment, validWeaponTypes, validArmorTypes);\n    }\n\n    @Override\n    public int levelUp(int level) {\n        if (level == 0) {\n            return level + 1;\n        } else {\n            return level++;\n        }\n    }\n\n    @Override\n    public Map<Slot, Item> equip() {\n\n        Map<Slot, Item> equipment = new HashMap<>();\n\n        Item weapon1 = new Weapon(\"Axe\", 1, WEAPON, AXES, 0);\n        Item weapon2 = new Weapon(\"Hammer\", 5, WEAPON, HAMMERS, 0);\n        Item weapon3 = new Weapon(\"Sword\", 10, WEAPON, SWORDS, 0);\n\n        Item armor1 = new Armor(\"Mail\", 1, BODY, MAIL, 1);\n        Item armor2 = new Armor(\"Plate\", 5, BODY, PLATE, 0);\n\n        if (getLevel() >= 1) {\n            equipment.put(WEAPON, weapon1);\n            equipment.put(BODY, armor1);\n\n        } else if (getLevel() >= 5) {\n            equipment.put(WEAPON, weapon2);\n            equipment.put(BODY, armor2);\n\n        } else if (getLevel() >= 10) {\n            equipment.put(WEAPON, weapon3);\n        }\n\n        return equipment;\n    }\n\n    @Override\n    public void damage() {\n\n    }\n\n    @Override\n    public void totalAttributes() {\n    }\n\n    @Override\n    public String display() {\n        return null;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/pojos/heroes/Warrior.java b/src/main/java/org/example/pojos/heroes/Warrior.java
+--- a/src/main/java/org/example/pojos/heroes/Warrior.java	(revision 2f705e786f8417052e20e8fe5ef78ba9a69fcecc)
++++ b/src/main/java/org/example/pojos/heroes/Warrior.java	(date 1676450971293)
+@@ -1,19 +1,19 @@
+ package org.example.pojos.heroes;
+ 
+-import org.example.enums.ArmorType;
+-import org.example.enums.Slot;
+-import org.example.enums.WeaponType;
+-import org.example.pojos.items_equipment.Armor;
+-import org.example.pojos.items_equipment.Item;
+-import org.example.pojos.items_equipment.Weapon;
++import org.example.equip_enums.ArmorType;
++import org.example.equip_enums.Slot;
++import org.example.equip_enums.WeaponType;
++import org.example.pojos.equipment.Armor;
++import org.example.pojos.equipment.Item;
++import org.example.pojos.equipment.Weapon;
+ 
+ import java.util.HashMap;
+ import java.util.List;
+ import java.util.Map;
+ 
+-import static org.example.enums.ArmorType.*;
+-import static org.example.enums.Slot.*;
+-import static org.example.enums.WeaponType.*;
++import static org.example.equip_enums.ArmorType.*;
++import static org.example.equip_enums.Slot.*;
++import static org.example.equip_enums.WeaponType.*;
+ 
+ public class Warrior extends Hero {
+ 
+Index: src/main/java/org/example/pojos/heroes/Rogue.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.pojos.heroes;\n\nimport org.example.enums.ArmorType;\nimport org.example.enums.Slot;\nimport org.example.enums.WeaponType;\nimport org.example.pojos.items_equipment.Armor;\nimport org.example.pojos.items_equipment.Item;\nimport org.example.pojos.items_equipment.Weapon;\n\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Map;\n\nimport static org.example.enums.ArmorType.*;\nimport static org.example.enums.Slot.*;\nimport static org.example.enums.WeaponType.*;\n\npublic class Rogue extends Hero {\n\n    public Rogue() {\n    }\n\n    public Rogue(String name) {\n        super(name);\n    }\n\n    public Rogue(String name, String heroClass, int level, HeroAttribute heroAttributes, Map<Slot, Item> equipment, List<WeaponType> validWeaponTypes, List<ArmorType> validArmorTypes) {\n        super(name, heroClass, level, heroAttributes, equipment, validWeaponTypes, validArmorTypes);\n    }\n\n    @Override\n    public int levelUp(int level) {\n        return level + 1;\n    }\n\n    @Override\n    public Map<Slot, Item> equip() {\n        Map<Slot, Item> equipment = new HashMap<>();\n        Item weapon1 = new Weapon(\"Dagger\", 1, WEAPON, DAGGERS, 0);\n        Item weapon2 = new Weapon(\"Sword\", 10, WEAPON, SWORDS, 0);\n\n        Item armor1 = new Armor(\"Leather\", 5, BODY, LEATHER, 0);\n        Item armor2 = new Armor(\"Mail\", 15, WEAPON, MAIL, 0);\n\n        if (getLevel() >= 1) {\n            equipment.put(WEAPON, weapon1);\n\n        } else if (getLevel() >= 5) {\n            equipment.put(BODY, armor1);\n\n        } else if (getLevel() >= 10) {\n            equipment.put(WEAPON, weapon2);\n\n        } else if (getLevel() >= 15) {\n            equipment.put(BODY, armor2);\n        }\n        return equipment;\n    }\n\n    @Override\n    public void damage() {\n\n    }\n\n    @Override\n    public void totalAttributes() {\n\n    }\n\n    @Override\n    public String display() {\n        return null;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/pojos/heroes/Rogue.java b/src/main/java/org/example/pojos/heroes/Rogue.java
+--- a/src/main/java/org/example/pojos/heroes/Rogue.java	(revision 2f705e786f8417052e20e8fe5ef78ba9a69fcecc)
++++ b/src/main/java/org/example/pojos/heroes/Rogue.java	(date 1676450971291)
+@@ -1,19 +1,19 @@
+ package org.example.pojos.heroes;
+ 
+-import org.example.enums.ArmorType;
+-import org.example.enums.Slot;
+-import org.example.enums.WeaponType;
+-import org.example.pojos.items_equipment.Armor;
+-import org.example.pojos.items_equipment.Item;
+-import org.example.pojos.items_equipment.Weapon;
++import org.example.equip_enums.ArmorType;
++import org.example.equip_enums.Slot;
++import org.example.equip_enums.WeaponType;
++import org.example.pojos.equipment.Armor;
++import org.example.pojos.equipment.Item;
++import org.example.pojos.equipment.Weapon;
+ 
+ import java.util.HashMap;
+ import java.util.List;
+ import java.util.Map;
+ 
+-import static org.example.enums.ArmorType.*;
+-import static org.example.enums.Slot.*;
+-import static org.example.enums.WeaponType.*;
++import static org.example.equip_enums.ArmorType.*;
++import static org.example.equip_enums.Slot.*;
++import static org.example.equip_enums.WeaponType.*;
+ 
+ public class Rogue extends Hero {
+ 
+Index: src/main/java/org/example/pojos/heroes/Mage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.pojos.heroes;\n\nimport org.example.enums.ArmorType;\nimport org.example.enums.*;\nimport org.example.enums.WeaponType;\nimport org.example.pojos.items_equipment.*;\n\nimport java.util.*;\n\nimport static org.example.enums.ArmorType.*;\nimport static org.example.enums.Slot.*;\nimport static org.example.enums.WeaponType.*;\n\npublic class Mage extends Hero {\n    public Mage() {\n    }\n\n    public Mage(String name) {\n        super(name);\n    }\n\n    public Mage(String name, String heroClass, int level, HeroAttribute heroAttributes, Map<Slot, Item> equipment, List<WeaponType> validWeaponTypes, List<ArmorType> validArmorTypes) {\n        super(name, heroClass, level, heroAttributes, equipment, validWeaponTypes, validArmorTypes);\n    }\n\n    @Override\n    public int levelUp(int level) {\n        level = level + 1;\n        return level;\n    }\n\n    @Override\n    public Map<Slot, Item> equip() {\n\n        Map<Slot, Item> equipment = new HashMap<>();\n\n        Weapon weapon1 = new Weapon(\"Staffs\", 1, WEAPON, STAFFS, 0);\n        Weapon weapon2 = new Weapon(\"Wand\", 5, WEAPON, WANDS, 0);\n        Armor armor = new Armor(\"Cloth\", 10, BODY, CLOTH, 0);\n\n        if (getLevel() >= 1) {\n            equipment.put(WEAPON, weapon1);\n\n        } else if (getLevel() >= 5) {\n            equipment.put(WEAPON, weapon2);\n\n        } else if (getLevel() >= 10) {\n            equipment.put(BODY, armor);\n\n        }\n\n        return equipment;\n    }\n\n    @Override\n    public void damage() {\n\n    }\n\n    @Override\n    public void totalAttributes() {\n\n        HeroAttribute attributes = new HeroAttribute(1, 1, 8);\n\n        int strength = attributes.getStrength();\n        int dexterity = attributes.getDexterity();\n        int intelligence = attributes.getIntelligence();\n\n        int totalAttributes = strength + dexterity + intelligence;\n        System.out.println(\"Mage total attributes: \" + totalAttributes);\n    }\n\n    @Override\n    public String display() {\n        StringBuilder sb = new StringBuilder();\n        Mage mage = new Mage(\"Erik\");\n        sb.append(\"Name: \" + mage.getName() + \"\\t\");\n        sb.append(\"Class: \" + mage.getClass() + \"\\t\");\n        sb.append(\"Level: \" + mage.getLevel() + \"\\t\");\n        sb.append(\"Total Strength: \" + mage.getHeroAttributes().getStrength() + \"\\t\");\n        sb.append(\"Total Dexterity: \" + mage.getHeroAttributes().getDexterity() + \"\\t\");\n        sb.append(\"Total Intelligence: \" + mage.getHeroAttributes().getIntelligence() + \"\\t\");\n        sb.append(\"Equipment: \" + mage.getEquipment() + \"\\t\");\n        return sb.toString();\n    }\n\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/pojos/heroes/Mage.java b/src/main/java/org/example/pojos/heroes/Mage.java
+--- a/src/main/java/org/example/pojos/heroes/Mage.java	(revision 2f705e786f8417052e20e8fe5ef78ba9a69fcecc)
++++ b/src/main/java/org/example/pojos/heroes/Mage.java	(date 1676450971297)
+@@ -1,15 +1,15 @@
+ package org.example.pojos.heroes;
+ 
+-import org.example.enums.ArmorType;
+-import org.example.enums.*;
+-import org.example.enums.WeaponType;
+-import org.example.pojos.items_equipment.*;
++import org.example.equip_enums.ArmorType;
++import org.example.equip_enums.*;
++import org.example.equip_enums.WeaponType;
++import org.example.pojos.equipment.*;
+ 
+ import java.util.*;
+ 
+-import static org.example.enums.ArmorType.*;
+-import static org.example.enums.Slot.*;
+-import static org.example.enums.WeaponType.*;
++import static org.example.equip_enums.ArmorType.*;
++import static org.example.equip_enums.Slot.*;
++import static org.example.equip_enums.WeaponType.*;
+ 
+ public class Mage extends Hero {
+     public Mage() {
+Index: src/main/java/org/example/pojos/heroes/Hero.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.pojos.heroes;\n\nimport org.example.enums.ArmorType;\nimport org.example.enums.Slot;\nimport org.example.enums.WeaponType;\nimport org.example.pojos.items_equipment.Item;\n\nimport java.util.List;\nimport java.util.Map;\n\npublic abstract class Hero {\n    private String name;\n    private String heroClass;\n    private int level = 1;\n    private HeroAttribute heroAttributes;\n    private Map<Slot, Item> equipment;\n    private List<WeaponType> validWeaponTypes;\n    private List<ArmorType> validArmorTypes;\n\n\n    public Hero() {\n    }\n\n    public Hero(String name) {\n        this.name = name;\n    }\n\n    public Hero(String name,\n                String heroClass,\n                int level,\n                HeroAttribute heroAttributes,\n                Map<Slot, Item> equipment,\n                List<WeaponType> validWeaponTypes,\n                List<ArmorType> validArmorTypes) {\n        this.name = name;\n        this.heroClass = heroClass;\n        this.level += level;\n        this.heroAttributes = heroAttributes;\n        this.equipment = equipment;\n        this.validWeaponTypes = validWeaponTypes;\n        this.validArmorTypes = validArmorTypes;\n    }\n\n\n    public abstract int levelUp(int level);\n\n    public abstract Map<Slot, Item> equip();\n\n    public abstract void damage();\n\n    public abstract void totalAttributes();\n\n    public abstract String display();\n\n\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public String getHeroClass() {\n        return heroClass;\n    }\n\n    public void setHeroClass(String heroClass) {\n        this.heroClass = heroClass;\n    }\n\n    public int getLevel() {\n        return level;\n    }\n\n    public void setLevel(int level) {\n        this.level = level;\n    }\n\n    public HeroAttribute getHeroAttributes() {\n        return heroAttributes;\n    }\n\n    public void setHeroAttributes(HeroAttribute heroAttributes) {\n        this.heroAttributes = heroAttributes;\n    }\n\n    public Map<Slot, Item> getEquipment() {\n        return equipment;\n    }\n\n    public void setEquipment(Map<Slot, Item> equipment) {\n        this.equipment = equipment;\n    }\n\n    public List<WeaponType> getValidWeaponTypes() {\n        return validWeaponTypes;\n    }\n\n    public void setValidWeaponTypes(List<WeaponType> validWeaponTypes) {\n        this.validWeaponTypes = validWeaponTypes;\n    }\n\n    public List<ArmorType> getValidArmorTypes() {\n        return validArmorTypes;\n    }\n\n    public void setValidArmorTypes(List<ArmorType> validArmorTypes) {\n        this.validArmorTypes = validArmorTypes;\n    }\n\n//    void levelUp() {\n//        level += 1;\n//    }\n\n\n    @Override\n    public String toString() {\n        StringBuilder sb = new StringBuilder();\n        sb.append(\"Name: \"+ name+\"\\t\");\n        sb.append(\"Class: \"+heroClass+\"\\t\");\n        sb.append(\"Level: \"+level+\"\\t\");\n        sb.append(\"Total Strength: \"+heroAttributes.getStrength()+\"\\t\");\n        sb.append(\"Total Dexterity: \"+heroAttributes.getDexterity()+\"\\t\");\n        sb.append(\"Total Intelligence: \"+heroAttributes.getIntelligence()+\"\\t\");\n        sb.append(\"Equipment: \" + equipment +\"\\t\");\n        return sb.toString();\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/pojos/heroes/Hero.java b/src/main/java/org/example/pojos/heroes/Hero.java
+--- a/src/main/java/org/example/pojos/heroes/Hero.java	(revision 2f705e786f8417052e20e8fe5ef78ba9a69fcecc)
++++ b/src/main/java/org/example/pojos/heroes/Hero.java	(date 1676450971283)
+@@ -1,9 +1,9 @@
+ package org.example.pojos.heroes;
+ 
+-import org.example.enums.ArmorType;
+-import org.example.enums.Slot;
+-import org.example.enums.WeaponType;
+-import org.example.pojos.items_equipment.Item;
++import org.example.equip_enums.ArmorType;
++import org.example.equip_enums.Slot;
++import org.example.equip_enums.WeaponType;
++import org.example.pojos.equipment.Item;
+ 
+ import java.util.List;
+ import java.util.Map;
+Index: src/main/java/org/example/enums/Slot.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/enums/Slot.java b/src/main/java/org/example/equip_enums/Slot.java
+rename from src/main/java/org/example/enums/Slot.java
+rename to src/main/java/org/example/equip_enums/Slot.java
+--- a/src/main/java/org/example/enums/Slot.java	(revision 2f705e786f8417052e20e8fe5ef78ba9a69fcecc)
++++ b/src/main/java/org/example/equip_enums/Slot.java	(date 1676450971303)
+@@ -1,4 +1,4 @@
+-package org.example.enums;
++package org.example.equip_enums;
+ 
+ public enum Slot {
+ 

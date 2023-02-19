@@ -3,12 +3,15 @@ package org.example.pojos.heroes;
 import org.example.enums.ArmorType;
 import org.example.enums.Slot;
 import org.example.enums.WeaponType;
+import org.example.exceptions.InvalidArmorException;
+import org.example.exceptions.InvalidWeaponException;
 import org.example.pojos.items_equipment.Armor;
 import org.example.pojos.items_equipment.Item;
 import org.example.pojos.items_equipment.Weapon;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public abstract class Hero {
     private String name;
@@ -33,10 +36,10 @@ public abstract class Hero {
         this.level++;
     }
 
-    public abstract void equip(Slot slot,Weapon weapon);
-    public abstract void equip(Slot slot,Armor armor);
+    public abstract void equip(Slot slot,Weapon weapon) throws InvalidWeaponException;
+    public abstract void equip(Slot slot,Armor armor) throws InvalidWeaponException, InvalidArmorException;
 
-    public void damage(){
+    public double calculateDamage(){
             double weaponDamage = 1.0;
             if (getEquipment().containsKey(Slot.WEAPON)) {
                 Item item = getEquipment().get(Slot.WEAPON);
@@ -55,7 +58,8 @@ public abstract class Hero {
             }
 
             double totalDamage = weaponDamage * (1 + damagingAttribute / 100.0);
-            System.out.println("Total Damage: " + totalDamage);
+//            System.out.println("Total Damage: " + totalDamage);
+        return totalDamage;
     }
 
     public void totalAttributes(){
@@ -64,7 +68,7 @@ public abstract class Hero {
 
         for (Item item : equipment.values()) {
             if (item instanceof Armor) {
-                totalAttributes.addAttributes(((Armor) item).getArmorAttribute());
+                totalAttributes.calculateHeroattributes(((Armor) item).getArmorAttribute());
             }
         }
 
@@ -136,7 +140,17 @@ public abstract class Hero {
         this.validArmorTypes = validArmorTypes;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Hero hero)) return false;
+        return getLevel() == hero.getLevel() && Objects.equals(getName(), hero.getName()) && Objects.equals(getHeroClass(), hero.getHeroClass()) && getHeroAttributes().equals(hero.getHeroAttributes()) && Objects.equals(getEquipment(), hero.getEquipment()) && Objects.equals(getValidWeaponTypes(), hero.getValidWeaponTypes()) && Objects.equals(getValidArmorTypes(), hero.getValidArmorTypes());
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getHeroClass(), getLevel(), getHeroAttributes(), getEquipment(), getValidWeaponTypes(), getValidArmorTypes());
+    }
 
     @Override
     public String toString() {

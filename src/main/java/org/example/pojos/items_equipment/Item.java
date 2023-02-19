@@ -10,14 +10,23 @@ public abstract class Item {
     public Item() {
     }
 
-    public String getName() {
-        return name;
+    public Item(String name) {
+        this.name = name;
+    }
+
+    public Item(int requiredLevel, Slot slot) {
+        this.requiredLevel = requiredLevel;
+        this.slot = slot;
     }
 
     public Item(String name, int requiredLevel, Slot slot) {
         this.name = name;
         this.requiredLevel = requiredLevel;
         this.slot = slot;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {
