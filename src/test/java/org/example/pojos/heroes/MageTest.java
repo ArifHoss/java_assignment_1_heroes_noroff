@@ -1,25 +1,27 @@
 package org.example.pojos.heroes;
 
-import org.example.enums.*;
+import org.example.enums.Slot;
+import org.example.enums.WeaponType;
 import org.example.exceptions.InvalidArmorException;
 import org.example.exceptions.InvalidWeaponException;
-import org.example.pojos.items_equipment.*;
+import org.example.pojos.items_equipment.Armor;
+import org.example.pojos.items_equipment.Item;
+import org.example.pojos.items_equipment.Weapon;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
-import static org.example.enums.ArmorType.*;
+import static org.example.enums.ArmorType.CLOTH;
+import static org.example.enums.ArmorType.LEATHER;
 import static org.example.enums.Slot.*;
-import static org.example.enums.WeaponType.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.example.enums.WeaponType.STAFFS;
+import static org.example.enums.WeaponType.WANDS;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class MageTest {
     private Mage mage;
     private Weapon weapon;
     private Armor armor;
-    private static final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
 
     /*
@@ -33,7 +35,6 @@ class MageTest {
 
     @BeforeEach
     void setUp() {
-        System.setOut(new PrintStream(outContent));
         mage = new Mage("Gandalf");
         weapon = new Weapon("Common Staff", 1, WEAPON, STAFFS);
         armor = new Armor("Common Cloth", 1, BODY, CLOTH);
@@ -277,10 +278,6 @@ class MageTest {
         //Assert
         assertEquals(expected, actual);
 
-    }
-
-    private static String getOutput() {
-        return outContent.toString().trim();
     }
 
 }
